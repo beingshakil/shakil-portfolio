@@ -1,21 +1,12 @@
 "use client"
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Navbar = ({isDarkMode, setIsDarkMode, content}) => {
   const [isScroll, setIsScroll] = useState(false);
-  const sideMenuRef = useRef();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const openMenu = () => {
-    if (sideMenuRef.current) {
-      sideMenuRef.current.style.transform = 'translateX(0)';
-    }
-  }
-
-  const closeMenu = () => {
-    if (sideMenuRef.current) {
-      sideMenuRef.current.style.transform = 'translateX(100%)';
-    }
-  }
+  const openMenu = () => setIsMenuOpen(true);
+  const closeMenu = () => setIsMenuOpen(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -94,13 +85,12 @@ const Navbar = ({isDarkMode, setIsDarkMode, content}) => {
 
         {/* Mobile Menu Overlay */}
         <div
-          ref={sideMenuRef}
-          className="fixed inset-0 z-50 bg-black/50 transition-opacity duration-300 hidden md:hidden"
+          className={`fixed inset-0 z-50 bg-black/50 transition-opacity duration-300 md:hidden ${isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
           onClick={closeMenu}
         >
           {/* Mobile Menu Panel */}
           <div
-            className="absolute right-0 top-0 bottom-0 w-64 bg-white dark:bg-dark h-full p-6 transform transition-transform duration-300 translate-x-full"
+            className={`absolute right-0 top-0 bottom-0 w-64 bg-white dark:bg-dark h-full p-6 transition-transform duration-300 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex justify-between items-center mb-8">

@@ -9,7 +9,7 @@
       { "label": "Home", "href": "#top" },
       { "label": "About", "href": "#about" },
       { "label": "Experience", "href": "#experience" },
-      { "label": "Explore", "href": "#blog" },
+      { "label": "Explore with me", "href": "#blog" },
       { "label": "Services", "href": "#services" },
       { "label": "My Work", "href": "#work" },
       { "label": "Contact", "href": "#contact" }

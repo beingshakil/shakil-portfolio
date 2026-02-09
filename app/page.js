@@ -16,15 +16,17 @@ import content from "./data/homepage.json";
 import blogContent from "./data/blog.json";
 
 export default function Home() {
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    if (typeof window !== 'undefined') {
-      if (localStorage.theme) {
-        return localStorage.theme === "dark";
-      }
-      return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const [isDarkMode, setIsDarkMode] = useState(true);
+
+  useEffect(() => {
+    if (localStorage.theme) {
+      setIsDarkMode(localStorage.theme === "dark");
+    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      setIsDarkMode(true);
+    } else {
+      setIsDarkMode(false);
     }
-    return true;
-  });
+  }, []);
 
   useEffect(() => {
     if (isDarkMode) {

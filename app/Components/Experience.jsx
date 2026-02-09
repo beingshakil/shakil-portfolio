@@ -1,10 +1,17 @@
 "use client"
-import React from 'react';
+import React, { useState } from 'react';
 import { useScrollReveal, useScrollRevealMultiple } from '../hooks/useScrollReveal';
+
+const INITIAL_BULLETS = 3;
 
 const Experience = ({content}) => {
   const headerRef = useScrollReveal();
   const setEntryRef = useScrollRevealMultiple(content.cards.length);
+  const [expandedCards, setExpandedCards] = useState({});
+
+  const toggleCard = (index) => {
+    setExpandedCards(prev => ({ ...prev, [index]: !prev[index] }));
+  };
 
   return (
     <div id='experience' className='w-full px-4 sm:px-6 lg:px-[8%] py-16 scroll-mt-20 bg-light dark:bg-dark'>
@@ -43,13 +50,21 @@ const Experience = ({content}) => {
                     )}
                   </h4>
                   <ul className="space-y-2 text-gray-600 dark:text-gray-300">
-                    {entry.content.map((bullet, i) => (
+                    {(expandedCards[index] ? entry.content : entry.content.slice(0, INITIAL_BULLETS)).map((bullet, i) => (
                       <li key={i} className="flex items-start">
                         <span className="inline-block w-2 h-2 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
                         <span>{bullet}</span>
                       </li>
                     ))}
                   </ul>
+                  {entry.content.length > INITIAL_BULLETS && (
+                    <button
+                      onClick={() => toggleCard(index)}
+                      className="mt-3 text-sm font-medium text-primary hover:text-primaryDark transition-colors duration-300"
+                    >
+                      {expandedCards[index] ? 'Show Less' : `Show More (${entry.content.length - INITIAL_BULLETS} more)`}
+                    </button>
+                  )}
                 </div>
               </div>
             ))}
