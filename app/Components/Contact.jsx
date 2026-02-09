@@ -3,27 +3,28 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
 import { assets } from '../Assets/assets'
+import { useScrollReveal } from '../hooks/useScrollReveal'
 
-const Contact = () => {
-
+const Contact = ({content}) => {
+    const sectionRef = useScrollReveal();
     const [result, setResult] = useState("");
 
     const onSubmit = async (event) => {
       event.preventDefault();
-      setResult("Sending....");
+      setResult(content.sendingText);
       const formData = new FormData(event.target);
-  
-      formData.append("access_key", "af58504b-24af-40ac-afb8-ae46f9bc2a6f");
-  
+
+      formData.append("access_key", content.web3formsKey);
+
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: formData
       });
-  
+
       const data = await response.json();
-  
+
       if (data.success) {
-        setResult("Form Submitted Successfully");
+        setResult(content.successText);
         event.target.reset();
       } else {
         console.log("Error", data);
@@ -33,36 +34,38 @@ const Contact = () => {
 
   return (
     <div id="contact" className='w-full px-[12%] py-10 scroll-mt-20'>
-    <h2 className="text-center text-5xl font-ovo">Connect with Me</h2>
+      <div ref={sectionRef}>
+        <h2 className="text-center text-5xl font-ovo">{content.title}</h2>
 
-    <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-ovo">
-      I'd Love to hear from you! If you have any question or feedback, 
-      please use the form below.
-    </p>
+        <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-ovo">
+          {content.content}
+        </p>
 
-    <form onSubmit={onSubmit} className='max-w-2xl mx-auto'>
+        <form onSubmit={onSubmit} className='max-w-2xl mx-auto'>
 
-        <div className='grid grid-cols-auto gap-6 mt-10 mb-6'>
-            <input type="text" placeholder='Enter your name' required
-            className='flex-1 p-3 outline-none border-[0.5px] border-gray-400 
-            rounded-md bg-white' name='name'/>
+            <div className='grid grid-cols-auto gap-6 mt-10 mb-6'>
+                <input type="text" placeholder={content.namePlaceholder} required
+                className='flex-1 p-3 outline-none border-[0.5px] border-primary/40
+                rounded-md bg-white dark:bg-darkHover dark:text-light dark:border-primaryDark/50' name='name'/>
 
-            <input type="email" placeholder='Enter your email' required
-            className='flex-1 p-3 outline-none border-[0.5px] border-gray-400 
-            rounded-md bg-white'name='email'/>
-        </div>
-        <textarea rows='6' placeholder='Enter your message' required 
-        className='w-full p-4 outline-none border-[0.5px] border-gray-400 
-        rounded-md bg-white mb-6' name='message'></textarea>
-       
-        <button type='submit'
-        className='py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80
-        text-white rounded-full mx-auto hover:bg-black duration-500'>Submit now <Image src={assets.right_arrow_white} alt='' className='w-4'/>
-        </button>
+                <input type="email" placeholder={content.emailPlaceholder} required
+                className='flex-1 p-3 outline-none border-[0.5px] border-primary/40
+                rounded-md bg-white dark:bg-darkHover dark:text-light dark:border-primaryDark/50' name='email'/>
+            </div>
+            <textarea rows='6' placeholder={content.messagePlaceholder} required
+            className='w-full p-4 outline-none border-[0.5px] border-primary/40
+            rounded-md bg-white dark:bg-darkHover dark:text-light dark:border-primaryDark/50 mb-6' name='message'></textarea>
 
-        <p className='mt-4'>{result}</p>
+            <button type='submit'
+            className='py-3 px-8 w-max flex items-center justify-between gap-2 bg-primaryDark
+            text-white rounded-full mx-auto hover:bg-dark duration-500'>
+              {content.submitText} <Image src={assets.right_arrow_white} alt='' className='w-4'/>
+            </button>
 
-    </form>
+            <p className='mt-4 text-center'>{result}</p>
+
+        </form>
+      </div>
     </div>
   )
 }

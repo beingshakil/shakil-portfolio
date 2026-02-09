@@ -1,23 +1,26 @@
+"use client"
 import React from 'react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
-const CallToAction = () => {
+const CallToAction = ({content}) => {
+  const sectionRef = useScrollReveal();
+
   return (
-    <div className='w-full px-4 sm:px-6 lg:px-[8%] py-16 scroll-mt-20 bg-gradient-to-r from-blue-600 to-purple-600'>
-      <div className="max-w-4xl mx-auto text-center">
+    <div className='w-full px-4 sm:px-6 lg:px-[8%] py-16 scroll-mt-20 bg-gradient-to-r from-primaryDark to-primary'>
+      <div ref={sectionRef} className="max-w-4xl mx-auto text-center">
         <h2 className='text-3xl md:text-4xl font-bold text-white mb-6'>
-          Ready to Transform Your Data Into Actionable Insights?
+          {content.title}
         </h2>
-        
-        <p className='text-xl text-blue-100 mb-10 max-w-2xl mx-auto'>
-          Let's collaborate to turn your data challenges into opportunities. 
-          Get in touch today to discuss how my expertise in SEO and Data Analysis can drive your business forward.
+
+        <p className='text-xl text-secondary/80 mb-10 max-w-2xl mx-auto'>
+          {content.content}
         </p>
-        
-        <a 
-          href='#contact' 
-          className='inline-block px-8 py-4 bg-white text-blue-600 font-bold rounded-full shadow-lg hover:bg-gray-100 transition-all duration-300 transform hover:-translate-y-1'
+
+        <a
+          href={content.buttonHref}
+          className='inline-block px-8 py-4 bg-light text-primaryDark font-bold rounded-full shadow-lg hover:bg-secondary transition-all duration-300 transform hover:-translate-y-1'
         >
-          Get In Touch
+          {content.buttonText}
         </a>
       </div>
     </div>

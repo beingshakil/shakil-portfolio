@@ -1,18 +1,18 @@
 import { Outfit, Ovo } from 'next/font/google';
 import "./globals.css";
+import content from './data/homepage.json';
 
 const outfit  = Outfit({
-  subsets: ["latin"], weight: ["400", "500", "600", "500"]
+  subsets: ["latin"], weight: ["400", "500", "600"]
 });
 
 const ovo  = Ovo({
   subsets: ["latin"], weight: ["400"]
 });
 
-
 export const metadata = {
-  title: "Md Shakil Hossen - Striving for Excellence",
-  description: "Result driven SEO & Data Analyst with experience in AI automation, analytics and reporting. Skilled in implementing SEO strategies to enhance online presence",
+  title: content.meta.title,
+  description: content.meta.description,
 };
 
 export default function RootLayout({ children }) {

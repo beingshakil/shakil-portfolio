@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "title": "Blog & Insights",
+    "subtitle": "Explore",
+    "description": "Thoughts, tutorials, and insights on Data Analysis, SEO, and Web Development. Stay updated with the latest trends and techniques.",
+    "readMoreText": "Read More",
+    "backText": "Back to Blog"
+  },
+  "blog-1": {
+    "slug": "how-i-increased-website-traffic-by-5x-using-seo",
+    "image": "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80",
+    "title": "How I Increased Website Traffic by 5x Using SEO",
+    "subtitle": "SEO",
+    "date": "Feb 5, 2026",
+    "author": "Md Shakil Hossen",
+    "readingTime": "9 mins",
+    "content": [
+      {
+        "type": "keypoints",
+        "title": "Key takeaways",
+        "points": [
+          "Targeted keyword research and competitor analysis laid the foundation for a 5x traffic increase.",
+          "Technical SEO audits and on-page optimization improved crawlability and search engine rankings.",
+          "Consistent content strategy combined with data-driven decisions accelerated organic growth."
+        ]
+      },
+      {
+        "type": "text",
+        "value": "When I joined IRD Foundation as an SEO and Data Analyst, the website was struggling with organic visibility. Search rankings were stagnant, and organic traffic had plateaued for months. I knew that a comprehensive, data-driven SEO strategy could turn things around."
+      },
+      {
+        "type": "heading",
+        "value": "The Foundation: Keyword & Competitor Research"
+      },
+      {
+        "type": "text",
+        "value": "The first step was understanding the competitive landscape. Using tools like Ahrefs and SEMrush, I conducted thorough keyword research to identify high-volume, low-competition opportunities. I mapped out competitor strategies to find gaps we could exploit."
+      },
+      {
+        "type": "image",
+        "src": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "alt": "SEO Analytics Dashboard"
+      },
+      {
+        "type": "heading",
+        "value": "Technical SEO: Fixing the Foundation"
+      },
+      {
+        "type": "text",
+        "value": "A comprehensive technical audit revealed several critical issues: slow page load times, broken internal links, missing meta descriptions, and poor mobile responsiveness. I systematically addressed each issue using Google Search Console data and custom Python scripts to automate the audit process."
+      },
+      {
+        "type": "text",
+        "value": "After implementing these technical fixes and optimizing the content structure, we saw a dramatic improvement. Within six months, organic traffic increased by 5x and key search rankings moved from page 3-4 to page 1 for our target keywords."
+      }
+    ]
+  },
+  "blog-2": {
+    "slug": "automating-data-workflows-with-python-pandas",
+    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    "title": "Automating Data Workflows with Python & Pandas",
+    "subtitle": "Data Analysis",
+    "date": "Jan 20, 2026",
+    "author": "Md Shakil Hossen",
+    "readingTime": "7 mins",
+    "content": [
+      {
+        "type": "keypoints",
+        "title": "Key takeaways",
+        "points": [
+          "Automated ETL pipelines using Python reduced manual data processing time by over 60%.",
+          "Pandas and NumPy were key tools for transforming raw data into structured, actionable insights.",
+          "Custom automation scripts enabled non-technical team members to generate reports independently."
+        ]
+      },
+      {
+        "type": "text",
+        "value": "Data processing is often the most time-consuming part of any analytics workflow. When I started working on data automation at IRD Foundation, the team was spending hours each week on repetitive manual tasks — cleaning spreadsheets, merging data from different sources, and formatting reports."
+      },
+      {
+        "type": "heading",
+        "value": "Building the ETL Pipeline"
+      },
+      {
+        "type": "text",
+        "value": "I designed an automated ETL (Extract, Transform, Load) pipeline using Python, Pandas, and NumPy. The pipeline extracted data from multiple sources including Google Analytics, CRM systems, and internal databases, transformed it into a unified format, and loaded it into our reporting dashboard."
+      },
+      {
+        "type": "images",
+        "items": [
+          {
+            "src": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+            "alt": "Data Pipeline Architecture"
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+            "alt": "Analytics Dashboard"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "value": "The results were immediate. What previously took 4-5 hours of manual work each week was now completed automatically in minutes. The team could focus on analysis and strategy instead of data wrangling, and the accuracy of our reports improved significantly."
+      }
+    ]
+  },
+  "blog-3": {
+    "slug": "building-interactive-dashboards-with-power-bi",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    "title": "Building Interactive Dashboards with Power BI",
+    "subtitle": "Data Visualization",
+    "date": "Jan 8, 2026",
+    "author": "Md Shakil Hossen",
+    "readingTime": "6 mins",
+    "content": [
+      {
+        "type": "text",
+        "value": "Data is only as valuable as the insights it delivers. At IRD Foundation, I was tasked with making complex datasets accessible to stakeholders who didn't have technical backgrounds. The solution was building interactive Power BI dashboards that turned raw numbers into visual stories."
+      },
+      {
+        "type": "heading",
+        "value": "Designing for Clarity"
+      },
+      {
+        "type": "text",
+        "value": "The key principle behind every dashboard I built was clarity. Each visualization had a clear purpose — whether it was tracking website traffic trends, monitoring SEO keyword rankings, or analyzing user behavior patterns. I focused on choosing the right chart type for each metric and ensuring the layout guided the viewer's eye naturally."
+      },
+      {
+        "type": "image",
+        "src": "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "alt": "Power BI Dashboard Example"
+      },
+      {
+        "type": "text",
+        "value": "The interactive dashboards transformed how the team made decisions. Instead of waiting for weekly reports, stakeholders could explore data in real-time, filter by date ranges, and drill down into specific metrics. This improved decision-making speed across all departments."
+      }
+    ]
+  }
+}

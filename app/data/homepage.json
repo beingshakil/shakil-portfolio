@@ -1,0 +1,226 @@
+{
+  "meta": {
+    "title": "Md Shakil Hossen - Striving for Excellence",
+    "description": "Result driven SEO & Data Analyst with experience in AI automation, analytics and reporting. Skilled in implementing SEO strategies to enhance online presence"
+  },
+  "navbar": {
+    "brandName": "Md Shakil Hossen",
+    "navLinks": [
+      { "label": "Home", "href": "#top" },
+      { "label": "About", "href": "#about" },
+      { "label": "Experience", "href": "#experience" },
+      { "label": "Explore", "href": "#blog" },
+      { "label": "Services", "href": "#services" },
+      { "label": "My Work", "href": "#work" },
+      { "label": "Contact", "href": "#contact" }
+    ],
+    "ctaButtonText": "Contact",
+    "mobileMenuTitle": "Menu",
+    "lightModeLabel": "Light Mode",
+    "darkModeLabel": "Dark Mode"
+  },
+  "hero": {
+    "title": "Step into the World of Data",
+    "subtitle": "Striving for Excellence!!",
+    "content": "I don't just follow trends. I set insights and strategy.",
+    "profileAlt": "Md Shakil Hossen",
+    "ctaPrimary": { "text": "Discover My Story", "href": "#about" },
+    "ctaSecondary": { "text": "Get In Touch", "href": "#contact" },
+    "backgroundImage": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+  },
+  "about": {
+    "title": "Who I AM",
+    "subtitle": "Introduction",
+    "content": [
+      "I am an experienced Data Analyst and SEO Specialist with expertise in transforming complex data into actionable insights. Throughout my career, I have had the privilege of collaborating with prestigious organizations, contributing to their success and growth through data-driven strategies.",
+      "My mission is to bridge the gap between data and business strategy, helping organizations make informed decisions that drive growth and competitive advantage. With a strong foundation in both technical analysis and strategic thinking, I aim to contribute to workflow improvements while continuing to grow professionally."
+    ],
+    "storyTitle": "My Story & Mission",
+    "ctaText": "Learn More",
+    "cards": [
+      {
+        "iconKey": "edu_icon",
+        "iconDarkKey": "edu_icon_dark",
+        "title": "Education",
+        "content": "BSc. in Computer Science and Engineering\nDaffodil International University\nSep 2020 – Sep 2024"
+      },
+      {
+        "iconKey": "project_icon",
+        "iconDarkKey": "project_icon_dark",
+        "title": "Projects",
+        "content": "Built more than 5 projects in Data Analysis, SEO, and Web Development"
+      },
+      {
+        "iconKey": "code_icon",
+        "iconDarkKey": "code_icon_dark",
+        "title": "Languages",
+        "content": "Python, Flask, React Js, Next Js, JavaScript, HTML, CSS"
+      }
+    ],
+    "toolsSectionTitle": "Tools I Use"
+  },
+  "experience": {
+    "title": "Work Experience",
+    "subtitle": "Career Path",
+    "cards": [
+      {
+        "title": "SEO and Data Analyst",
+        "duration": "Jan 2025 – Feb 2026",
+        "company": "IRD Foundation",
+        "companyLink": "https://irdfoundation.com/",
+        "content": [
+          "Automated workflow processes with Python and JavaScript. Streamlined data processing and reduced manual tasks by developing custom automation scripts, improving team efficiency, and accelerating data-driven decisions.",
+          "Increased website traffic and search rankings by 5x through targeted keyword and competitor research, implementation of Technical SEO strategies, and data optimization using Ahrefs, SEMrush, and Google Search Console.",
+          "Transformed raw data into actionable insights by building automated ETL workflows with Pandas and NumPy, improving data accuracy and usability.",
+          "Collaborated with Web and Database teams to ensure data compliance and optimize website structure, enhancing SEO performance and user experience based on analytical insights.",
+          "Developed interactive Power BI and Excel dashboards to visualize key trends, improving data accessibility and decision-making speed across teams."
+        ],
+        "side": "right"
+      },
+      {
+        "title": "Web Developer",
+        "duration": "Jun 2024 – Dec 2024",
+        "company": "Searchaly Agency",
+        "companyLink": null,
+        "content": [
+          "Developed responsive web applications using React JS and CSS to enhance user experience, improving performance and scalability through reusable components.",
+          "Designed modular, reusable automation tools that improved team productivity by enabling non-technical stakeholders to generate insights through simple UI triggers."
+        ],
+        "side": "left"
+      }
+    ]
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "What I Offer",
+    "content": "I offer a range of services to help you succeed in the digital world. From data analysis and SEO to web development and UI/UX design, I turn your ideas into impactful results.",
+    "cards": [
+      {
+        "iconKey": "web_icon",
+        "title": "Data Analyst",
+        "content": "Analyzing and interpreting complex datasets to uncover trends, provide actionable insights, and support data-driven decision making for businesses.",
+        "link": "#"
+      },
+      {
+        "iconKey": "ui_icon",
+        "title": "SEO",
+        "content": "Optimizing websites to rank higher on search engines, driving organic traffic, and improving online visibility.",
+        "link": "#"
+      },
+      {
+        "iconKey": "mobile_icon",
+        "title": "Web Development",
+        "content": "Building responsive, high-performance websites and web applications using modern technologies and best practices.",
+        "link": "#"
+      },
+      {
+        "iconKey": "graphics_icon",
+        "title": "UI/UX Design",
+        "content": "Creating intuitive and engaging user interfaces with a focus on user experience and visual aesthetics.",
+        "link": "#"
+      }
+    ],
+    "readMoreText": "Read More",
+    "viewAllText": "View All Services"
+  },
+  "carousel": {
+    "title": "Service Showcase",
+    "subtitle": "Featured Work",
+    "buttonText": "View Case Study",
+    "cards": [
+      {
+        "id": 1,
+        "title": "SEO Performance Dashboard",
+        "content": "Comprehensive SEO analytics and performance tracking dashboard",
+        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+      },
+      {
+        "id": 2,
+        "title": "Advanced Web Analytics",
+        "content": "Detailed web traffic analysis and user behavior insights",
+        "image": "https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+      },
+      {
+        "id": 3,
+        "title": "Data-Driven SEO Strategy",
+        "content": "Evidence-based search engine optimization approach",
+        "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+      },
+      {
+        "id": 4,
+        "title": "Conversion Rate Optimization",
+        "content": "Advanced CRO techniques for maximizing website performance",
+        "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+      }
+    ]
+  },
+  "work": {
+    "title": "My Latest Work",
+    "subtitle": "My Portfolio",
+    "content": "Explore my recent projects showcasing expertise in web development, SEO, and data analysis. Each project reflects my commitment to quality and innovation.",
+    "cards": [
+      {
+        "title": "Frontend Project",
+        "badge": "Web Development",
+        "content": "Modern responsive website built with React and Next.js, featuring interactive UI components and smooth animations.",
+        "bgImage": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "link": "#"
+      },
+      {
+        "title": "Bahari Site",
+        "badge": "E-commerce Website",
+        "content": "Full-featured online shopping platform with product catalog, cart functionality, and secure payment integration.",
+        "bgImage": "https://images.unsplash.com/photo-1591369822091-8b8285d1000e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "link": "#"
+      },
+      {
+        "title": "SEO Optimization",
+        "badge": "Search Engine Optimization",
+        "content": "Comprehensive SEO strategy implementation including keyword research, on-page optimization, and performance tracking.",
+        "bgImage": "https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "link": "#"
+      },
+      {
+        "title": "Deep Learning",
+        "badge": "Neural Networks Implementation",
+        "content": "Advanced machine learning models for data analysis and pattern recognition using TensorFlow and Python.",
+        "bgImage": "https://images.unsplash.com/photo-1677442135722-5f11e06a4e6d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "link": "#"
+      }
+    ],
+    "showMoreText": "Show More Projects",
+    "viewProjectText": "View Project"
+  },
+  "callToAction": {
+    "title": "Ready to Transform Your Data Into Actionable Insights?",
+    "content": "Let's collaborate to turn your data challenges into opportunities. Get in touch today to discuss how my expertise in SEO and Data Analysis can drive your business forward.",
+    "buttonText": "Get In Touch",
+    "buttonHref": "#contact"
+  },
+  "contact": {
+    "title": "Connect with Me",
+    "content": "I'd Love to hear from you! If you have any question or feedback, please use the form below.",
+    "namePlaceholder": "Enter your name",
+    "emailPlaceholder": "Enter your email",
+    "messagePlaceholder": "Enter your message",
+    "submitText": "Submit now",
+    "sendingText": "Sending....",
+    "successText": "Form Submitted Successfully",
+    "web3formsKey": "af58504b-24af-40ac-afb8-ae46f9bc2a6f"
+  },
+  "footer": {
+    "brandName": "Md Shakil Hossen",
+    "content": "Full suite of premium services in Data Analysis, SEO, and Web Development.",
+    "email": "being.shakill@gmail.com",
+    "phone": "+880 1755780537",
+    "location": "Rayerbag, Dhaka, Bangladesh",
+    "contactInfoTitle": "Contact Info",
+    "followMeTitle": "Follow Me",
+    "socialLinks": [
+      { "platform": "linkedin", "url": "https://www.linkedin.com/in/md-shakil-hossen/", "label": "LinkedIn" },
+      { "platform": "github", "url": "https://github.com/beingshakil", "label": "GitHub" },
+      { "platform": "facebook", "url": "https://www.facebook.com/shakiil.hossen", "label": "Facebook" }
+    ],
+    "copyrightText": "Md Shakil Hossen. All rights reserved."
+  }
+}
