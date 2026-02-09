@@ -13,6 +13,9 @@ const ovo  = Ovo({
 export const metadata = {
   title: content.meta.title,
   description: content.meta.description,
+  verification: {
+    google: 'QaAxnJn3CC3FIktiXOSIkdploAsdJwoQwlZXhkW-M1M',
+  },
 };
 
 export default function RootLayout({ children }) {
