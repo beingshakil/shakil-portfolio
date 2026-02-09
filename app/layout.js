@@ -13,6 +13,10 @@ const ovo  = Ovo({
 export const metadata = {
   title: content.meta.title,
   description: content.meta.description,
+  alternates: {
+    canonical: 'https://beingshakil.xyz',
+  },
+  viewport: 'width=device-width, initial-scale=1',
   verification: {
     google: 'QaAxnJn3CC3FIktiXOSIkdploAsdJwoQwlZXhkW-M1M',
   },
