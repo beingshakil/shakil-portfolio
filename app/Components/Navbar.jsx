@@ -1,5 +1,6 @@
 "use client"
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 
 const Navbar = ({isDarkMode, setIsDarkMode, content}) => {
   const [isScroll, setIsScroll] = useState(false);
@@ -28,18 +29,18 @@ const Navbar = ({isDarkMode, setIsDarkMode, content}) => {
         ${isScroll ? "bg-white/90 dark:bg-dark/90 backdrop-blur-md shadow-lg" : "bg-transparent"}`}>
 
         {/* Brand Logo - Left side */}
-        <a href="#top" className="flex items-center">
+        <Link href="/" className="flex items-center">
           <span className="text-xl font-bold md:text-2xl bg-gradient-to-r from-primaryDark to-primary bg-clip-text text-transparent">{content.brandName}</span>
-        </a>
+        </Link>
 
         {/* Desktop Navigation Links - Center */}
         <ul className="hidden md:flex items-center gap-8 lg:gap-10">
           {content.navLinks.map((link, index) => (
             <li key={index}>
-              <a href={link.href} className="font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-300 relative group">
+              <Link href={link.href} className="font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-300 relative group">
                 {link.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -64,12 +65,12 @@ const Navbar = ({isDarkMode, setIsDarkMode, content}) => {
           </button>
 
           {/* Contact Button - Hidden on mobile */}
-          <a
-            href="#contact"
+          <Link
+            href="/contact"
             className="hidden md:inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-primaryDark to-primary text-white font-medium rounded-lg hover:from-primaryDark-dark hover:to-primary-dark transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
           >
             {content.ctaButtonText}
-          </a>
+          </Link>
 
           {/* Mobile Menu Button */}
           <button
@@ -109,9 +110,9 @@ const Navbar = ({isDarkMode, setIsDarkMode, content}) => {
             <ul className="space-y-6">
               {content.navLinks.map((link, index) => (
                 <li key={index}>
-                  <a href={link.href} className="block py-3 font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-300 border-b border-gray-200 dark:border-gray-700" onClick={closeMenu}>
+                  <Link href={link.href} className="block py-3 font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-300 border-b border-gray-200 dark:border-gray-700" onClick={closeMenu}>
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

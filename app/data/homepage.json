@@ -1,18 +1,18 @@
 {
   "meta": {
-    "title": "Md Shakil Hossen - Striving for Excellence",
+    "title": "Md Shakil Hossen - SEO & Data Analyst Portfolio",
     "description": "Result driven SEO & Data Analyst with experience in AI automation, analytics and reporting. Skilled in implementing SEO strategies to enhance online presence"
   },
   "navbar": {
     "brandName": "Md Shakil Hossen",
     "navLinks": [
-      { "label": "Home", "href": "#top" },
-      { "label": "About", "href": "#about" },
-      { "label": "Experience", "href": "#experience" },
-      { "label": "Explore with me", "href": "#blog" },
-      { "label": "Services", "href": "#services" },
-      { "label": "My Work", "href": "#work" },
-      { "label": "Contact", "href": "#contact" }
+      { "label": "Home", "href": "/" },
+      { "label": "About", "href": "/about" },
+      { "label": "Experience", "href": "/experience" },
+      { "label": "Explore with me", "href": "/explore" },
+      { "label": "Services", "href": "/services" },
+      { "label": "My Work", "href": "/work" },
+      { "label": "Contact", "href": "/contact" }
     ],
     "ctaButtonText": "Contact",
     "mobileMenuTitle": "Menu",
@@ -24,8 +24,8 @@
     "subtitle": "Striving for Excellence!!",
     "content": "I don't just follow trends. I set insights and strategy.",
     "profileAlt": "Md Shakil Hossen",
-    "ctaPrimary": { "text": "Discover My Story", "href": "#about" },
-    "ctaSecondary": { "text": "Get In Touch", "href": "#contact" },
+    "ctaPrimary": { "text": "Discover My Story", "href": "/about" },
+    "ctaSecondary": { "text": "Get In Touch", "href": "/contact" },
     "backgroundImage": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
   },
   "about": {
@@ -195,7 +195,7 @@
     "title": "Ready to Transform Your Data Into Actionable Insights?",
     "content": "Let's collaborate to turn your data challenges into opportunities. Get in touch today to discuss how my expertise in SEO and Data Analysis can drive your business forward.",
     "buttonText": "Get In Touch",
-    "buttonHref": "#contact"
+    "buttonHref": "/contact"
   },
   "contact": {
     "title": "Connect with Me",

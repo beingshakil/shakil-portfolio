@@ -1,5 +1,6 @@
 "use client"
 import Image from 'next/image'
+import Link from 'next/link'
 import React, { useState, useEffect } from 'react'
 import { assets } from '../Assets/assets'
 
@@ -61,30 +62,30 @@ const Header = ({content}) => {
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
+            <Link
               href={content.ctaPrimary.href}
               className="px-8 py-4 bg-light text-dark font-semibold rounded-full shadow-lg hover:bg-secondary transition-all duration-300 transform hover:-translate-y-1"
             >
               {content.ctaPrimary.text}
-            </a>
+            </Link>
 
-            <a
+            <Link
               href={content.ctaSecondary.href}
               className="px-8 py-4 border-2 border-light text-light font-semibold rounded-full hover:bg-light hover:text-dark transition-all duration-300 transform hover:-translate-y-1"
             >
               {content.ctaSecondary.text}
-            </a>
+            </Link>
           </div>
         </div>
       </div>
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-0 right-0 flex justify-center animate-bounce">
-        <a href={content.ctaPrimary.href} className="block text-white">
+        <Link href={content.ctaPrimary.href} className="block text-white">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
-        </a>
+        </Link>
       </div>
     </div>
   )

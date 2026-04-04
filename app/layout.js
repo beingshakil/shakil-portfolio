@@ -1,6 +1,8 @@
 import { Outfit, Ovo } from 'next/font/google';
 import "./globals.css";
 import content from './data/homepage.json';
+import { ThemeProvider } from './context/ThemeContext';
+import LayoutWrapper from './Components/LayoutWrapper';
 
 const outfit  = Outfit({
   subsets: ["latin"], weight: ["400", "500", "600"]
@@ -29,7 +31,11 @@ export default function RootLayout({ children }) {
         className={`${outfit.className} ${ovo.className} antialiased leading-8 overflow-x-hidden
          dark:bg-darkTheme dark:text-white`}
       >
-        {children}
+        <ThemeProvider>
+          <LayoutWrapper>
+            {children}
+          </LayoutWrapper>
+        </ThemeProvider>
       </body>
     </html>
   );

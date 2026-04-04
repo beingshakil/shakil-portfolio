@@ -1,5 +1,6 @@
 "use client"
 import React from 'react';
+import Link from 'next/link';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const CallToAction = ({content}) => {
@@ -16,12 +17,12 @@ const CallToAction = ({content}) => {
           {content.content}
         </p>
 
-        <a
+        <Link
           href={content.buttonHref}
           className='inline-block px-8 py-4 bg-light text-primaryDark font-bold rounded-full shadow-lg hover:bg-secondary transition-all duration-300 transform hover:-translate-y-1'
         >
           {content.buttonText}
-        </a>
+        </Link>
       </div>
     </div>
   );
