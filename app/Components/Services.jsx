@@ -23,12 +23,12 @@ const Services = ({content}) => {
         </div>
 
         {/* Services grid */}
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch'>
           {content.cards.map((item, index) => (
             <div
               key={index}
               ref={setCardRef(index)}
-              className='bg-white dark:bg-darkHover border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group'
+              className='flex flex-col bg-white dark:bg-darkHover border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group h-full'
             >
               {/* Icon */}
               <div className="w-14 h-14 rounded-full bg-secondary/20 dark:bg-primaryDark/30 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
@@ -47,10 +47,10 @@ const Services = ({content}) => {
               {/* Description */}
               <p className='text-gray-600 dark:text-gray-400 mb-6'>{item.content}</p>
 
-              {/* Link */}
+              {/* Link — pinned to bottom for uniform alignment */}
               <a
                 href={item.link}
-                className='flex items-center gap-2 text-primary font-medium group-hover:text-primaryDark dark:group-hover:text-secondary transition-colors duration-300'
+                className='mt-auto pt-2 flex items-center gap-2 text-primary font-medium group-hover:text-primaryDark dark:group-hover:text-secondary transition-colors duration-300'
               >
                 {content.readMoreText}
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -1,13 +1,30 @@
 "use client"
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const isActiveLink = (pathname, href) => {
+  if (!pathname) return false;
+  if (href === '/') return pathname === '/';
+  return pathname === href || pathname.startsWith(href + '/');
+};
 
 const Navbar = ({isDarkMode, setIsDarkMode, content}) => {
+  const pathname = usePathname();
   const [isScroll, setIsScroll] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const openMenu = () => setIsMenuOpen(true);
   const closeMenu = () => setIsMenuOpen(false);
+
+  // Lock body scroll while the mobile menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      const prev = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      return () => { document.body.style.overflow = prev; };
+    }
+  }, [isMenuOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,14 +52,29 @@ const Navbar = ({isDarkMode, setIsDarkMode, content}) => {
 
         {/* Desktop Navigation Links - Center */}
         <ul className="hidden md:flex items-center gap-8 lg:gap-10">
-          {content.navLinks.map((link, index) => (
-            <li key={index}>
-              <Link href={link.href} className="font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-300 relative group">
-                {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-            </li>
-          ))}
+          {content.navLinks.map((link, index) => {
+            const active = isActiveLink(pathname, link.href);
+            return (
+              <li key={index}>
+                <Link
+                  href={link.href}
+                  aria-current={active ? 'page' : undefined}
+                  className={`font-medium transition-colors duration-300 relative group ${
+                    active
+                      ? 'text-primary'
+                      : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary'
+                  }`}
+                >
+                  {link.label}
+                  <span
+                    className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                      active ? 'w-full' : 'w-0 group-hover:w-full'
+                    }`}
+                  ></span>
+                </Link>
+              </li>
+            );
+          })}
         </ul>
 
         {/* Right side controls */}
@@ -86,12 +118,12 @@ const Navbar = ({isDarkMode, setIsDarkMode, content}) => {
 
         {/* Mobile Menu Overlay */}
         <div
-          className={`fixed inset-0 z-50 bg-black/50 transition-opacity duration-300 md:hidden ${isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+          className={`fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm transition-opacity duration-300 md:hidden ${isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
           onClick={closeMenu}
         >
           {/* Mobile Menu Panel */}
           <div
-            className={`absolute right-0 top-0 bottom-0 w-64 bg-white dark:bg-dark h-full p-6 transition-transform duration-300 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+            className={`absolute right-0 top-0 bottom-0 w-64 bg-white dark:bg-dark h-full p-6 shadow-2xl z-[101] overflow-y-auto transition-transform duration-300 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex justify-between items-center mb-8">
@@ -108,13 +140,25 @@ const Navbar = ({isDarkMode, setIsDarkMode, content}) => {
             </div>
 
             <ul className="space-y-6">
-              {content.navLinks.map((link, index) => (
-                <li key={index}>
-                  <Link href={link.href} className="block py-3 font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-300 border-b border-gray-200 dark:border-gray-700" onClick={closeMenu}>
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              {content.navLinks.map((link, index) => {
+                const active = isActiveLink(pathname, link.href);
+                return (
+                  <li key={index}>
+                    <Link
+                      href={link.href}
+                      aria-current={active ? 'page' : undefined}
+                      onClick={closeMenu}
+                      className={`block py-3 font-medium transition-colors duration-300 border-b border-gray-200 dark:border-gray-700 ${
+                        active
+                          ? 'text-primary border-primary'
+                          : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary'
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
 
             <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">

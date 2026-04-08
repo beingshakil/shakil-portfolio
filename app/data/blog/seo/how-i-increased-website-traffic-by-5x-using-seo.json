@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "title": "How I Increased Website Traffic by 5x Using SEO",
+    "description": "A data-driven SEO case study covering keyword research, technical audits, and on-page optimization that led to a 5x organic traffic increase."
+  },
+  "heading": "How I Increased Website Traffic by 5x Using SEO",
+  "subtitle": "SEO",
+  "category": "SEO",
+  "image": "",
+  "author": "Md Shakil Hossen",
+  "date": "Feb 5, 2026",
+  "readingTime": "9 mins",
+  "slug": "how-i-increased-website-traffic-by-5x-using-seo",
+  "contents": [
+    {
+      "type": "keypoints",
+      "title": "Key takeaways",
+      "content": "<ul><li><strong>Targeted keyword research</strong> and competitor analysis laid the foundation for a 5x traffic increase.</li><li><strong>Technical SEO audits</strong> and on-page optimization improved crawlability and search engine rankings.</li><li>Consistent <strong>content strategy</strong> combined with data-driven decisions accelerated organic growth.</li></ul>"
+    },
+    {
+      "type": "text",
+      "title": "",
+      "content": "<p>When I joined IRD Foundation as an SEO and Data Analyst, the website was struggling with organic visibility. Search rankings were stagnant, and organic traffic had plateaued for months. I knew that a comprehensive, <strong>data-driven SEO strategy</strong> could turn things around.</p>"
+    },
+    {
+      "type": "text",
+      "title": "The Foundation: Keyword & Competitor Research",
+      "content": "<p>The first step was understanding the competitive landscape. Using tools like <strong>Ahrefs</strong> and <strong>SEMrush</strong>, I conducted thorough keyword research to identify high-volume, low-competition opportunities. I mapped out competitor strategies to find gaps we could exploit.</p>"
+    },
+    {
+      "type": "image",
+      "title": "",
+      "content": "<img src=\"https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80\" alt=\"SEO Analytics Dashboard\" />"
+    },
+    {
+      "type": "text",
+      "title": "Technical SEO: Fixing the Foundation",
+      "content": "<p>A comprehensive technical audit revealed several critical issues:</p><ul><li>Slow page load times</li><li>Broken internal links</li><li>Missing meta descriptions</li><li>Poor mobile responsiveness</li></ul><p>I systematically addressed each issue using <strong>Google Search Console</strong> data and custom Python scripts to automate the audit process.</p><p>After implementing these technical fixes and optimizing the content structure, we saw a dramatic improvement. Within six months, organic traffic increased by <strong>5x</strong> and key search rankings moved from page 3-4 to page 1 for our target keywords.</p>"
+    }
+  ]
+}

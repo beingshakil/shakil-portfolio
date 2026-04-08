@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "title": "Automating Data Workflows with Python & Pandas",
+    "description": "How I built automated ETL pipelines with Python, Pandas, and NumPy to cut manual data processing time by over 60%."
+  },
+  "heading": "Automating Data Workflows with Python & Pandas",
+  "subtitle": "Data Analysis",
+  "category": "Data Analysis",
+  "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+  "author": "Md Shakil Hossen",
+  "date": "Jan 20, 2026",
+  "readingTime": "7 mins",
+  "slug": "automating-data-workflows-with-python-pandas",
+  "contents": [
+    {
+      "type": "keypoints",
+      "title": "Key takeaways",
+      "content": "<ul><li><strong>Automated ETL pipelines</strong> using Python reduced manual data processing time by over 60%.</li><li><strong>Pandas and NumPy</strong> were key tools for transforming raw data into structured, actionable insights.</li><li>Custom automation scripts enabled <strong>non-technical team members</strong> to generate reports independently.</li></ul>"
+    },
+    {
+      "type": "text",
+      "title": "",
+      "content": "<p>Data processing is often the most time-consuming part of any analytics workflow. When I started working on data automation at IRD Foundation, the team was spending hours each week on repetitive manual tasks — cleaning spreadsheets, merging data from different sources, and formatting reports.</p>"
+    },
+    {
+      "type": "text",
+      "title": "Building the ETL Pipeline",
+      "content": "<p>I designed an automated <strong>ETL (Extract, Transform, Load)</strong> pipeline using Python, Pandas, and NumPy. The pipeline extracted data from multiple sources including:</p><ul><li>Google Analytics</li><li>CRM systems</li><li>Internal databases</li></ul><p>It transformed everything into a unified format and loaded it into our reporting dashboard.</p>"
+    },
+    {
+      "type": "image",
+      "title": "",
+      "content": "<img src=\"https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80\" alt=\"Data Pipeline Architecture\" />"
+    },
+    {
+      "type": "text",
+      "title": "",
+      "content": "<p>The results were immediate. What previously took <strong>4-5 hours</strong> of manual work each week was now completed automatically in minutes. The team could focus on analysis and strategy instead of data wrangling, and the accuracy of our reports improved significantly.</p>"
+    }
+  ]
+}

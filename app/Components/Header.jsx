@@ -64,14 +64,14 @@ const Header = ({content}) => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href={content.ctaPrimary.href}
-              className="px-8 py-4 bg-light text-dark font-semibold rounded-full shadow-lg hover:bg-secondary transition-all duration-300 transform hover:-translate-y-1"
+              className="px-8 py-4 bg-light text-dark font-semibold rounded-full shadow-lg hover:bg-secondary hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-dark"
             >
               {content.ctaPrimary.text}
             </Link>
 
             <Link
               href={content.ctaSecondary.href}
-              className="px-8 py-4 border-2 border-light text-light font-semibold rounded-full hover:bg-light hover:text-dark transition-all duration-300 transform hover:-translate-y-1"
+              className="px-8 py-4 border-2 border-light text-light font-semibold rounded-full hover:bg-light hover:text-dark hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-dark"
             >
               {content.ctaSecondary.text}
             </Link>
@@ -80,12 +80,23 @@ const Header = ({content}) => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-0 right-0 flex justify-center animate-bounce">
-        <Link href={content.ctaPrimary.href} className="block text-white">
+      <div className="absolute bottom-8 left-0 right-0 flex justify-center z-20 animate-bounce pointer-events-none">
+        <a
+          href="#about"
+          aria-label="Scroll to About section"
+          onClick={(e) => {
+            const target = document.getElementById('about');
+            if (target) {
+              e.preventDefault();
+              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }}
+          className="pointer-events-auto p-3 rounded-full text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white transition-colors"
+        >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
-        </Link>
+        </a>
       </div>
     </div>
   )

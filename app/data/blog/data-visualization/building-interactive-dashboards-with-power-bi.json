@@ -1,0 +1,36 @@
+{
+  "metadata": {
+    "title": "Building Interactive Dashboards with Power BI",
+    "description": "Designing clear, interactive Power BI dashboards that turn raw numbers into visual stories for non-technical stakeholders."
+  },
+  "heading": "Building Interactive Dashboards with Power BI",
+  "subtitle": "Data Visualization",
+  "category": "Data Visualization",
+  "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+  "author": "Md Shakil Hossen",
+  "date": "Jan 8, 2026",
+  "readingTime": "6 mins",
+  "slug": "building-interactive-dashboards-with-power-bi",
+  "contents": [
+    {
+      "type": "text",
+      "title": "",
+      "content": "<p>Data is only as valuable as the insights it delivers. At IRD Foundation, I was tasked with making complex datasets accessible to stakeholders who didn't have technical backgrounds. The solution was building <strong>interactive Power BI dashboards</strong> that turned raw numbers into visual stories.</p>"
+    },
+    {
+      "type": "text",
+      "title": "Designing for Clarity",
+      "content": "<p>The key principle behind every dashboard I built was <strong>clarity</strong>. Each visualization had a clear purpose — whether it was tracking website traffic trends, monitoring SEO keyword rankings, or analyzing user behavior patterns.</p><ul><li>Choose the right chart type for each metric</li><li>Guide the viewer's eye naturally through layout</li><li>Keep filters discoverable and intuitive</li></ul>"
+    },
+    {
+      "type": "image",
+      "title": "",
+      "content": "<img src=\"https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80\" alt=\"Power BI Dashboard Example\" />"
+    },
+    {
+      "type": "text",
+      "title": "",
+      "content": "<p>The interactive dashboards <strong>transformed how the team made decisions</strong>. Instead of waiting for weekly reports, stakeholders could explore data in real-time, filter by date ranges, and drill down into specific metrics. This improved decision-making speed across all departments.</p>"
+    }
+  ]
+}

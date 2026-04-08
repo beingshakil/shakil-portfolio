@@ -60,13 +60,13 @@ const About = ({content}) => {
               <div
                 key={index}
                 ref={setCardRef(index)}
-                className='border border-gray-200 dark:border-gray-700 rounded-xl p-6 cursor-pointer hover:bg-light dark:hover:bg-darkHover hover:-translate-y-2 transition-all duration-300 shadow-sm hover:shadow-lg'
+                className='group border border-gray-200 dark:border-gray-700 rounded-xl p-6 cursor-pointer hover:bg-light dark:hover:bg-darkHover hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 shadow-sm hover:shadow-xl'
               >
-                <div className="w-12 h-12 rounded-full bg-secondary/20 dark:bg-primaryDark/30 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-full bg-primary/10 dark:bg-primaryDark/30 flex items-center justify-center mb-4 group-hover:bg-primary transition-colors duration-300">
                   <Image
                     src={assets[card.iconKey]}
                     alt={card.title}
-                    className='w-6 h-6'
+                    className='w-6 h-6 icon-mono'
                     width={24}
                     height={24}
                   />
@@ -90,7 +90,7 @@ const About = ({content}) => {
                 <Image
                   src={tool}
                   alt='Tool'
-                  className='w-8 h-8 sm:w-10 sm:h-10 object-contain'
+                  className='w-8 h-8 sm:w-10 sm:h-10 object-contain icon-mono'
                   width={40}
                   height={40}
                 />
