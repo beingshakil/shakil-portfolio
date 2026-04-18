@@ -4,7 +4,7 @@ import frontendProject from "./web-development/frontend-project.json";
 import bahariSite from "./web-development/bahari-site.json"; // moved from ecommerce → web-development
 import seoAlHadith from "./seo/al-hadith.json";
 import seoDuaRuqyah from "./seo/dua-ruqyah.json";
-import seoIrdFoundation from "./seo/ird-foundation.json";
+import seoQuranMazid from "./seo/quranmazid.json";
 import deepLearning from "./neural-networks/deep-learning.json";
 import dataVisualization from "./data-visualization/data-visualization.json";
 
@@ -23,7 +23,7 @@ export const workProjects = [
   bahariSite,
   seoAlHadith,
   seoDuaRuqyah,
-  seoIrdFoundation,
+  seoQuranMazid,
   deepLearning,
   dataVisualization,
 ];
