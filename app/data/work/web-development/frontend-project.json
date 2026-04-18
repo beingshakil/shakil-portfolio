@@ -7,7 +7,7 @@
   "category": "Web Development",
   "badge": "Web Development",
   "content": "RS Automart is a comprehensive automotive e-commerce solution featuring product catalog management, advanced search & filtering, shopping cart functionality, and a streamlined checkout flow. Designed for speed, accessibility, and conversion.",
-  "bgImage": "https://images.unsplash.com/photo-1591369822091-8b8285d1000e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-  "link": "https://rsautomart.com",
+  "bgImage": "/my-work/web-development/rs-automart.png",
+  "link": "https://rsautomart.shop/",
   "slug": "rs-automart"
 }

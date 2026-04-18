@@ -65,7 +65,7 @@ const Work = ({content}) => {
                 <div className="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent"></div>
               </div>
 
-              <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
+              <div className="absolute inset-0 flex flex-col justify-end p-6 text-white z-10">
                 <div className="transform translate-y-0 group-hover:-translate-y-2 transition-transform duration-300">
                   <span className="inline-block px-3 py-1 text-xs font-semibold bg-primary rounded-full mb-3">
                     Category: {project.badge || project.category}
@@ -75,7 +75,7 @@ const Work = ({content}) => {
                     {project.content}
                   </p>
 
-                  <a href={project.link || '#'} className="flex items-center gap-2 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <a href={project.link || '#'} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     {content.viewProjectText}
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -84,7 +84,6 @@ const Work = ({content}) => {
                 </div>
               </div>
 
-              <div className="absolute inset-0 bg-gradient-to-t from-primaryDark/80 to-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
           ))}
         </div>
