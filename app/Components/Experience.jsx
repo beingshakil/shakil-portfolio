@@ -4,16 +4,34 @@ import { useScrollReveal, useScrollRevealMultiple } from '../hooks/useScrollReve
 
 const INITIAL_BULLETS = 3;
 
-const Experience = ({content}) => {
+const Experience = ({content, hideTabs}) => {
   const headerRef = useScrollReveal();
   const [activeTab, setActiveTab] = useState('professional');
   
   useEffect(() => {
+    // Read initial hash
+    if (typeof window !== 'undefined') {
+      const hash = window.location.hash;
+      if (hash === '#extra-curricular') setActiveTab('extraCurricular');
+      else if (hash === '#professional') setActiveTab('professional');
+    }
+
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash === '#extra-curricular') setActiveTab('extraCurricular');
+      else if (hash === '#professional') setActiveTab('professional');
+    };
+    
     const handleTabChange = (e) => {
       if (e.detail) setActiveTab(e.detail);
     };
+
+    window.addEventListener('hashchange', handleHashChange);
     window.addEventListener('setExperienceTab', handleTabChange);
-    return () => window.removeEventListener('setExperienceTab', handleTabChange);
+    return () => {
+      window.removeEventListener('setExperienceTab', handleTabChange);
+      window.removeEventListener('hashchange', handleHashChange);
+    };
   }, []);
 
   const currentCards = content[activeTab] || [];
@@ -35,22 +53,24 @@ const Experience = ({content}) => {
         </div>
 
         {/* Tabs */}
-        <div className="flex justify-center mb-12">
-          <div className="inline-flex bg-white dark:bg-darkHover rounded-full p-1 shadow-md border border-gray-200 dark:border-gray-700">
-            <button
-              onClick={() => setActiveTab('professional')}
-              className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${activeTab === 'professional' ? 'bg-primary text-white shadow-md' : 'text-gray-600 dark:text-gray-300 hover:text-primary'}`}
-            >
-              Professional
-            </button>
-            <button
-              onClick={() => setActiveTab('extraCurricular')}
-              className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${activeTab === 'extraCurricular' ? 'bg-primary text-white shadow-md' : 'text-gray-600 dark:text-gray-300 hover:text-primary'}`}
-            >
-              Extra Curricular
-            </button>
+        {!hideTabs && (
+          <div className="flex justify-center mb-12">
+            <div className="inline-flex bg-white dark:bg-darkHover rounded-full p-1 shadow-md border border-gray-200 dark:border-gray-700">
+              <button
+                onClick={() => setActiveTab('professional')}
+                className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${activeTab === 'professional' ? 'bg-primary text-white shadow-md' : 'text-gray-600 dark:text-gray-300 hover:text-primary'}`}
+              >
+                Professional
+              </button>
+              <button
+                onClick={() => setActiveTab('extraCurricular')}
+                className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${activeTab === 'extraCurricular' ? 'bg-primary text-white shadow-md' : 'text-gray-600 dark:text-gray-300 hover:text-primary'}`}
+              >
+                Extra Curricular
+              </button>
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Experience timeline */}
         <div className="relative">

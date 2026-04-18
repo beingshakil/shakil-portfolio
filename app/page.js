@@ -21,7 +21,7 @@ export default function Home() {
     <>
       <Header isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} content={content.hero} />
       <About isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} content={content.about} />
-      <Experience isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} content={content.experience} />
+      <Experience isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} content={content.experience} hideTabs={true} />
       <Services isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} content={content.services} />
       <Carousel isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} content={content.carousel} />
       <Work isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} content={workData} />
