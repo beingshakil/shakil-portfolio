@@ -54,6 +54,32 @@ const Navbar = ({isDarkMode, setIsDarkMode, content}) => {
         <ul className="hidden md:flex items-center gap-8 lg:gap-10">
           {content.navLinks.map((link, index) => {
             const active = isActiveLink(pathname, link.href);
+            
+            if (link.label === "Experience") {
+              return (
+                <li key={index} className="relative group">
+                  <Link href={link.href} className={`font-medium transition-colors duration-300 relative block py-2 ${
+                    active ? 'text-primary' : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary'
+                  }`}>
+                    {link.label}
+                    <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 w-0 group-hover:w-full`}></span>
+                  </Link>
+                  <div className="absolute left-0 mt-0 w-48 bg-white dark:bg-dark border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 flex flex-col z-50 overflow-hidden">
+                    <button onClick={() => {
+                      const el = document.getElementById('experience');
+                      if (el) el.scrollIntoView({ behavior: 'smooth' });
+                      window.dispatchEvent(new CustomEvent('setExperienceTab', { detail: 'professional' }));
+                    }} className="px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-darkHover text-gray-700 dark:text-gray-300 transition-colors">Professional</button>
+                    <button onClick={() => {
+                      const el = document.getElementById('experience');
+                      if (el) el.scrollIntoView({ behavior: 'smooth' });
+                      window.dispatchEvent(new CustomEvent('setExperienceTab', { detail: 'extraCurricular' }));
+                    }} className="px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-darkHover text-gray-700 dark:text-gray-300 transition-colors border-t border-gray-100 dark:border-gray-700">Extra Curricular</button>
+                  </div>
+                </li>
+              );
+            }
+
             return (
               <li key={index}>
                 <Link
@@ -142,6 +168,29 @@ const Navbar = ({isDarkMode, setIsDarkMode, content}) => {
             <ul className="space-y-6">
               {content.navLinks.map((link, index) => {
                 const active = isActiveLink(pathname, link.href);
+
+                if (link.label === "Experience") {
+                  return (
+                    <li key={index} className="border-b border-gray-200 dark:border-gray-700 py-3">
+                      <Link href={link.href} onClick={closeMenu} className="font-medium text-gray-700 dark:text-gray-300 mb-2 block hover:text-primary transition-colors">{link.label}</Link>
+                      <div className="flex flex-col pl-4 space-y-3">
+                        <button onClick={() => {
+                          closeMenu();
+                          const el = document.getElementById('experience');
+                          if (el) el.scrollIntoView({ behavior: 'smooth' });
+                          window.dispatchEvent(new CustomEvent('setExperienceTab', { detail: 'professional' }));
+                        }} className="text-left text-sm text-gray-600 dark:text-gray-400 hover:text-primary">Professional</button>
+                        <button onClick={() => {
+                          closeMenu();
+                          const el = document.getElementById('experience');
+                          if (el) el.scrollIntoView({ behavior: 'smooth' });
+                          window.dispatchEvent(new CustomEvent('setExperienceTab', { detail: 'extraCurricular' }));
+                        }} className="text-left text-sm text-gray-600 dark:text-gray-400 hover:text-primary">Extra Curricular</button>
+                      </div>
+                    </li>
+                  );
+                }
+
                 return (
                   <li key={index}>
                     <Link

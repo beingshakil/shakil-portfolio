@@ -3,6 +3,8 @@ import React, { useMemo, useState } from "react";
 import { useScrollReveal, useScrollRevealMultiple } from '../hooks/useScrollReveal';
 import CategoryFilter from './CategoryFilter';
 
+const ITEMS_PER_PAGE = 4;
+
 const Work = ({content}) => {
   const headerRef = useScrollReveal();
 
@@ -10,13 +12,22 @@ const Work = ({content}) => {
   const categories = content.categories || Array.from(new Set(allCards.map(c => c.category || c.badge)));
 
   const [activeCategory, setActiveCategory] = useState('All');
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const handleCategoryChange = (cat) => {
+    setActiveCategory(cat);
+    setCurrentPage(1);
+  };
 
   const cards = useMemo(() => {
     if (activeCategory === 'All') return allCards;
     return allCards.filter((c) => (c.category || c.badge) === activeCategory);
   }, [allCards, activeCategory]);
 
-  const setCardRef = useScrollRevealMultiple(cards.length);
+  const totalPages = Math.ceil(cards.length / ITEMS_PER_PAGE);
+  const currentCards = cards.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE);
+
+  const setCardRef = useScrollRevealMultiple(currentCards.length);
 
   return (
     <div id="work" className="w-full px-4 sm:px-6 lg:px-[8%] py-16 scroll-mt-20 bg-light dark:bg-dark">
@@ -35,17 +46,17 @@ const Work = ({content}) => {
         <CategoryFilter
           categories={categories}
           activeCategory={activeCategory}
-          onChange={setActiveCategory}
+          onChange={handleCategoryChange}
           label="Filter projects by category"
         />
 
         {/* Work grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-          {cards.map((project, index) => (
+          {currentCards.map((project, index) => (
             <div
               key={project.slug || index}
               ref={setCardRef(index)}
-              className="group relative rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500"
+              className="group relative rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 animate-fade-in"
             >
               <div
                 className="h-80 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
@@ -84,11 +95,36 @@ const Work = ({content}) => {
           </p>
         )}
 
-        <div className="text-center mt-12">
-          <button className="px-8 py-3 bg-gradient-to-r from-primaryDark to-primary text-white font-semibold rounded-full hover:from-primaryDark-dark hover:to-primary-dark transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl">
-            {content.showMoreText}
-          </button>
-        </div>
+        {/* Pagination UI */}
+        {totalPages > 1 && (
+          <div className="flex justify-center items-center mt-12 gap-2">
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <button
+                key={page}
+                onClick={() => setCurrentPage(page)}
+                className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold transition-all duration-300 ${
+                  currentPage === page
+                    ? "bg-primary text-white shadow-md"
+                    : "bg-white dark:bg-darkHover text-gray-600 dark:text-gray-300 hover:bg-primary/10 dark:hover:bg-primaryDark/30"
+                }`}
+              >
+                {page}
+              </button>
+            ))}
+            <button
+              onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+              disabled={currentPage === totalPages}
+              className={`px-4 h-10 rounded-full flex items-center justify-center font-semibold transition-all duration-300 ${
+                currentPage === totalPages
+                  ? "bg-gray-200 dark:bg-gray-800 text-gray-400 cursor-not-allowed"
+                  : "bg-white dark:bg-darkHover text-primary hover:bg-primary/10 dark:hover:bg-primaryDark/30 shadow-sm cursor-pointer"
+              }`}
+            >
+              Next
+            </button>
+          </div>
+        )}
+
       </div>
     </div>
   );

@@ -1,0 +1,53 @@
+{
+  "slug": "coxs-bazar-tour",
+  "image": "/blog-images/coxsbazar-cover.jpg",
+  "title": "Cox's Bazar Tour",
+  "heading": "The World's Longest Beach: My Cox's Bazar Diary",
+  "category": "Life",
+  "subtitle": "Life",
+  "date": "Jan 10, 2026",
+  "author": "Md Shakil Hossen",
+  "readingTime": "7 mins",
+  "metadata": {
+    "description": "A personal travel diary from Cox's Bazar — sunsets over the Bay of Bengal, fresh seafood, and long walks on the world's longest natural sea beach."
+  },
+  "contents": [
+    {
+      "type": "keypoints",
+      "title": "Trip Highlights",
+      "content": "<ul><li>Watched a stunning sunset from Himchori beach.</li><li>Explored the coral island of Saint Martin's by speedboat.</li><li>Savoured fresh grilled seafood at the Cox's Bazar market.</li></ul>"
+    },
+    {
+      "type": "text",
+      "title": "Arrival at the World's Longest Beach",
+      "content": "<p>Cox's Bazar is Bangladesh's crown jewel of natural tourism — a 120-kilometre unbroken stretch of sandy beach hugging the Bay of Bengal. When you first step onto that beach and see the ocean stretching to the horizon in both directions, it genuinely takes your breath away. The salt air, the roar of the waves, and the endless blue sky — it's impossible not to feel immediately lighter.</p>"
+    },
+    {
+      "type": "image",
+      "content": "<img src=\"/blog-images/coxsbazar-1.jpg\" alt=\"Cox's Bazar beach at sunset\" />"
+    },
+    {
+      "type": "text",
+      "title": "Himchori: Waterfalls Meets the Sea",
+      "content": "<p>A short ride south of Cox's Bazar town lies Himchori — a dramatic hillside where a small waterfall cascades down to meet the beach. We climbed to the top of the ridge at golden hour and watched the sun dissolve into the Bay of Bengal in a wash of orange and pink. It was one of those moments you instinctively try to photograph but know no image will ever do justice to.</p>"
+    },
+    {
+      "type": "image",
+      "content": "<img src=\"/blog-images/coxsbazar-2.jpg\" alt=\"Himchori waterfall and beach\" />"
+    },
+    {
+      "type": "text",
+      "title": "Saint Martin's: The Coral Island",
+      "content": "<p>A day-trip by speedboat took us to Saint Martin's Island — Bangladesh's only coral island and a diver's paradise. The water here is a translucent turquoise, shallow enough to walk out and see starfish and coral formations beneath your feet. We snorkelled in the morning and spent the afternoon exploring the island on foot, ending with a massive plate of grilled hilsa and prawn at a local restaurant by the shore.</p>"
+    },
+    {
+      "type": "image",
+      "content": "<img src=\"/blog-images/coxsbazar-3.jpg\" alt=\"Saint Martin's coral island turquoise water\" />"
+    },
+    {
+      "type": "text",
+      "title": "Reflections",
+      "content": "<p>Trips like Cox's Bazar remind me of why disconnecting periodically is not a luxury but a necessity. The best ideas I've had — the clearest thinking — often come after stepping away from the screen and letting the mind breathe. I came back from this trip recharged, with fresh perspective and renewed energy for everything I'm building.</p>"
+    }
+  ]
+}

@@ -8,10 +8,10 @@
     "navLinks": [
       { "label": "Home", "href": "/" },
       { "label": "About", "href": "/about" },
+      { "label": "My Work", "href": "/work" },
       { "label": "Experience", "href": "/experience" },
       { "label": "Explore with me", "href": "/explore" },
       { "label": "Services", "href": "/services" },
-      { "label": "My Work", "href": "/work" },
       { "label": "Contact", "href": "/contact" }
     ],
     "ctaButtonText": "Contact",
@@ -60,9 +60,9 @@
     "toolsSectionTitle": "Tools I Use"
   },
   "experience": {
-    "title": "Work Experience",
-    "subtitle": "Career Path",
-    "cards": [
+    "title": "Experiences",
+    "subtitle": "My Journey",
+    "professional": [
       {
         "title": "SEO and Data Analyst",
         "duration": "Jan 2025 – Apr 2026",
@@ -87,6 +87,21 @@
           "Designed modular, reusable automation tools that improved team productivity by enabling non-technical stakeholders to generate insights through simple UI triggers."
         ],
         "side": "left"
+      }
+    ],
+    "extraCurricular": [
+      {
+        "title": "Assistant General Secretary",
+        "duration": "2023 – 2024",
+        "company": "Computer and Programming Club, DIU",
+        "companyLink": null,
+        "content": [
+          "Effective Team Building and Collaboration",
+          "Strategic Planning and Execution",
+          "Leadership Development and Mentorship",
+          "Time Management and Organization"
+        ],
+        "side": "right"
       }
     ]
   },
@@ -132,25 +147,25 @@
         "id": 1,
         "title": "SEO Performance Dashboard",
         "content": "Comprehensive SEO analytics and performance tracking dashboard",
-        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+        "image": "/service-images/image1.jpg"
       },
       {
         "id": 2,
         "title": "Advanced Web Analytics",
         "content": "Detailed web traffic analysis and user behavior insights",
-        "image": "https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+        "image": "/service-images/image2.jpg"
       },
       {
         "id": 3,
         "title": "Data-Driven SEO Strategy",
         "content": "Evidence-based search engine optimization approach",
-        "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+        "image": "/service-images/image3.jpg"
       },
       {
         "id": 4,
         "title": "Conversion Rate Optimization",
         "content": "Advanced CRO techniques for maximizing website performance",
-        "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+        "image": "/service-images/image4.jpg"
       }
     ]
   },

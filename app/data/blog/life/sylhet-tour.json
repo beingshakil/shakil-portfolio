@@ -1,0 +1,53 @@
+{
+  "slug": "sylhet-tour",
+  "image": "/blog-images/sylhet-cover.jpg",
+  "title": "Sylhet Tour",
+  "heading": "Chasing Tea Gardens & Waterfalls: My Sylhet Adventure",
+  "category": "Life",
+  "subtitle": "Life",
+  "date": "Feb 22, 2026",
+  "author": "Md Shakil Hossen",
+  "readingTime": "6 mins",
+  "metadata": {
+    "description": "A travel diary from my trip to Sylhet — the misty tea gardens of Sreemangal, the crystal waters of Ratargul Swamp Forest, and the serenity of Jaflong."
+  },
+  "contents": [
+    {
+      "type": "keypoints",
+      "title": "Trip Highlights",
+      "content": "<ul><li>Explored the breathtaking tea gardens of Sreemangal at dawn.</li><li>Took a boat through Ratargul Swamp Forest — Bangladesh's Amazon.</li><li>Visited the stone-strewn shores of Jaflong at the Indian border.</li></ul>"
+    },
+    {
+      "type": "text",
+      "title": "Why Sylhet?",
+      "content": "<p>Every so often, the mind demands a reset. After weeks of back-to-back projects and deadlines, my friends and I decided to pack our bags and head north-east to Sylhet — Bangladesh's tea capital. Famous for rolling hills covered in green tea bushes, crystal-clear streams, and a unique cultural charm, Sylhet had been on my list for a long time.</p>"
+    },
+    {
+      "type": "image",
+      "content": "<img src=\"/blog-images/sylhet-1.jpg\" alt=\"Tea gardens of Sreemangal\" />"
+    },
+    {
+      "type": "text",
+      "title": "Sreemangal: The Tea Garden Trail",
+      "content": "<p>We started early morning at Sreemangal, the tea capital of Bangladesh. Walking through row upon row of perfectly manicured tea bushes with the morning mist still clinging to the hills felt surreal. We stopped at a local tea stall for the famous seven-layer tea — a local invention where each sip reveals a different flavour.</p>"
+    },
+    {
+      "type": "image",
+      "content": "<img src=\"/blog-images/sylhet-2.jpg\" alt=\"Ratargul Swamp Forest boat ride\" />"
+    },
+    {
+      "type": "text",
+      "title": "Ratargul: Bangladesh's Amazon",
+      "content": "<p>No Sylhet trip is complete without Ratargul Swamp Forest. We hired a small wooden boat and glided silently through trees rising straight out of the water. Sunlight filtered through the canopy in broken beams, and the only sounds were birdsong and the soft dip of the oar. It was peaceful in a way that's hard to describe.</p>"
+    },
+    {
+      "type": "image",
+      "content": "<img src=\"/blog-images/sylhet-3.jpg\" alt=\"Jaflong stone collection area\" />"
+    },
+    {
+      "type": "text",
+      "title": "Jaflong: Where Rivers Meet Mountains",
+      "content": "<p>Our final stop was Jaflong, a scenic spot at the foothills of the Meghalaya mountains on the Indian border. The Piyain River carries smooth, colourful stones down from the mountains, creating a uniquely beautiful landscape. Watching the river rush over the stones as the mountains loomed in the background was the perfect ending to our journey.</p>"
+    }
+  ]
+}

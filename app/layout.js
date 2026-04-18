@@ -18,16 +18,21 @@ export const metadata = {
   alternates: {
     canonical: 'https://beingshakil.xyz',
   },
-  viewport: 'width=device-width, initial-scale=1',
   verification: {
     google: 'QaAxnJn3CC3FIktiXOSIkdploAsdJwoQwlZXhkW-M1M',
   },
 };
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className='scroll-smooth dark'>
+    <html lang="en" className='scroll-smooth dark' suppressHydrationWarning>
       <body
+        suppressHydrationWarning
         className={`${outfit.className} ${ovo.className} antialiased leading-8 overflow-x-hidden
          dark:bg-darkTheme dark:text-white`}
       >

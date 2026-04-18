@@ -1,0 +1,44 @@
+{
+  "slug": "extra-curriculars",
+  "image": "/blog-images/extra-curriculars-cover.jpg",
+  "title": "Extra-Curriculars",
+  "heading": "Beyond the Code: My Extra-Curricular Journey",
+  "category": "Life",
+  "subtitle": "Life",
+  "date": "Mar 15, 2026",
+  "author": "Md Shakil Hossen",
+  "readingTime": "5 mins",
+  "metadata": {
+    "description": "A candid look at the clubs, competitions, and community activities that shaped who I am outside of academics and professional work."
+  },
+  "contents": [
+    {
+      "type": "keypoints",
+      "title": "Highlights",
+      "content": "<ul><li>Participated in inter-university programming contests and hackathons.</li><li>Volunteered as a tech mentor for junior students at DIU.</li><li>Active member of the university's Data Science & AI Club.</li></ul>"
+    },
+    {
+      "type": "text",
+      "title": "Why Extra-Curriculars Matter",
+      "content": "<p>University is so much more than attending classes and completing assignments. For me, the real learning happened in the spaces between — in the late-night hackathons, the mentoring sessions, and the spirited debates inside club rooms. These experiences built skills that no curriculum could fully teach: leadership, collaboration under pressure, and the ability to communicate complex ideas simply.</p>"
+    },
+    {
+      "type": "image",
+      "content": "<img src=\"/blog-images/extra-curriculars-1.jpg\" alt=\"Programming contest at DIU\" />"
+    },
+    {
+      "type": "text",
+      "title": "Programming Contests & Hackathons",
+      "content": "<p>Competing in inter-university programming contests was one of the most formative experiences of my academic life. Working under time pressure, debugging in real-time, and collaborating with teammates to arrive at elegant solutions sharpened my problem-solving instincts dramatically.</p><p>Hackathons pushed me even further — from ideation to a working prototype in 24 hours. These events taught me how to scope a problem fast, prioritize ruthlessly, and ship something that works over something that's perfect.</p>"
+    },
+    {
+      "type": "image",
+      "content": "<img src=\"/blog-images/extra-curriculars-2.jpg\" alt=\"Hackathon team working late\" />"
+    },
+    {
+      "type": "text",
+      "title": "Mentoring & Community",
+      "content": "<p>Perhaps the most rewarding activity was mentoring junior students in data analysis and web development fundamentals. Explaining concepts to others forces you to truly understand them yourself — and watching someone's confusion turn into clarity is one of the most satisfying feelings imaginable.</p>"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "metadata": {
+    "title": "Interactive Power BI Dashboards — Data Visualization",
+    "description": "Built interactive Power BI dashboards that transformed raw datasets into clear, actionable visual stories for non-technical stakeholders."
+  },
+  "title": "Power BI Dashboards",
+  "category": "Data Visualization",
+  "badge": "Data Visualization",
+  "content": "Designed and developed a suite of interactive Power BI dashboards for IRD Foundation. Visualized KPIs including website traffic trends, SEO ranking movements, and campaign performance metrics — enabling real-time, self-serve data exploration for decision-makers across teams.",
+  "bgImage": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+  "link": "#",
+  "slug": "data-visualization"
+}

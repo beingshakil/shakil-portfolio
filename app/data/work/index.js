@@ -1,9 +1,12 @@
 // Aggregator: imports every project JSON and exposes a unified API.
 // To add a new project: drop a JSON file under data/work/{category}/ and import it here.
 import frontendProject from "./web-development/frontend-project.json";
-import bahariSite from "./ecommerce/bahari-site.json";
-import seoOptimization from "./seo/seo-optimization.json";
+import bahariSite from "./web-development/bahari-site.json"; // moved from ecommerce → web-development
+import seoAlHadith from "./seo/al-hadith.json";
+import seoDuaRuqyah from "./seo/dua-ruqyah.json";
+import seoIrdFoundation from "./seo/ird-foundation.json";
 import deepLearning from "./neural-networks/deep-learning.json";
+import dataVisualization from "./data-visualization/data-visualization.json";
 
 export const workMeta = {
   title: "My Latest Work",
@@ -15,11 +18,23 @@ export const workMeta = {
   allLabel: "All",
 };
 
-export const workProjects = [frontendProject, bahariSite, seoOptimization, deepLearning];
+export const workProjects = [
+  frontendProject,
+  bahariSite,
+  seoAlHadith,
+  seoDuaRuqyah,
+  seoIrdFoundation,
+  deepLearning,
+  dataVisualization,
+];
 
-export const workCategories = Array.from(
-  new Set(workProjects.map((p) => p.category))
-);
+// Fixed category order for the filter tabs
+export const workCategories = [
+  "Web Development",
+  "Search Engine Optimization",
+  "Neural Networks Implementation",
+  "Data Visualization",
+];
 
 const workData = {
   meta: workMeta,

@@ -1,12 +1,23 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useScrollReveal, useScrollRevealMultiple } from '../hooks/useScrollReveal';
 
 const INITIAL_BULLETS = 3;
 
 const Experience = ({content}) => {
   const headerRef = useScrollReveal();
-  const setEntryRef = useScrollRevealMultiple(content.cards.length);
+  const [activeTab, setActiveTab] = useState('professional');
+  
+  useEffect(() => {
+    const handleTabChange = (e) => {
+      if (e.detail) setActiveTab(e.detail);
+    };
+    window.addEventListener('setExperienceTab', handleTabChange);
+    return () => window.removeEventListener('setExperienceTab', handleTabChange);
+  }, []);
+
+  const currentCards = content[activeTab] || [];
+  const setEntryRef = useScrollRevealMultiple(currentCards.length);
   const [expandedCards, setExpandedCards] = useState({});
 
   const toggleCard = (index) => {
@@ -17,10 +28,28 @@ const Experience = ({content}) => {
     <div id='experience' className='w-full px-4 sm:px-6 lg:px-[8%] py-16 scroll-mt-20 bg-light dark:bg-dark'>
       <div className="max-w-7xl mx-auto">
         {/* Section header */}
-        <div ref={headerRef} className="text-center mb-16">
+        <div ref={headerRef} className="text-center mb-10">
           <h4 className='mb-2 text-lg font-ovo text-primary'>{content.subtitle}</h4>
           <h2 className='text-4xl md:text-5xl font-bold'>{content.title}</h2>
           <div className="w-20 h-1 bg-primary mx-auto mt-4"></div>
+        </div>
+
+        {/* Tabs */}
+        <div className="flex justify-center mb-12">
+          <div className="inline-flex bg-white dark:bg-darkHover rounded-full p-1 shadow-md border border-gray-200 dark:border-gray-700">
+            <button
+              onClick={() => setActiveTab('professional')}
+              className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${activeTab === 'professional' ? 'bg-primary text-white shadow-md' : 'text-gray-600 dark:text-gray-300 hover:text-primary'}`}
+            >
+              Professional
+            </button>
+            <button
+              onClick={() => setActiveTab('extraCurricular')}
+              className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${activeTab === 'extraCurricular' ? 'bg-primary text-white shadow-md' : 'text-gray-600 dark:text-gray-300 hover:text-primary'}`}
+            >
+              Extra Curricular
+            </button>
+          </div>
         </div>
 
         {/* Experience timeline */}
@@ -30,8 +59,8 @@ const Experience = ({content}) => {
 
           {/* Experience items */}
           <div className="space-y-12">
-            {content.cards.map((entry, index) => (
-              <div key={index} ref={setEntryRef(index)} className="relative pl-8 md:pl-0">
+            {currentCards.map((entry, index) => (
+              <div key={index} ref={setEntryRef(index)} className="relative pl-8 md:pl-0 animate-fade-in">
                 <div className="md:absolute md:left-1/2 md:transform md:-translate-x-1/2 w-6 h-6 rounded-full bg-primary border-4 border-white dark:border-dark z-10"></div>
                 <div className={`${entry.side === 'right' ? 'md:ml-[55%]' : 'md:mr-[55%] md:ml-0'} bg-white dark:bg-darkHover rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700`}>
                   <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">

@@ -4,6 +4,8 @@ import { useRouter } from 'next/navigation';
 import { useScrollReveal, useScrollRevealMultiple } from '../hooks/useScrollReveal';
 import CategoryFilter from './CategoryFilter';
 
+const ITEMS_PER_PAGE = 3;
+
 const Blog = ({ content }) => {
   const router = useRouter();
   const headerRef = useScrollReveal();
@@ -13,13 +15,22 @@ const Blog = ({ content }) => {
   const categories = content.categories || [];
 
   const [activeCategory, setActiveCategory] = useState('All');
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const handleCategoryChange = (cat) => {
+    setActiveCategory(cat);
+    setCurrentPage(1);
+  };
 
   const posts = useMemo(() => {
     if (activeCategory === 'All') return allPosts;
     return allPosts.filter((p) => p.category === activeCategory);
   }, [allPosts, activeCategory]);
 
-  const setCardRef = useScrollRevealMultiple(posts.length);
+  const totalPages = Math.ceil(posts.length / ITEMS_PER_PAGE);
+  const currentPosts = posts.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE);
+
+  const setCardRef = useScrollRevealMultiple(currentPosts.length);
 
   return (
     <div id="blog" className="w-full px-4 sm:px-6 lg:px-[8%] py-16 scroll-mt-20">
@@ -38,18 +49,18 @@ const Blog = ({ content }) => {
         <CategoryFilter
           categories={categories}
           activeCategory={activeCategory}
-          onChange={setActiveCategory}
+          onChange={handleCategoryChange}
           label="Filter blog posts by category"
         />
 
         {/* Blog grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {posts.map((post, index) => (
+          {currentPosts.map((post, index) => (
             <div
               key={post.slug}
               ref={setCardRef(index)}
               onClick={() => router.push(`/blog/${post.slug}`)}
-              className="group flex flex-col bg-white dark:bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-200 cursor-pointer"
+              className="group flex flex-col bg-white dark:bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-200 cursor-pointer animate-fade-in"
             >
               {/* Blog image */}
               <div className="h-48 overflow-hidden">
@@ -96,6 +107,37 @@ const Blog = ({ content }) => {
             No posts in this category yet.
           </p>
         )}
+
+        {/* Pagination UI */}
+        {totalPages > 1 && (
+          <div className="flex justify-center items-center mt-12 gap-2">
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <button
+                key={page}
+                onClick={() => setCurrentPage(page)}
+                className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold transition-all duration-300 ${
+                  currentPage === page
+                    ? "bg-primary text-white shadow-md"
+                    : "bg-white dark:bg-darkHover text-gray-600 dark:text-gray-300 hover:bg-primary/10 dark:hover:bg-primaryDark/30"
+                }`}
+              >
+                {page}
+              </button>
+            ))}
+            <button
+              onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+              disabled={currentPage === totalPages}
+              className={`px-4 h-10 rounded-full flex items-center justify-center font-semibold transition-all duration-300 ${
+                currentPage === totalPages
+                  ? "bg-gray-200 dark:bg-gray-800 text-gray-400 cursor-not-allowed"
+                  : "bg-white dark:bg-darkHover text-primary hover:bg-primary/10 dark:hover:bg-primaryDark/30 shadow-sm cursor-pointer"
+              }`}
+            >
+              Next
+            </button>
+          </div>
+        )}
+
       </div>
     </div>
   );

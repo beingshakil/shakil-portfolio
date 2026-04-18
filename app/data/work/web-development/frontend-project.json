@@ -1,13 +1,13 @@
 {
   "metadata": {
-    "title": "Frontend Project — React & Next.js",
-    "description": "Modern responsive website built with React and Next.js, featuring interactive UI components and smooth animations."
+    "title": "RS Automart — E-Commerce Automotive Platform",
+    "description": "A fully-featured e-commerce platform for automotive parts and accessories, built with a modern React frontend and a robust backend, delivering a seamless shopping experience."
   },
-  "title": "Frontend Project",
+  "title": "RS Automart",
   "category": "Web Development",
   "badge": "Web Development",
-  "content": "Modern responsive website built with React and Next.js, featuring interactive UI components and smooth animations.",
-  "bgImage": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-  "link": "#",
-  "slug": "frontend-project"
+  "content": "RS Automart is a comprehensive automotive e-commerce solution featuring product catalog management, advanced search & filtering, shopping cart functionality, and a streamlined checkout flow. Designed for speed, accessibility, and conversion.",
+  "bgImage": "https://images.unsplash.com/photo-1591369822091-8b8285d1000e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+  "link": "https://rsautomart.com",
+  "slug": "rs-automart"
 }

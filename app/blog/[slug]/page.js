@@ -3,11 +3,67 @@ import React from 'react';
 import Link from 'next/link';
 import { blogMeta, getPostBySlug } from '../../data/blog';
 
+/**
+ * ContentRenderer
+ * Handles two JSON content-block schemas:
+ *
+ * SCHEMA A (old — used by professional blog posts):
+ *   { type: "text"|"heading"|"image"|"images"|"keypoints", value/src/items/points/title }
+ *
+ * SCHEMA B (new — used by life/travel posts):
+ *   { type: "text"|"image"|"keypoints", title?, content: "<html string>" }
+ */
 const ContentRenderer = ({ block, index }) => {
-  // All block types now carry a string `content` that may include HTML.
-  // We render via dangerouslySetInnerHTML so embedded <ul>, <strong>, <img>, etc. work.
-  const html = { __html: block.content || '' };
+  // ── Schema B: block already has a pre-built HTML string in `content` ──
+  if (typeof block.content === 'string') {
+    const html = { __html: block.content };
 
+    switch (block.type) {
+      case 'keypoints':
+        return (
+          <div key={index} className="my-8">
+            <div className="bg-primary/10 dark:bg-primaryDark/20 rounded-2xl p-8">
+              {block.title && (
+                <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-5">
+                  {block.title}
+                </h4>
+              )}
+              <div
+                className="blog-rich text-gray-700 dark:text-gray-300"
+                dangerouslySetInnerHTML={html}
+              />
+            </div>
+          </div>
+        );
+
+      case 'image':
+        return (
+          <div
+            key={index}
+            className="my-8 rounded-xl overflow-hidden shadow-lg blog-rich"
+            dangerouslySetInnerHTML={html}
+          />
+        );
+
+      case 'text':
+      default:
+        return (
+          <div key={index} className="mb-8">
+            {block.title && (
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mt-10 mb-4">
+                {block.title}
+              </h3>
+            )}
+            <div
+              className="blog-rich text-gray-700 dark:text-gray-300 leading-relaxed text-justify"
+              dangerouslySetInnerHTML={html}
+            />
+          </div>
+        );
+    }
+  }
+
+  // ── Schema A: structured object with value / src / points fields ──
   switch (block.type) {
     case 'keypoints':
       return (
@@ -18,37 +74,51 @@ const ContentRenderer = ({ block, index }) => {
                 {block.title}
               </h4>
             )}
-            <div
-              className="blog-rich text-gray-700 dark:text-gray-300"
-              dangerouslySetInnerHTML={html}
-            />
+            {block.points && (
+              <ul className="space-y-3">
+                {block.points.map((pt, i) => (
+                  <li key={i} className="flex items-start gap-3 text-gray-700 dark:text-gray-300">
+                    <span className="mt-1 w-2 h-2 rounded-full bg-primary shrink-0" />
+                    {pt}
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         </div>
       );
 
+    case 'heading':
+      return (
+        <h3 key={index} className="text-2xl font-bold text-gray-900 dark:text-white mt-10 mb-4">
+          {block.value}
+        </h3>
+      );
+
     case 'image':
       return (
-        <div
-          key={index}
-          className="my-8 rounded-xl overflow-hidden shadow-lg blog-rich"
-          dangerouslySetInnerHTML={html}
-        />
+        <div key={index} className="my-8 rounded-xl overflow-hidden shadow-lg">
+          <img src={block.src} alt={block.alt || ''} className="w-full h-auto object-cover" />
+        </div>
+      );
+
+    case 'images':
+      return (
+        <div key={index} className="my-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+          {(block.items || []).map((img, i) => (
+            <div key={i} className="rounded-xl overflow-hidden shadow-lg">
+              <img src={img.src} alt={img.alt || ''} className="w-full h-auto object-cover" />
+            </div>
+          ))}
+        </div>
       );
 
     case 'text':
     default:
       return (
-        <div key={index} className="mb-8">
-          {block.title && (
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mt-10 mb-4">
-              {block.title}
-            </h3>
-          )}
-          <div
-            className="blog-rich text-gray-700 dark:text-gray-300 leading-relaxed text-justify"
-            dangerouslySetInnerHTML={html}
-          />
-        </div>
+        <p key={index} className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6 text-justify">
+          {block.value}
+        </p>
       );
   }
 };
@@ -70,6 +140,9 @@ export default function BlogPost({ params }) {
     );
   }
 
+  // Support both `post.contents` (new) and `post.content` array (old schema A)
+  const contentBlocks = post.contents || post.content || [];
+
   return (
     <div className="w-full px-4 sm:px-6 lg:px-[8%] py-16 pt-32">
       <div className="max-w-4xl mx-auto">
@@ -87,7 +160,7 @@ export default function BlogPost({ params }) {
         {/* Cover image */}
         {post.image && (
           <div className="mb-8 rounded-2xl overflow-hidden shadow-lg">
-            <img src={post.image} alt={post.heading} className="w-full h-64 md:h-96 object-cover" />
+            <img src={post.image} alt={post.heading || post.title} className="w-full h-64 md:h-96 object-cover" />
           </div>
         )}
 
@@ -95,7 +168,7 @@ export default function BlogPost({ params }) {
         <div className="mb-8">
           <div className="bg-primary/10 dark:bg-primaryDark/20 rounded-2xl p-8 md:p-12 mb-8">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-              {post.heading}
+              {post.heading || post.title}
             </h1>
 
             {post.metadata?.description && (
@@ -125,7 +198,7 @@ export default function BlogPost({ params }) {
 
         {/* Content */}
         <article>
-          {(post.contents || []).map((block, index) => (
+          {contentBlocks.map((block, index) => (
             <ContentRenderer key={index} block={block} index={index} />
           ))}
         </article>
