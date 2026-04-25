@@ -102,7 +102,7 @@ const Experience = ({content, hideTabs}) => {
                     {(expandedCards[index] ? entry.content : entry.content.slice(0, INITIAL_BULLETS)).map((bullet, i) => (
                       <li key={i} className="flex items-start">
                         <span className="inline-block w-2 h-2 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
-                        <span>{bullet}</span>
+                        <span className="text-justify">{bullet}</span>
                       </li>
                     ))}
                   </ul>

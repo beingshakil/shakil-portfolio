@@ -113,5 +113,11 @@ export const infoList = [
 ];
 
 export const toolsData = [
-    assets.vscode, assets.firebase, assets.mongodb, assets.figma, assets.git
+    assets.vscode, 
+    assets.firebase, 
+    assets.mongodb, 
+    assets.figma, 
+    assets.git,
+    'https://www.vectorlogo.zone/logos/google_analytics/google_analytics-icon.svg',
+    'https://www.vectorlogo.zone/logos/cloudflare/cloudflare-icon.svg'
 ];

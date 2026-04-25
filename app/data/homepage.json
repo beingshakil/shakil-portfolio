@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Md Shakil Hossen - SEO Expert & Data Analyst Portfolio",
-    "description": "Result driven Data Analyst and SEO Expert with experience in AI automation, analytics and reporting. Skilled in implementing SEO strategies to enhance online presence"
+    "title": "Md Shakil Hossen — AI Automation and SEO Expert in Bangladesh",
+    "description": "Professional AI Automation and SEO Expert in Bangladesh. Result-driven Data Analyst specializing in AI Agents, Technical SEO, and Data Visualization."
   },
   "navbar": {
     "brandName": "Md Shakil Hossen",
@@ -39,22 +39,16 @@
     "ctaText": "Learn More",
     "cards": [
       {
-        "iconKey": "edu_icon",
-        "iconDarkKey": "edu_icon_dark",
-        "title": "Education",
-        "content": "BSc. in Computer Science and Engineering\nDaffodil International University\nSep 2020 – Sep 2024"
-      },
-      {
         "iconKey": "project_icon",
         "iconDarkKey": "project_icon_dark",
         "title": "Projects",
-        "content": "Built more than 5 projects in Data Analysis, SEO, and Web Development"
+        "content": "Built more than 50+ projects in AI Automation, SEO, Data Analysis, and Web Development. Specializing in delivering data-driven solutions and high-performance automation tools for diverse business needs."
       },
       {
         "iconKey": "code_icon",
         "iconDarkKey": "code_icon_dark",
-        "title": "Languages",
-        "content": "Python, Flask, React Js, Next Js, JavaScript, HTML, CSS"
+        "title": "Technical Skills",
+        "content": "**Programming & Web:** Python, SQL, React JS, JavaScript, HTML, CSS\n**SEO Tools:** SEMrush, Ahrefs, GSC, GA4, GTM\n**Data Analysis:** Power BI, Excel/Sheets\n**Advanced Analytics:** NumPy, Pandas, BeautifulSoup, Selenium"
       }
     ],
     "toolsSectionTitle": "Tools I Use"
@@ -108,34 +102,54 @@
   "services": {
     "title": "Our Services",
     "subtitle": "What I Offer",
-    "content": "I offer a range of services to help you succeed in the digital world. From data analysis and SEO to web development and UI/UX design, I turn your ideas into impactful results.",
+    "content": "I offer a range of specialized services designed to transform your data into a competitive advantage and elevate your digital presence.",
     "cards": [
       {
-        "iconKey": "web_icon",
-        "title": "Data Analyst",
-        "content": "Analyzing and interpreting complex datasets to uncover trends, provide actionable insights, and support data-driven decision making for businesses.",
-        "link": "#"
-      },
-      {
         "iconKey": "ui_icon",
-        "title": "SEO",
-        "content": "Optimizing websites to rank higher on search engines, driving organic traffic, and improving online visibility.",
+        "title": "AI Automation",
+        "bullets": [
+          "AI + Automation Integration",
+          "AI Agent Development",
+          "Chrome Extension Development",
+          "Python Automation Scripts",
+          "Web Scraping & Data Extraction"
+        ],
         "link": "#"
       },
       {
         "iconKey": "mobile_icon",
-        "title": "Web Development",
-        "content": "Building responsive, high-performance websites and web applications using modern technologies and best practices.",
+        "title": "SEO",
+        "bullets": [
+          "Technical SEO",
+          "On-Page SEO",
+          "Off-Page SEO",
+          "Keyword Research",
+          "SEO Audit & Performance Tracking"
+        ],
+        "link": "#"
+      },
+      {
+        "iconKey": "web_icon",
+        "title": "Data Analysis",
+        "bullets": [
+          "Data Cleaning & Preprocessing",
+          "Exploratory Data Analysis",
+          "Machine Learning Models",
+          "Data Visualization & Dashboard"
+        ],
         "link": "#"
       },
       {
         "iconKey": "graphics_icon",
-        "title": "UI/UX Design",
-        "content": "Creating intuitive and engaging user interfaces with a focus on user experience and visual aesthetics.",
+        "title": "Web Development",
+        "bullets": [
+          "Frontend Development",
+          "Website Optimization & SEO"
+        ],
         "link": "#"
       }
     ],
-    "readMoreText": "Read More",
+    "readMoreText": "Learn More",
     "viewAllText": "View All Services"
   },
   "carousel": {
@@ -234,7 +248,9 @@
     "socialLinks": [
       { "platform": "linkedin", "url": "https://www.linkedin.com/in/md-shakil-hossen/", "label": "LinkedIn" },
       { "platform": "github", "url": "https://github.com/beingshakil", "label": "GitHub" },
-      { "platform": "facebook", "url": "https://www.facebook.com/shakiil.hossen", "label": "Facebook" }
+      { "platform": "facebook", "url": "https://www.facebook.com/shakiil.hossen", "label": "Facebook" },
+      { "platform": "instagram", "url": "https://www.instagram.com/feel._.shakeel", "label": "Instagram" },
+      { "platform": "researchgate", "url": "https://www.researchgate.net/profile/Md-Hossen-139", "label": "ResearchGate" }
     ],
     "copyrightText": "Md Shakil Hossen. All rights reserved."
   }

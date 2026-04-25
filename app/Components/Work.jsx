@@ -3,7 +3,7 @@ import React, { useMemo, useState } from "react";
 import { useScrollReveal, useScrollRevealMultiple } from '../hooks/useScrollReveal';
 import CategoryFilter from './CategoryFilter';
 
-const ITEMS_PER_PAGE = 4;
+const ITEMS_PER_PAGE = 6;
 
 const Work = ({content}) => {
   const headerRef = useScrollReveal();
@@ -51,39 +51,72 @@ const Work = ({content}) => {
         />
 
         {/* Work grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {currentCards.map((project, index) => (
             <div
               key={project.slug || index}
               ref={setCardRef(index)}
-              className="group relative rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 animate-fade-in"
+              className="group bg-white dark:bg-darkHover rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100 dark:border-gray-800 flex flex-col h-full"
             >
-              <div
-                className="h-80 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                style={{ backgroundImage: `url("${project.bgImage}")` }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent"></div>
-              </div>
-
-              <div className="absolute inset-0 flex flex-col justify-end p-6 text-white z-10">
-                <div className="transform translate-y-0 group-hover:-translate-y-2 transition-transform duration-300">
-                  <span className="inline-block px-3 py-1 text-xs font-semibold bg-primary rounded-full mb-3">
+              {/* Image Container */}
+              <div className="relative h-64 sm:h-72 overflow-hidden rounded-t-[2rem]">
+                <img 
+                  src={project.bgImage} 
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                />
+                {/* Category Badge */}
+                <div className="absolute bottom-4 left-4 bg-slate-900/60 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
+                  <span className="text-white text-xs font-semibold">
                     Category: {project.badge || project.category}
                   </span>
-                  <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                  <p className="text-gray-200 text-sm mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    {project.content}
-                  </p>
+                </div>
+              </div>
 
-                  <a href={project.link || '#'} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    {content.viewProjectText}
+              {/* Content Container */}
+              <div className="px-6 py-5 flex flex-col flex-grow">
+                <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
+                  {project.title}
+                </h3>
+
+                {/* Features List + View Project Action */}
+                <div className="flex flex-wrap items-center justify-between gap-4">
+                  <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+                    {(project.features || ["Responsive Design", "Performance Optimized", "Clean Code"]).map((feature, i) => (
+                      <div key={i} className="flex items-center gap-1.5 text-gray-600 dark:text-gray-400">
+                        <div className="p-1 rounded-md bg-gray-50 dark:bg-dark/40 border border-gray-100 dark:border-gray-700">
+                          <svg className="w-3 h-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            {feature.toLowerCase().includes('seo') || feature.toLowerCase().includes('search') ? (
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            ) : feature.toLowerCase().includes('perf') || feature.toLowerCase().includes('speed') ? (
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            ) : feature.toLowerCase().includes('mobile') || feature.toLowerCase().includes('resp') ? (
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                            ) : feature.toLowerCase().includes('data') || feature.toLowerCase().includes('visual') ? (
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                            ) : (
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
+                            )}
+                          </svg>
+                        </div>
+                        <span className="text-[11px] sm:text-xs font-medium">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <a 
+                    href={project.link || '#'} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-all duration-300 ml-auto flex-shrink-0 font-bold text-xs"
+                  >
+                    <span>{content.viewProjectText || 'View Project'}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                   </a>
                 </div>
               </div>
-
             </div>
           ))}
         </div>

@@ -6,7 +6,6 @@ import Experience from "./Components/Experience";
 import Services from "./Components/Services";
 import Work from "./Components/Work";
 import Contact from "./Components/Contact";
-import Carousel from "./Components/Carousel";
 import Blog from "./Components/Blog";
 import CallToAction from "./Components/CallToAction";
 import { useTheme } from "./context/ThemeContext";
@@ -23,7 +22,6 @@ export default function Home() {
       <About isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} content={content.about} />
       <Experience isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} content={content.experience} hideTabs={true} />
       <Services isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} content={content.services} />
-      <Carousel isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} content={content.carousel} />
       <Work isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} content={workData} />
       <Blog isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} content={blogData} />
       <CallToAction isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} content={content.callToAction} />

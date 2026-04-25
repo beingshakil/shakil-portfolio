@@ -3,9 +3,10 @@
     "title": "Deep Learning — Neural Networks",
     "description": "Advanced machine learning models for data analysis and pattern recognition using TensorFlow and Python."
   },
-  "title": "Deep Learning",
-  "category": "Neural Networks Implementation",
-  "badge": "Neural Networks Implementation",
+  "title": "AI / Machine Learning",
+  "category": "AI / ML Implementation",
+  "badge": "AI / ML Implementation",
+  "features": ["AI Automation", "Machine Learning", "Predictive Modeling"],
   "content": "Advanced machine learning models for data analysis and pattern recognition using TensorFlow and Python.",
   "bgImage": "https://images.unsplash.com/photo-1677442135722-5f11e06a4e6d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
   "link": "#",
