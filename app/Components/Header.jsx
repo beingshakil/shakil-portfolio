@@ -1,10 +1,10 @@
 "use client"
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { assets } from '../Assets/assets'
 
-const Header = ({content}) => {
+const Header = ({ content }) => {
   const [displayText, setDisplayText] = useState('');
   const [isTypingDone, setIsTypingDone] = useState(false);
 

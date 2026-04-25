@@ -1,10 +1,10 @@
 "use client"
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useScrollReveal, useScrollRevealMultiple } from '../hooks/useScrollReveal';
 
 const INITIAL_BULLETS = 3;
 
-const Experience = ({content, hideTabs}) => {
+const Experience = ({ content, hideTabs }) => {
   const headerRef = useScrollReveal();
   const [activeTab, setActiveTab] = useState('professional');
   
@@ -75,17 +75,17 @@ const Experience = ({content, hideTabs}) => {
         {/* Experience timeline */}
         <div className="relative">
           {/* Vertical line */}
-          <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 bg-secondary dark:bg-gray-700 transform md:translate-x-1"></div>
+          <div className="absolute left-0 lg:left-1/2 top-0 bottom-0 w-0.5 bg-secondary dark:bg-gray-700 transform lg:translate-x-1"></div>
 
           {/* Experience items */}
           <div className="space-y-12">
             {currentCards.map((entry, index) => (
-              <div key={index} ref={setEntryRef(index)} className="relative pl-8 md:pl-0 animate-fade-in">
-                <div className="md:absolute md:left-1/2 md:transform md:-translate-x-1/2 w-6 h-6 rounded-full bg-primary border-4 border-white dark:border-dark z-10"></div>
-                <div className={`${entry.side === 'right' ? 'md:ml-[55%]' : 'md:mr-[55%] md:ml-0'} bg-white dark:bg-darkHover rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700`}>
-                  <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
+              <div key={index} ref={setEntryRef(index)} className="relative pl-8 lg:pl-0 animate-fade-in">
+                <div className="lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2 w-6 h-6 rounded-full bg-primary border-4 border-white dark:border-dark z-10 mt-1 lg:mt-0"></div>
+                <div className={`${entry.side === 'right' ? 'lg:ml-[55%]' : 'lg:mr-[55%] lg:ml-0'} bg-white dark:bg-darkHover rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700`}>
+                  <div className="flex flex-col lg:flex-row lg:items-center justify-between mb-4">
                     <h3 className="text-xl font-bold text-gray-800 dark:text-white">{entry.title}</h3>
-                    <span className="inline-block px-3 py-1 text-sm font-semibold bg-secondary/20 dark:bg-primaryDark/30 text-primaryDark dark:text-secondary rounded-full mt-2 md:mt-0">
+                    <span className="inline-block px-3 py-1 text-sm font-semibold bg-secondary/20 dark:bg-primaryDark/30 text-primaryDark dark:text-secondary rounded-full mt-2 lg:mt-0">
                       {entry.duration}
                     </span>
                   </div>

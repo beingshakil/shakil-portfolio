@@ -1,11 +1,11 @@
 "use client"
 
 import Image from 'next/image'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { assets } from '../Assets/assets'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 
-const Contact = ({content}) => {
+const Contact = ({ content }) => {
     const sectionRef = useScrollReveal();
     const [result, setResult] = useState("");
 

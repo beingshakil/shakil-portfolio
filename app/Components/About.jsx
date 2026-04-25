@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import React from "react";
 import { assets, toolsData } from "../Assets/assets";
 import {
   useScrollReveal,
@@ -169,7 +168,7 @@ const About = ({ content }) => {
                         }
                       : undefined
                    }
-                   className="group border border-gray-200 dark:border-gray-700 rounded-[2rem] p-10 cursor-pointer hover:-translate-y-2 hover:scale-[1.01] transition-all duration-300 shadow-sm hover:shadow-2xl h-full"
+                   className="group border border-gray-200 dark:border-gray-700 rounded-[2rem] p-6 lg:p-10 cursor-pointer hover:-translate-y-2 hover:scale-[1.01] transition-all duration-300 shadow-sm hover:shadow-2xl h-full"
                  >
                   <div className="w-16 h-16 rounded-2xl bg-primary/10 dark:bg-primaryDark/30 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
                     <Image

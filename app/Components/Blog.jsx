@@ -1,5 +1,5 @@
 "use client"
-import React, { useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useScrollReveal, useScrollRevealMultiple } from '../hooks/useScrollReveal';
 import CategoryFilter from './CategoryFilter';

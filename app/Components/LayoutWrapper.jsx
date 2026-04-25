@@ -11,7 +11,8 @@ export default function LayoutWrapper({ children }) {
     <>
       <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} content={content.navbar} />
       {children}
-      <Footer isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} content={content.footer} />
+      <Footer content={content.footer} />
     </>
   );
 }
+

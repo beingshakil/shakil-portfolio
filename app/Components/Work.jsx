@@ -1,11 +1,11 @@
 "use client"
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { useScrollReveal, useScrollRevealMultiple } from '../hooks/useScrollReveal';
 import CategoryFilter from './CategoryFilter';
 
 const ITEMS_PER_PAGE = 6;
 
-const Work = ({content}) => {
+const Work = ({ content }) => {
   const headerRef = useScrollReveal();
 
   const allCards = content.cards || [];

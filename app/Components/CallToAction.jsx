@@ -1,9 +1,9 @@
 "use client"
-import React from 'react';
+
 import Link from 'next/link';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
-const CallToAction = ({content}) => {
+const CallToAction = ({ content }) => {
   const sectionRef = useScrollReveal();
 
   return (

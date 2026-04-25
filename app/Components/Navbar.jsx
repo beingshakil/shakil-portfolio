@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -13,6 +13,7 @@ const Navbar = ({isDarkMode, setIsDarkMode, content}) => {
   const pathname = usePathname();
   const [isScroll, setIsScroll] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isExperienceOpen, setIsExperienceOpen] = useState(false);
 
   const openMenu = () => setIsMenuOpen(true);
   const closeMenu = () => setIsMenuOpen(false);
@@ -51,7 +52,7 @@ const Navbar = ({isDarkMode, setIsDarkMode, content}) => {
         </Link>
 
         {/* Desktop Navigation Links - Center */}
-        <ul className="hidden md:flex items-center gap-8 lg:gap-10">
+        <ul className="hidden lg:flex items-center gap-8 xl:gap-10">
           {content.navLinks.map((link, index) => {
             const active = isActiveLink(pathname, link.href);
             
@@ -117,14 +118,14 @@ const Navbar = ({isDarkMode, setIsDarkMode, content}) => {
           {/* Contact Button - Hidden on mobile */}
           <Link
             href="/contact"
-            className="hidden md:inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-primaryDark to-primary text-white font-medium rounded-lg hover:from-primaryDark-dark hover:to-primary-dark transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+            className="hidden lg:inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-primaryDark to-primary text-white font-medium rounded-lg hover:from-primaryDark-dark hover:to-primary-dark transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
           >
             {content.ctaButtonText}
           </Link>
 
           {/* Mobile Menu Button */}
           <button
-            className="block md:hidden p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-darkHover transition-colors duration-300"
+            className="block lg:hidden p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-darkHover transition-colors duration-300"
             onClick={openMenu}
             aria-label="Open menu"
           >
@@ -133,10 +134,11 @@ const Navbar = ({isDarkMode, setIsDarkMode, content}) => {
             </svg>
           </button>
         </div>
+      </nav>
 
-        {/* Mobile Menu Overlay */}
-        <div
-          className={`fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm transition-opacity duration-300 md:hidden ${isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+      {/* Mobile Menu Overlay */}
+      <div
+          className={`fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
           onClick={closeMenu}
         >
           {/* Mobile Menu Panel */}
@@ -164,8 +166,18 @@ const Navbar = ({isDarkMode, setIsDarkMode, content}) => {
                 if (link.label === "Experience") {
                   return (
                     <li key={index} className="border-b border-gray-200 dark:border-gray-700 py-3">
-                      <Link href={link.href} onClick={closeMenu} className="font-medium text-gray-700 dark:text-gray-300 mb-2 block hover:text-primary transition-colors">{link.label}</Link>
-                      <div className="flex flex-col pl-4 space-y-3">
+                      <button 
+                        type="button"
+                        onClick={() => setIsExperienceOpen(!isExperienceOpen)} 
+                        className="flex items-center justify-between w-full font-medium text-gray-700 dark:text-gray-300 hover:text-primary transition-colors text-left"
+                        suppressHydrationWarning
+                      >
+                        {link.label}
+                        <svg xmlns="http://www.w3.org/2000/svg" className={`h-5 w-5 transition-transform duration-300 ${isExperienceOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </button>
+                      <div className={`flex flex-col pl-4 overflow-hidden transition-all duration-300 ${isExperienceOpen ? 'max-h-40 opacity-100 mt-3 space-y-3' : 'max-h-0 opacity-0 space-y-0'}`}>
                         <Link href="/experience#professional" onClick={() => {
                           closeMenu();
                           window.dispatchEvent(new CustomEvent('setExperienceTab', { detail: 'professional' }));
@@ -225,7 +237,6 @@ const Navbar = ({isDarkMode, setIsDarkMode, content}) => {
             </div>
           </div>
         </div>
-      </nav>
     </>
   );
 };

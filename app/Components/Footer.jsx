@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import React from 'react'
+
 import { assets } from '../Assets/assets'
 
 const socialIcons = {
@@ -30,7 +30,7 @@ const socialIcons = {
   ),
 };
 
-const Footer = ({content}) => {
+const Footer = ({ content }) => {
   return (
     <div className='w-full bg-dark text-gray-300 py-16 px-4 sm:px-6 lg:px-[8%]'>
       <div className="max-w-7xl mx-auto">

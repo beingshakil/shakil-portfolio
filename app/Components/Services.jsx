@@ -1,10 +1,10 @@
 "use client"
-import React from 'react'
+
 import { assets } from '../Assets/assets'
 import Image from 'next/image'
 import { useScrollReveal, useScrollRevealMultiple } from '../hooks/useScrollReveal'
 
-const Services = ({content}) => {
+const Services = ({ content }) => {
   const headerRef = useScrollReveal();
   const setCardRef = useScrollRevealMultiple(content.cards.length);
 
