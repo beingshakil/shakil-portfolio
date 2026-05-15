@@ -30,8 +30,8 @@ export default {
         darkTheme: '#1A3040',
       },
       fontFamily: {
-        outfit: ["Outfit", "sans-serif"],
-        ovo: ["Ovo", "serif"],
+        outfit: ["Plus Jakarta Sans", "sans-serif"],
+        ovo: ["Plus Jakarta Sans", "sans-serif"],
       },
       boxShadow: {
         'black': '4px 4px 0 #000',

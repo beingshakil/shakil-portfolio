@@ -1,15 +1,12 @@
-import { Outfit, Ovo } from 'next/font/google';
+import { Plus_Jakarta_Sans } from 'next/font/google';
 import "./globals.css";
 import content from './data/homepage.json';
 import { ThemeProvider } from './context/ThemeContext';
 import LayoutWrapper from './Components/LayoutWrapper';
 
-const outfit  = Outfit({
-  subsets: ["latin"], weight: ["400", "500", "600"]
-});
-
-const ovo  = Ovo({
-  subsets: ["latin"], weight: ["400"]
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 const siteUrl = 'https://beingshakil.xyz';
@@ -140,7 +137,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className='scroll-smooth dark' suppressHydrationWarning>
       <body
         suppressHydrationWarning
-        className={`${outfit.className} ${ovo.className} antialiased leading-8 overflow-x-hidden
+        className={`${plusJakartaSans.className} antialiased leading-8 overflow-x-hidden
          dark:bg-darkTheme dark:text-white`}
       >
         <script
