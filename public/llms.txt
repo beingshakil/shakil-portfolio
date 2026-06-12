@@ -1,0 +1,25 @@
+# Md Shakil Hossen
+
+> AI Automation and SEO Expert | Data Analyst | Bangladesh
+
+Md Shakil Hossen is a results-driven professional specializing in AI Automation, Technical SEO, Data Analysis, and Web Development based in Bangladesh. This portfolio showcases 50+ real-world projects, case studies, and expert insights across these domains.
+
+## Main Pages
+
+- [Home](https://beingshakil.xyz/): Portfolio overview — services, expertise, and featured work
+- [About](https://beingshakil.xyz/about/): Professional background, skills, tools, and personal profile
+- [Experience](https://beingshakil.xyz/experience/): Work history, roles, and professional timeline
+- [Services](https://beingshakil.xyz/services/): AI Automation, Technical SEO, Data Analysis, and Web Development services
+- [My Work](https://beingshakil.xyz/work/): Portfolio of 50+ projects with real results and impact
+- [Blog](https://beingshakil.xyz/explore/): Tutorials, case studies, and insights on SEO, Data, and AI
+- [Contact](https://beingshakil.xyz/contact/): Hire or get in touch
+
+## Blog Posts
+
+- [What Is SEO and How Does It Work?](https://beingshakil.xyz/blog/what-is-seo-and-how-does-it-work): Complete beginner-to-advanced guide covering crawling, indexing, ranking, the 3 pillars of SEO, and how to use AI for SEO
+- [20 Best SEO Tools in 2026](https://beingshakil.xyz/blog/20-best-seo-tools-in-2026): In-depth review of 20 SEO tools personally tested — covering keyword research, technical audits, rank tracking, and link building
+- [Automating Data Workflows with Python & Pandas](https://beingshakil.xyz/blog/automating-data-workflows-with-python-pandas): Step-by-step tutorial on automating repetitive data tasks using Python and Pandas
+- [Building Interactive Dashboards with Power BI](https://beingshakil.xyz/blog/building-interactive-dashboards-with-power-bi): Guide to designing and publishing interactive data dashboards in Power BI
+- [Beyond the Code: My Extra-Curricular Journey](https://beingshakil.xyz/blog/extra-curriculars): Personal story of activities, communities, and growth outside professional work
+- [My Cox's Bazar Travel Diary](https://beingshakil.xyz/blog/coxs-bazar-tour): Travel experience at the world's longest natural sea beach
+- [Chasing Tea Gardens & Waterfalls: My Sylhet Adventure](https://beingshakil.xyz/blog/sylhet-tour): Travel diary from Sylhet, Bangladesh — tea gardens, waterfalls, and culture
