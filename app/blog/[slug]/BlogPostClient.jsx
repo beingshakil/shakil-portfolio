@@ -275,6 +275,10 @@ function BlogSidebar({ blocks, title }) {
                 <div key={i}>
                   <a
                     href={`#${id}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
                     className={`block py-2.5 text-sm font-medium transition-all duration-200 leading-snug ${
                       isActive
                         ? 'text-primary dark:text-primaryDark pl-3 border-l-2 border-primary dark:border-primaryDark -ml-px'
