@@ -64,10 +64,11 @@ const Blog = ({ content }) => {
             >
               {/* Blog image */}
               <div className="h-48 overflow-hidden">
-                <div
-                  className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                  style={{ backgroundImage: `url("${post.image}")` }}
-                ></div>
+                <img
+                  src={post.image}
+                  alt={post.imageAlt || post.heading || post.title || ''}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
               </div>
 
               {/* Blog content */}

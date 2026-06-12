@@ -19,4 +19,12 @@ Drop your blog post images here. Each blog post references specific paths.
 - `coxsbazar-2.jpg` — Himchori waterfall
 - `coxsbazar-3.jpg` — Saint Martin's coral island
 
-To change image paths, edit the `src` fields inside each blog JSON file under `app/data/blog/life/`.
+## SEO posts
+- `seo/what-is-seo-cover.webp` — Cover / hero image for "What Is SEO and How Does It Work?"
+- `seo/what-is-seo-search-engine-workflow.webp` — Search engine crawling, indexing, and ranking workflow
+- `seo/what-is-seo-three-pillars.webp` — Technical, on-page, and off-page SEO pillars
+- `seo/seo-tools-cover.webp` — Cover / hero image for the SEO tools article
+- `seo/seo-tools-comparison-dashboard.webp` — SEO tool comparison dashboard
+- `seo/seo-tools-technical-audit-workflow.webp` — Technical SEO audit workflow
+
+To change image paths, edit the image fields inside each blog JSON file under `app/data/blog/`.

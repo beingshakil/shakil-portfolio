@@ -58,6 +58,23 @@
     "subtitle": "My Journey",
     "professional": [
       {
+        "title": "SEO & AI Automation",
+        "duration": "May 2026 – Present",
+        "company": "Musemind",
+        "companyLink": "https://musemind.agency",
+        "content": [
+          "Built AI automation workflows using Python and Chrome extensions to cut down manual work and help teams move faster.",
+          "Created prompt templates for AI tools (LLMs) to get better, more consistent outputs across different tasks and use cases.",
+          "Pulled and analyzed data from Google Analytics and Search Console to find SEO issues and spot growth opportunities.",
+          "Set up automated SEO reports so the team could track keyword rankings, site health, and traffic without doing it manually.",
+          "Used AI tools to build content and internal linking strategies that helped improve search rankings and topic coverage.",
+          "Connected third-party APIs and AI services into existing workflows to automate repetitive tasks without breaking current processes.",
+          "Turned raw data from multiple sources into clear insights that helped leadership make better decisions on content and strategy.",
+          "Applied prompt engineering techniques to improve AI outputs for SEO, content, and data tasks — saving time and reducing back-and-forth."
+        ],
+        "side": "right"
+      },
+      {
         "title": "SEO and AI Automation",
         "duration": "Jan 2025 – Apr 2026",
         "company": "IRD Foundation",
@@ -68,17 +85,6 @@
           "Transformed raw data into actionable insights by building automated ETL workflows with Pandas and NumPy, improving data accuracy and usability.",
           "Collaborated with Web and Database teams to ensure data compliance and optimize website structure, enhancing SEO performance and user experience based on analytical insights.",
           "Developed interactive Power BI and Excel dashboards to visualize key trends, improving data accessibility and decision-making speed across teams."
-        ],
-        "side": "right"
-      },
-      {
-        "title": "Web Developer",
-        "duration": "Jun 2024 – Dec 2024",
-        "company": "Searchaly Agency",
-        "companyLink": null,
-        "content": [
-          "Developed responsive web applications using React JS and CSS to enhance user experience, improving performance and scalability through reusable components.",
-          "Designed modular, reusable automation tools that improved team productivity by enabling non-technical stakeholders to generate insights through simple UI triggers."
         ],
         "side": "left"
       }
@@ -107,6 +113,7 @@
       {
         "iconKey": "ui_icon",
         "title": "AI Automation",
+        "content": "I build AI workflows, automation scripts, and Chrome extensions that eliminate repetitive tasks and help your team operate faster.",
         "bullets": [
           "AI + Automation Integration",
           "AI Agent Development",
@@ -119,6 +126,7 @@
       {
         "iconKey": "mobile_icon",
         "title": "SEO",
+        "content": "I optimize your website with technical SEO, keyword research, and data-driven content strategies to rank higher and drive genuine organic traffic.",
         "bullets": [
           "Technical SEO",
           "On-Page SEO",
@@ -131,6 +139,7 @@
       {
         "iconKey": "web_icon",
         "title": "Data Analysis",
+        "content": "I clean, analyze, and visualize your data using Python, Power BI, and custom dashboards that turn raw numbers into actionable decisions.",
         "bullets": [
           "Data Cleaning & Preprocessing",
           "Exploratory Data Analysis",
@@ -142,6 +151,7 @@
       {
         "iconKey": "graphics_icon",
         "title": "Web Development",
+        "content": "I build fast, SEO-optimized frontend websites that look great and perform reliably across all devices and browsers.",
         "bullets": [
           "Frontend Development",
           "Website Optimization & SEO"

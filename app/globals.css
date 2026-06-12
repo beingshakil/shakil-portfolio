@@ -136,12 +136,43 @@ html {
   margin: 0.75rem 0 1rem;
 }
 .blog-rich li { margin-bottom: 0.4rem; }
-.blog-rich a { color: #607D8B; text-decoration: underline; }
+.blog-rich a { color: #607D8B; text-decoration: none; }
 .blog-rich img {
   width: 100%;
   height: auto;
   border-radius: 0.75rem;
   display: block;
+}
+.blog-rich h4 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: inherit;
+}
+.blog-rich blockquote {
+  border-left: 3px solid #607D8B;
+  padding: 0.5rem 1rem;
+  margin: 1.25rem 0;
+  font-style: italic;
+  color: inherit;
+  opacity: 0.85;
+}
+.blog-rich table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.25rem 0;
+  font-size: 0.9rem;
+}
+.blog-rich th,
+.blog-rich td {
+  border: 1px solid #e5e7eb;
+  padding: 0.65rem 0.85rem;
+  text-align: left;
+}
+.blog-rich th {
+  background: rgba(96, 125, 139, 0.12);
+  font-weight: 700;
 }
 
 /* Responsive grid adjustments */
