@@ -1,6 +1,6 @@
 // Aggregator: imports every blog post JSON and exposes a unified API.
 // To add a new post: drop a JSON file under data/blog/{category}/ and import it here.
-import seoTraffic from "./seo/how-i-increased-website-traffic-by-5x-using-seo.json";
+import seoTraffic from "./seo/best-seo-tools.json";
 import seoGuide from "./seo/what-is-seo-and-how-does-it-work.json";
 import dataPandas from "./data-analysis/automating-data-workflows-with-python-pandas.json";
 import dataPowerbi from "./data-visualization/building-interactive-dashboards-with-power-bi.json";
