@@ -198,6 +198,36 @@ body {
   font-weight: 700;
   white-space: nowrap;
 }
+/* Inline code + fenced code blocks */
+.blog-rich code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 0.85em;
+  background: rgba(96, 125, 139, 0.14);
+  padding: 0.15em 0.4em;
+  border-radius: 0.3rem;
+  word-break: break-word;
+}
+.blog-rich pre {
+  background: #1A3040;
+  color: #e5e7eb;
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.25rem 0;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.blog-rich pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+  color: inherit;
+  white-space: pre;
+  word-break: normal;
+}
 
 /* Responsive grid adjustments */
 .grid-cols-auto {

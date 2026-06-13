@@ -8,6 +8,7 @@ import extraCurriculars from "./life/extra-curriculars.json";
 import sylhetTour from "./life/sylhet-tour.json";
 import coxsBazarTour from "./life/coxs-bazar-tour.json";
 import aiAutomation from "./automation/what-is-ai-automation.json";
+import aiForSoftwareEngineers from "./automation/ai-for-software-engineers.json";
 
 export const blogMeta = {
   title: "Blog & Insights",
@@ -20,6 +21,7 @@ export const blogMeta = {
 };
 
 export const blogPosts = [
+  aiForSoftwareEngineers,
   aiAutomation,
   seoGuide,
   seoTraffic,
