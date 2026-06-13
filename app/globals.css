@@ -159,22 +159,28 @@ html {
   opacity: 0.85;
 }
 .blog-table-scroll {
+  display: block;
+  width: 100%;
+  max-width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  max-width: 100%;
   margin: 1.25rem 0;
+}
+/* Pre-JS fallback: constrain inline overflow-x div wrappers from JSON content */
+.blog-rich > div {
+  display: block;
+  width: 100%;
+  max-width: 100%;
 }
 .blog-rich table {
   border-collapse: collapse;
   font-size: 0.9rem;
-  min-width: 480px;
 }
 .blog-rich th,
 .blog-rich td {
   border: 1px solid #e5e7eb;
   padding: 0.65rem 0.85rem;
   text-align: left;
-  white-space: normal;
 }
 .blog-rich th {
   background: rgba(96, 125, 139, 0.12);

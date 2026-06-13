@@ -390,7 +390,7 @@ export default function BlogPostClient({ slug }) {
     .slice(0, 3);
 
   return (
-    <div className="w-full px-4 sm:px-6 lg:px-[8%] py-16 pt-32">
+    <div className="w-full px-4 sm:px-6 lg:px-[8%] py-16 pt-32 overflow-x-hidden">
       <div className="max-w-[1400px] mx-auto mb-6">
         <Link
           href="/explore"
