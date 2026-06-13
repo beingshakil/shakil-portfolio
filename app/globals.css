@@ -159,6 +159,9 @@ html {
   opacity: 0.85;
 }
 .blog-rich table {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   width: 100%;
   border-collapse: collapse;
   margin: 1.25rem 0;

@@ -7,6 +7,7 @@ import dataPowerbi from "./data-visualization/building-interactive-dashboards-wi
 import extraCurriculars from "./life/extra-curriculars.json";
 import sylhetTour from "./life/sylhet-tour.json";
 import coxsBazarTour from "./life/coxs-bazar-tour.json";
+import aiAutomation from "./automation/what-is-ai-automation.json";
 
 export const blogMeta = {
   title: "Blog & Insights",
@@ -19,6 +20,7 @@ export const blogMeta = {
 };
 
 export const blogPosts = [
+  aiAutomation,
   seoGuide,
   seoTraffic,
   dataPandas,
