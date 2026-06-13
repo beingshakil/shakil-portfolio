@@ -27,4 +27,9 @@ Drop your blog post images here. Each blog post references specific paths.
 - `seo/seo-tools-comparison-dashboard.webp` — SEO tool comparison dashboard
 - `seo/seo-tools-technical-audit-workflow.webp` — Technical SEO audit workflow
 
+## Automation posts
+- `automation/ai-automation-cover.webp` - Cover / hero image for "What Is AI Automation?"
+- `automation/ai-automation-workflow.webp` - Data input, AI processing, automated execution, and feedback loop workflow
+- `automation/ai-automation-types-and-implementation.webp` - AI automation capabilities and implementation planning dashboard
+
 To change image paths, edit the image fields inside each blog JSON file under `app/data/blog/`.

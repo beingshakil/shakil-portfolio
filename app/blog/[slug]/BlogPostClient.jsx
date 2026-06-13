@@ -347,6 +347,22 @@ function BlogSidebar({ blocks, title }) {
 export default function BlogPostClient({ slug }) {
   const post = getPostBySlug(slug);
 
+  useEffect(() => {
+    const tables = document.querySelectorAll('.blog-rich table');
+    tables.forEach(table => {
+      const parent = table.parentElement;
+      if (parent && parent.tagName === 'DIV') {
+        parent.classList.add('blog-table-scroll');
+        parent.removeAttribute('style');
+      } else if (parent && !parent.classList.contains('blog-table-scroll')) {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'blog-table-scroll';
+        parent.insertBefore(wrapper, table);
+        wrapper.appendChild(table);
+      }
+    });
+  }, [slug]);
+
   if (!post) {
     return (
       <div className="min-h-screen flex items-center justify-center pt-20">
