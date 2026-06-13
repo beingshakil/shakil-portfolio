@@ -137,7 +137,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className='scroll-smooth dark' suppressHydrationWarning>
       <body
         suppressHydrationWarning
-        className={`${plusJakartaSans.className} antialiased leading-8 overflow-x-hidden
+        className={`${plusJakartaSans.className} antialiased leading-8
          dark:bg-darkTheme dark:text-white`}
       >
         <script

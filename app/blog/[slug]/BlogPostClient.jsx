@@ -398,7 +398,7 @@ export default function BlogPostClient({ slug }) {
     .slice(0, 3);
 
   return (
-    <div className="w-full px-4 sm:px-6 lg:px-[8%] py-16 pt-32 overflow-x-hidden">
+    <div className="w-full px-4 sm:px-6 lg:px-[8%] py-16 pt-32">
       <div className="max-w-[1400px] mx-auto mb-6">
         <Link
           href="/explore"
@@ -420,7 +420,7 @@ export default function BlogPostClient({ slug }) {
           />
         </aside>
 
-        <div className="flex-1 min-w-0">
+        <div className="w-full xl:flex-1 min-w-0">
           {post.image && (
             <div className="mb-8 rounded-2xl overflow-hidden shadow-lg">
               <img src={post.image} alt={postImageAlt} className="w-full h-64 md:h-96 object-cover" />

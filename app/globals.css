@@ -28,7 +28,11 @@ html {
   overflow-x: hidden;
 }
 body {
-  overflow-x: hidden;
+  /* clip (not hidden) so <body> is NOT a scroll container:
+     keeps page from overflowing horizontally while still allowing
+     inner overflow-x:auto containers (e.g. blog tables) to scroll on
+     iOS Safari, and not breaking position:sticky descendants. */
+  overflow-x: clip;
 }
 
 /* Custom animations */
@@ -166,7 +170,7 @@ body {
   display: block;
   width: 100%;
   max-width: 100%;
-  overflow-x: auto;
+  overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
   margin: 1.25rem 0;
 }
@@ -175,10 +179,13 @@ body {
   display: block;
   width: 100%;
   max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 .blog-rich table {
   border-collapse: collapse;
   font-size: 0.9rem;
+  min-width: 540px;
 }
 .blog-rich th,
 .blog-rich td {
