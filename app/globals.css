@@ -22,9 +22,13 @@
   font-weight: 300;
 }
 
-/* Smooth scrolling */
+/* Smooth scrolling + prevent iOS Safari horizontal overflow */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+body {
+  overflow-x: hidden;
 }
 
 /* Custom animations */

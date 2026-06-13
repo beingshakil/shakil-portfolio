@@ -350,11 +350,19 @@ export default function BlogPostClient({ slug }) {
   useEffect(() => {
     const tables = document.querySelectorAll('.blog-rich table');
     tables.forEach(table => {
+      if (table.closest('.blog-table-scroll')) return;
       const parent = table.parentElement;
-      if (parent && parent.tagName === 'DIV') {
+      // Only use the parent as the scroll wrapper if it's a plain div
+      // (not blog-rich itself or any other semantic container)
+      const parentIsWrapper =
+        parent &&
+        parent.tagName === 'DIV' &&
+        !parent.classList.contains('blog-rich') &&
+        parent.children.length === 1;
+      if (parentIsWrapper) {
         parent.classList.add('blog-table-scroll');
         parent.removeAttribute('style');
-      } else if (parent && !parent.classList.contains('blog-table-scroll')) {
+      } else {
         const wrapper = document.createElement('div');
         wrapper.className = 'blog-table-scroll';
         parent.insertBefore(wrapper, table);
