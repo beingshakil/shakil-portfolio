@@ -15,14 +15,14 @@ export const metadata = {
     title: 'Experience — Md Shakil Hossen | SEO & AI Automation',
     description: 'Professional journey of Md Shakil Hossen: SEO & AI Automation at Musemind and IRD Foundation, plus leadership at DIU Computer and Programming Club.',
     siteName: 'Md Shakil Hossen — Portfolio',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Md Shakil Hossen — Experience' }],
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Md Shakil Hossen — Experience' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Experience — Md Shakil Hossen | SEO & AI Automation',
     description: 'Professional journey of Md Shakil Hossen: SEO & AI Automation at Musemind and IRD Foundation, plus leadership at DIU Computer and Programming Club.',
     creator: '@beingshakil',
-    images: ['/og-image.png'],
+    images: ['/og-image.jpg'],
   },
 };
 

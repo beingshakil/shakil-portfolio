@@ -203,16 +203,27 @@ const About = ({ content }) => {
           <div className="flex flex-wrap justify-center gap-6">
             {toolsData.map((tool, index) => (
               <div
-                className="flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 border border-gray-200 dark:border-gray-700 rounded-xl cursor-pointer hover:-translate-y-2 transition-transform duration-300 shadow-sm hover:shadow-md bg-white dark:bg-darkHover"
+                className="group relative flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 border border-gray-200 dark:border-gray-700 rounded-xl cursor-pointer hover:-translate-y-2 transition-transform duration-300 shadow-sm hover:shadow-md bg-white dark:bg-darkHover"
                 key={index}
               >
                 <Image
-                  src={tool}
-                  alt="Tool"
+                  src={tool.src}
+                  alt={tool.name}
+                  title={tool.name}
                   className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
                   width={40}
                   height={40}
                 />
+
+                {/* Tooltip — tool name on hover */}
+                <span
+                  role="tooltip"
+                  className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 z-20 whitespace-nowrap rounded-md bg-dark dark:bg-white px-2.5 py-1 text-xs font-medium text-white dark:text-dark opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 shadow-lg"
+                >
+                  {tool.name}
+                  {/* little arrow */}
+                  <span className="absolute top-full left-1/2 -translate-x-1/2 -mt-px border-4 border-transparent border-t-dark dark:border-t-white" />
+                </span>
               </div>
             ))}
           </div>

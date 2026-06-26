@@ -15,14 +15,14 @@ export const metadata = {
     title: 'About — Md Shakil Hossen | AI Automation & SEO Expert',
     description: 'Md Shakil Hossen is an AI Automation and SEO Expert based in Dhaka, Bangladesh. Specialized in Python automation, technical SEO, data analysis, and web development.',
     siteName: 'Md Shakil Hossen — Portfolio',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Md Shakil Hossen — AI Automation and SEO Expert' }],
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Md Shakil Hossen — AI Automation and SEO Expert' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'About — Md Shakil Hossen | AI Automation & SEO Expert',
     description: 'Md Shakil Hossen is an AI Automation and SEO Expert based in Dhaka, Bangladesh. Specialized in Python automation, technical SEO, data analysis, and web development.',
     creator: '@beingshakil',
-    images: ['/og-image.png'],
+    images: ['/og-image.jpg'],
   },
 };
 
@@ -46,7 +46,7 @@ const aboutPageSchema = {
     '@id': `${siteUrl}/#person`,
     name: 'Md Shakil Hossen',
     url: siteUrl,
-    image: `${siteUrl}/og-image.png`,
+    image: `${siteUrl}/og-image.jpg`,
     jobTitle: 'AI Automation and SEO Expert',
     description: content.about.content.join(' '),
     address: {

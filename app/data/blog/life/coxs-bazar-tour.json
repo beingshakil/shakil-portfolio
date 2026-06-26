@@ -1,6 +1,6 @@
 {
   "slug": "coxs-bazar-tour",
-  "image": "/blog-images/coxsbazar-cover.jpg",
+  "image": "/blog-images/coxsbazar-cover.webp",
   "title": "Cox's Bazar Tour",
   "heading": "The World's Longest Beach: My Cox's Bazar Diary",
   "category": "Life",
@@ -24,7 +24,7 @@
     },
     {
       "type": "image",
-      "content": "<img src=\"/blog-images/coxsbazar-1.jpg\" alt=\"Cox's Bazar beach at sunset\" />"
+      "content": "<img src=\"/blog-images/coxsbazar-1.webp\" alt=\"Cox's Bazar beach at sunset\" />"
     },
     {
       "type": "text",
@@ -33,7 +33,7 @@
     },
     {
       "type": "image",
-      "content": "<img src=\"/blog-images/coxsbazar-2.jpg\" alt=\"Himchori waterfall and beach\" />"
+      "content": "<img src=\"/blog-images/coxsbazar-2.webp\" alt=\"Himchori waterfall and beach\" />"
     },
     {
       "type": "text",
@@ -42,7 +42,7 @@
     },
     {
       "type": "image",
-      "content": "<img src=\"/blog-images/coxsbazar-3.jpg\" alt=\"Saint Martin's coral island turquoise water\" />"
+      "content": "<img src=\"/blog-images/coxsbazar-3.webp\" alt=\"Saint Martin's coral island turquoise water\" />"
     },
     {
       "type": "text",

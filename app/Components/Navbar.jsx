@@ -18,6 +18,42 @@ const Navbar = ({isDarkMode, setIsDarkMode, content}) => {
   const openMenu = () => setIsMenuOpen(true);
   const closeMenu = () => setIsMenuOpen(false);
 
+  // Lazy-load Calendly's widget assets once, then resolve.
+  const ensureCalendly = () =>
+    new Promise((resolve) => {
+      if (typeof window === 'undefined') return resolve();
+      if (window.Calendly) return resolve();
+
+      if (!document.getElementById('calendly-css')) {
+        const link = document.createElement('link');
+        link.id = 'calendly-css';
+        link.rel = 'stylesheet';
+        link.href = 'https://assets.calendly.com/assets/external/widget.css';
+        document.head.appendChild(link);
+      }
+
+      let script = document.getElementById('calendly-js');
+      if (!script) {
+        script = document.createElement('script');
+        script.id = 'calendly-js';
+        script.src = 'https://assets.calendly.com/assets/external/widget.js';
+        script.async = true;
+        script.addEventListener('load', () => resolve());
+        document.body.appendChild(script);
+      } else {
+        script.addEventListener('load', () => resolve());
+      }
+    });
+
+  // Open the Calendly scheduling popup ("Hire Me").
+  const openCalendly = async (e) => {
+    if (e && e.preventDefault) e.preventDefault();
+    const url = content.calendlyUrl;
+    if (!url) return;
+    await ensureCalendly();
+    if (window.Calendly) window.Calendly.initPopupWidget({ url });
+  };
+
   // Lock body scroll while the mobile menu is open
   useEffect(() => {
     if (isMenuOpen) {
@@ -115,13 +151,14 @@ const Navbar = ({isDarkMode, setIsDarkMode, content}) => {
             )}
           </button>
 
-          {/* Contact Button - Hidden on mobile */}
-          <Link
-            href="/contact"
+          {/* Hire Me Button (opens Calendly popup) - Hidden on mobile */}
+          <button
+            type="button"
+            onClick={openCalendly}
             className="hidden lg:inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-primaryDark to-primary text-white font-medium rounded-lg hover:from-primaryDark-dark hover:to-primary-dark transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
           >
             {content.ctaButtonText}
-          </Link>
+          </button>
 
           {/* Mobile Menu Button */}
           <button
@@ -211,6 +248,18 @@ const Navbar = ({isDarkMode, setIsDarkMode, content}) => {
             </ul>
 
             <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
+              {/* Hire Me — opens Calendly popup */}
+              <button
+                type="button"
+                onClick={() => {
+                  closeMenu();
+                  openCalendly();
+                }}
+                className="flex items-center justify-center gap-2 w-full mb-4 px-5 py-3 bg-gradient-to-r from-primaryDark to-primary text-white font-medium rounded-lg shadow-md transition-all duration-300"
+              >
+                {content.ctaButtonText}
+              </button>
+
               <button
                 onClick={() => {
                   setIsDarkMode(prev => !prev);

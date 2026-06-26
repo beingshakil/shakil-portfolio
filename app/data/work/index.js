@@ -1,5 +1,6 @@
 // Aggregator: imports every project JSON and exposes a unified API.
 // To add a new project: drop a JSON file under data/work/{category}/ and import it here.
+import musemind from "./web-development/musemind.json";
 import frontendProject from "./web-development/frontend-project.json";
 import bahariSite from "./web-development/bahari-site.json"; // moved from ecommerce → web-development
 import seoAlHadith from "./seo/al-hadith.json";
@@ -19,6 +20,7 @@ export const workMeta = {
 };
 
 export const workProjects = [
+  musemind,
   frontendProject,
   bahariSite,
   seoAlHadith,
@@ -26,6 +28,15 @@ export const workProjects = [
   seoQuranMazid,
   deepLearning,
   dataVisualization,
+];
+
+// Curated subset shown in the sticky-stacking "Featured Work" section, in order.
+export const featuredProjects = [
+  musemind,
+  frontendProject, // RS Automart
+  seoAlHadith,
+  seoDuaRuqyah,
+  seoQuranMazid,
 ];
 
 // Fixed category order for the filter tabs

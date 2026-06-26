@@ -15,14 +15,14 @@ export const metadata = {
     title: 'Services — AI Automation, SEO & Data Analysis | Md Shakil Hossen',
     description: 'Professional services by Md Shakil Hossen: AI Automation workflows, Technical SEO, Data Analysis & visualization, and Frontend Web Development in Bangladesh.',
     siteName: 'Md Shakil Hossen — Portfolio',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Md Shakil Hossen — Services' }],
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Md Shakil Hossen — Services' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Services — AI Automation, SEO & Data Analysis | Md Shakil Hossen',
     description: 'Professional services by Md Shakil Hossen: AI Automation workflows, Technical SEO, Data Analysis & visualization, and Frontend Web Development in Bangladesh.',
     creator: '@beingshakil',
-    images: ['/og-image.png'],
+    images: ['/og-image.jpg'],
   },
 };
 

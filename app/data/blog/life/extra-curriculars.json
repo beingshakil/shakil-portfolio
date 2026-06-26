@@ -1,6 +1,6 @@
 {
   "slug": "extra-curriculars",
-  "image": "/blog-images/extra-curriculars-cover.jpg",
+  "image": "/blog-images/extra-curriculars-cover.webp",
   "title": "Extra-Curriculars",
   "heading": "Beyond the Code: My Extra-Curricular Journey",
   "category": "Life",
@@ -24,7 +24,7 @@
     },
     {
       "type": "image",
-      "content": "<img src=\"/blog-images/extra-curriculars-1.jpg\" alt=\"Programming contest at DIU\" />"
+      "content": "<img src=\"/blog-images/extra-curriculars-1.webp\" alt=\"Programming contest at DIU\" />"
     },
     {
       "type": "text",
@@ -33,7 +33,7 @@
     },
     {
       "type": "image",
-      "content": "<img src=\"/blog-images/extra-curriculars-2.jpg\" alt=\"Hackathon team working late\" />"
+      "content": "<img src=\"/blog-images/extra-curriculars-2.webp\" alt=\"Hackathon team working late\" />"
     },
     {
       "type": "text",

@@ -15,14 +15,14 @@ export const metadata = {
     title: 'Contact Md Shakil Hossen — Get In Touch',
     description: 'Contact Md Shakil Hossen for AI Automation, SEO, and Data Analysis services. Based in Dhaka, Bangladesh. Reach out via the contact form or email.',
     siteName: 'Md Shakil Hossen — Portfolio',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Contact Md Shakil Hossen' }],
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Contact Md Shakil Hossen' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Contact Md Shakil Hossen — Get In Touch',
     description: 'Contact Md Shakil Hossen for AI Automation, SEO, and Data Analysis services. Based in Dhaka, Bangladesh. Reach out via the contact form or email.',
     creator: '@beingshakil',
-    images: ['/og-image.png'],
+    images: ['/og-image.jpg'],
   },
 };
 

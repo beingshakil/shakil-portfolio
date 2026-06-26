@@ -1,6 +1,6 @@
 {
   "slug": "sylhet-tour",
-  "image": "/blog-images/sylhet-cover.jpg",
+  "image": "/blog-images/sylhet-cover.webp",
   "title": "Sylhet Tour",
   "heading": "Chasing Tea Gardens & Waterfalls: My Sylhet Adventure",
   "category": "Life",
@@ -24,7 +24,7 @@
     },
     {
       "type": "image",
-      "content": "<img src=\"/blog-images/sylhet-1.jpg\" alt=\"Tea gardens of Sreemangal\" />"
+      "content": "<img src=\"/blog-images/sylhet-1.webp\" alt=\"Tea gardens of Sreemangal\" />"
     },
     {
       "type": "text",
@@ -33,7 +33,7 @@
     },
     {
       "type": "image",
-      "content": "<img src=\"/blog-images/sylhet-2.jpg\" alt=\"Ratargul Swamp Forest boat ride\" />"
+      "content": "<img src=\"/blog-images/sylhet-2.webp\" alt=\"Ratargul Swamp Forest boat ride\" />"
     },
     {
       "type": "text",
@@ -42,7 +42,7 @@
     },
     {
       "type": "image",
-      "content": "<img src=\"/blog-images/sylhet-3.jpg\" alt=\"Jaflong stone collection area\" />"
+      "content": "<img src=\"/blog-images/sylhet-3.webp\" alt=\"Jaflong stone collection area\" />"
     },
     {
       "type": "text",

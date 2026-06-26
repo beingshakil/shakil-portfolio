@@ -1,14 +1,15 @@
 {
   "metadata": {
-    "title": "Al Hadith — SEO Optimization",
-    "description": "Comprehensive SEO strategy for Al Hadith, driving significant organic traffic growth through targeted keyword research and on-page optimization."
+    "title": "Al Hadith — SEO & Automation",
+    "description": "SEO and automation for Al Hadith (ihadis.com) — technical SEO, on-page optimization, and prompt-engineered automation workflows driving sustained organic traffic growth."
   },
   "title": "Al Hadith",
   "category": "Search Engine Optimization",
   "badge": "Search Engine Optimization",
-  "features": ["SEO Optimized", "Keyword Ranking", "Organic Traffic Growth"],
-  "content": "Executed a full-scale SEO audit and optimization campaign for Al Hadith. Identified high-impact keywords, resolved technical issues, improved Core Web Vitals, and built a content strategy that resulted in measurable growth in search visibility and organic sessions.",
-  "bgImage": "/my-work/search-engine-optimzation/ihadis.png",
+  "featuredLabel": "SEO & Automation",
+  "features": ["Technical SEO", "On-Page SEO", "Prompt Engineering", "Automation Tools"],
+  "content": "Led SEO and automation for Al Hadith (ihadis.com). Executed technical SEO audits, on-page optimization, and built automated keyword-tracking and content workflows with prompt engineering and automation tools — driving measurable, sustained organic traffic growth.",
+  "bgImage": "/my-work/search-engine-optimzation/ihadis.webp",
   "link": "https://ihadis.com/",
   "slug": "al-hadith-seo"
 }

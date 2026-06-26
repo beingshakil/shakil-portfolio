@@ -11,6 +11,7 @@ const AI_TOOLS = [
   {
     name: 'ChatGPT',
     href: 'https://chatgpt.com',
+    buildUrl: (q) => `https://chatgpt.com/?q=${q}`,
     defaultColor: '#374151',
     hoverColor: '#10a37f',
     icon: (
@@ -22,6 +23,7 @@ const AI_TOOLS = [
   {
     name: 'Claude',
     href: 'https://claude.ai',
+    buildUrl: (q) => `https://claude.ai/new?q=${q}`,
     defaultColor: '#374151',
     hoverColor: '#CC785C',
     icon: (
@@ -33,6 +35,7 @@ const AI_TOOLS = [
   {
     name: 'Perplexity',
     href: 'https://www.perplexity.ai',
+    buildUrl: (q) => `https://www.perplexity.ai/search?q=${q}`,
     defaultColor: '#374151',
     hoverColor: '#20808D',
     icon: (
@@ -43,7 +46,8 @@ const AI_TOOLS = [
   },
   {
     name: 'Grok',
-    href: 'https://x.com/grok',
+    href: 'https://grok.com',
+    buildUrl: (q) => `https://grok.com/?q=${q}`,
     defaultColor: '#374151',
     hoverColor: '#111827',
     icon: (
@@ -55,6 +59,7 @@ const AI_TOOLS = [
   {
     name: 'Gemini',
     href: 'https://gemini.google.com',
+    buildUrl: (q) => `https://www.google.com/search?udm=50&q=${q}`,
     defaultColor: '#4285F4',
     hoverColor: '#1a73e8',
     icon: (
@@ -189,6 +194,14 @@ function BlogSidebar({ blocks, title }) {
   const [hoveredAI, setHoveredAI] = useState(null);
   const [hoveredShare, setHoveredShare] = useState(null);
   const [activeId, setActiveId] = useState(null);
+  const [aiHrefs, setAiHrefs] = useState(AI_TOOLS.map(t => t.href));
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const prompt = `Summarize this article "${title || ''}": ${window.location.href}`;
+    const q = encodeURIComponent(prompt);
+    setAiHrefs(AI_TOOLS.map(t => t.buildUrl(q)));
+  }, [title]);
 
   useEffect(() => {
     if (headings.length === 0) return;
@@ -323,7 +336,7 @@ function BlogSidebar({ blocks, title }) {
           {AI_TOOLS.map((tool, i) => (
             <a
               key={tool.name}
-              href={tool.href}
+              href={aiHrefs[i]}
               target="_blank"
               rel="noopener noreferrer"
               title={tool.name}

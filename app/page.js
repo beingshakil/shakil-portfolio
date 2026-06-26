@@ -2,13 +2,13 @@ import Header from "./Components/Header";
 import About from "./Components/About";
 import Experience from "./Components/Experience";
 import Services from "./Components/Services";
-import Work from "./Components/Work";
+import StickyProjects from "./Components/StickyProjects";
 import Contact from "./Components/Contact";
 import Blog from "./Components/Blog";
 import CallToAction from "./Components/CallToAction";
 import content from "./data/homepage.json";
 import blogData from "./data/blog/index";
-import workData from "./data/work";
+import { featuredProjects } from "./data/work";
 
 const siteUrl = 'https://beingshakil.xyz';
 
@@ -24,14 +24,14 @@ export const metadata = {
     title: content.meta.title,
     description: content.meta.description,
     siteName: 'Md Shakil Hossen — Portfolio',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Md Shakil Hossen — AI Automation and SEO Expert in Bangladesh' }],
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Md Shakil Hossen — AI Automation and SEO Expert in Bangladesh' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: content.meta.title,
     description: content.meta.description,
     creator: '@beingshakil',
-    images: ['/og-image.png'],
+    images: ['/og-image.jpg'],
   },
 };
 
@@ -90,7 +90,7 @@ export default function Home() {
       <About content={content.about} />
       <Experience content={content.experience} hideTabs={true} />
       <Services content={content.services} />
-      <Work content={workData} />
+      <StickyProjects projects={featuredProjects} exploreHref="/work" />
       <Blog content={blogData} />
       <CallToAction content={content.callToAction} />
       <Contact content={content.contact} />

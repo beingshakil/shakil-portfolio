@@ -1,14 +1,15 @@
 {
   "metadata": {
-    "title": "Dua & Ruqyah — SEO Optimization",
-    "description": "Targeted SEO strategy for Dua & Ruqyah, improving Islamic content discoverability and driving higher organic engagement."
+    "title": "Dua & Ruqyah — SEO & Automation",
+    "description": "SEO and automation for Dua & Ruqyah — technical SEO, on-page optimization, and prompt-engineered automation pipelines improving discoverability and organic engagement."
   },
   "title": "Dua & Ruqyah",
   "category": "Search Engine Optimization",
   "badge": "Search Engine Optimization",
-  "features": ["SEO Optimized", "Keyword Ranking", "Organic Traffic Growth"],
-  "content": "Delivered a results-driven SEO campaign for Dua & Ruqyah. Conducted deep-dive keyword mapping for Islamic content niches, performed competitor gap analysis, and implemented structured data markup. The project achieved improved SERP positions across key topic clusters and boosted click-through rates significantly.",
-  "bgImage": "/my-work/search-engine-optimzation/dua-ruqyah.png",
+  "featuredLabel": "SEO & Automation",
+  "features": ["Technical SEO", "On-Page SEO", "Prompt Engineering", "Automation Tools"],
+  "content": "Drove SEO and automation for Dua & Ruqyah. Combined technical SEO, on-page optimization, and prompt-engineered automation pipelines to streamline content production and reporting — improving SERP positions across key Islamic topic clusters and boosting click-through rates.",
+  "bgImage": "/my-work/search-engine-optimzation/dua-ruqyah.webp",
   "link": "https://duaruqyah.com/",
   "slug": "dua-ruqyah-seo"
 }

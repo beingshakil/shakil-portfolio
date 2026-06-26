@@ -3,21 +3,21 @@
 Drop your blog post images here. Each blog post references specific paths.
 
 ## Extra-Curriculars post
-- `extra-curriculars-cover.jpg` — Cover / hero image
-- `extra-curriculars-1.jpg` — Programming contest photo
-- `extra-curriculars-2.jpg` — Hackathon team photo
+- `extra-curriculars-cover.webp` — Cover / hero image
+- `extra-curriculars-1.webp` — Programming contest photo
+- `extra-curriculars-2.webp` — Hackathon team photo
 
 ## Sylhet Tour post
-- `sylhet-cover.jpg` — Cover / hero image
-- `sylhet-1.jpg` — Tea gardens of Sreemangal
-- `sylhet-2.jpg` — Ratargul Swamp Forest boat ride
-- `sylhet-3.jpg` — Jaflong stone shores
+- `sylhet-cover.webp` — Cover / hero image
+- `sylhet-1.webp` — Tea gardens of Sreemangal
+- `sylhet-2.webp` — Ratargul Swamp Forest boat ride
+- `sylhet-3.webp` — Jaflong stone shores
 
 ## Cox's Bazar Tour post
-- `coxsbazar-cover.jpg` — Cover / hero image
-- `coxsbazar-1.jpg` — Beach sunset
-- `coxsbazar-2.jpg` — Himchori waterfall
-- `coxsbazar-3.jpg` — Saint Martin's coral island
+- `coxsbazar-cover.webp` — Cover / hero image
+- `coxsbazar-1.webp` — Beach sunset
+- `coxsbazar-2.webp` — Himchori waterfall
+- `coxsbazar-3.webp` — Saint Martin's coral island
 
 ## SEO posts
 - `seo/what-is-seo-cover.webp` — Cover / hero image for "What Is SEO and How Does It Work?"

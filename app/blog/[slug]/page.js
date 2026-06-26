@@ -22,7 +22,7 @@ export async function generateMetadata({ params }) {
   const title = post.metadata?.title || post.heading || post.title;
   const description = post.metadata?.description || '';
   const postUrl = `${siteUrl}/blog/${post.slug}`;
-  const imageUrl = post.image ? `${siteUrl}${post.image}` : `${siteUrl}/og-image.png`;
+  const imageUrl = post.image ? `${siteUrl}${post.image}` : `${siteUrl}/og-image.jpg`;
   const imageAlt = post.imageAlt || post.heading || post.title || '';
   const publishedDate = toISODate(post.date);
 
@@ -82,7 +82,7 @@ export default async function BlogPostPage({ params }) {
       '@type': 'Person',
       name: 'Md Shakil Hossen',
       url: siteUrl,
-      image: `${siteUrl}/og-image.png`,
+      image: `${siteUrl}/og-image.jpg`,
     },
     datePublished: publishedDate,
     dateModified: publishedDate,

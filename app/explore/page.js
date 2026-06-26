@@ -15,14 +15,14 @@ export const metadata = {
     title: 'Blog & Insights — Data, SEO & AI | Md Shakil Hossen',
     description: 'Tutorials and insights on Data Analysis, SEO strategies, AI Automation, and Web Development by Md Shakil Hossen. Real-world guides backed by hands-on experience.',
     siteName: 'Md Shakil Hossen — Portfolio',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Blog & Insights — Md Shakil Hossen' }],
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Blog & Insights — Md Shakil Hossen' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Blog & Insights — Data, SEO & AI | Md Shakil Hossen',
     description: 'Tutorials and insights on Data Analysis, SEO strategies, AI Automation, and Web Development by Md Shakil Hossen. Real-world guides backed by hands-on experience.',
     creator: '@beingshakil',
-    images: ['/og-image.png'],
+    images: ['/og-image.jpg'],
   },
 };
 
