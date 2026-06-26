@@ -5,26 +5,32 @@ const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
   const [isDarkMode, setIsDarkMode] = useState(true);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    if (localStorage.theme) {
-      setIsDarkMode(localStorage.theme === "dark");
-    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    const stored = localStorage.getItem("theme");
+    if (stored === "dark") {
       setIsDarkMode(true);
-    } else {
+    } else if (stored === "light") {
       setIsDarkMode(false);
+    } else {
+      setIsDarkMode(window.matchMedia("(prefers-color-scheme: dark)").matches);
     }
+    setMounted(true);
   }, []);
 
   useEffect(() => {
+    // Don't persist/apply until the stored preference has been read,
+    // otherwise the default state would clobber localStorage on first paint.
+    if (!mounted) return;
     if (isDarkMode) {
       document.documentElement.classList.add("dark");
-      localStorage.theme = "dark";
+      localStorage.setItem("theme", "dark");
     } else {
       document.documentElement.classList.remove("dark");
-      localStorage.theme = "";
+      localStorage.setItem("theme", "light");
     }
-  }, [isDarkMode]);
+  }, [isDarkMode, mounted]);
 
   return (
     <ThemeContext.Provider value={{ isDarkMode, setIsDarkMode }}>

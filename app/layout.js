@@ -32,6 +32,8 @@ export const metadata = {
   ],
   authors: [{ name: 'Md Shakil Hossen', url: siteUrl }],
   creator: 'Md Shakil Hossen',
+  // Favicon / touch icons are auto-detected from app/favicon.ico, app/icon.png,
+  // and app/apple-icon.png (generated from the hero profile photo).
   openGraph: {
     type: 'website',
     url: siteUrl,
@@ -40,7 +42,7 @@ export const metadata = {
     siteName: 'Md Shakil Hossen — Portfolio',
     images: [
       {
-        url: '/og-image.png',
+        url: '/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Md Shakil Hossen — AI Automation and SEO Expert in Bangladesh',
@@ -53,7 +55,7 @@ export const metadata = {
     title: content.meta.title,
     description: content.meta.description,
     creator: '@beingshakil',
-    images: ['/og-image.png'],
+    images: ['/og-image.jpg'],
   },
   robots: {
     index: true,
@@ -77,7 +79,7 @@ const personSchema = {
   '@type': 'Person',
   name: 'Md Shakil Hossen',
   url: siteUrl,
-  image: '/og-image.png',
+  image: '/og-image.jpg',
   sameAs: [
     'https://www.linkedin.com/in/md-shakil-hossen/',
     'https://github.com/beingshakil',
@@ -134,7 +136,14 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className='scroll-smooth dark' suppressHydrationWarning>
+    <html lang="en" className='scroll-smooth' suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');var d=t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.classList.toggle('dark',d);}catch(e){}})();`,
+          }}
+        />
+      </head>
       <body
         suppressHydrationWarning
         className={`${plusJakartaSans.className} antialiased leading-8
