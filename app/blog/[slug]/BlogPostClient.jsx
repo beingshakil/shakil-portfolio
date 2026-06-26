@@ -117,9 +117,9 @@ const ContentRenderer = ({ block, index }) => {
         return (
           <div key={index} className="mb-8">
             {block.title && (
-              <h3 id={id} className="text-2xl font-bold text-gray-900 dark:text-white mt-10 mb-4 scroll-mt-28">
+              <h2 id={id} className="text-2xl font-bold text-gray-900 dark:text-white mt-10 mb-4 scroll-mt-28">
                 {block.title}
-              </h3>
+              </h2>
             )}
             <div
               className="blog-rich text-gray-700 dark:text-gray-300 leading-relaxed text-justify"
@@ -156,9 +156,9 @@ const ContentRenderer = ({ block, index }) => {
 
     case 'heading':
       return (
-        <h3 key={index} className="text-2xl font-bold text-gray-900 dark:text-white mt-10 mb-4">
+        <h2 key={index} className="text-2xl font-bold text-gray-900 dark:text-white mt-10 mb-4">
           {block.value}
-        </h3>
+        </h2>
       );
 
     case 'image':

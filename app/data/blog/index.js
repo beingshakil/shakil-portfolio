@@ -9,6 +9,7 @@ import sylhetTour from "./life/sylhet-tour.json";
 import coxsBazarTour from "./life/coxs-bazar-tour.json";
 import aiAutomation from "./automation/what-is-ai-automation.json";
 import aiForSoftwareEngineers from "./automation/ai-for-software-engineers.json";
+import geminiVsChatgptVsClaude from "./automation/gemini-vs-chatgpt-vs-claude.json";
 
 export const blogMeta = {
   title: "Blog & Insights",
@@ -21,6 +22,7 @@ export const blogMeta = {
 };
 
 export const blogPosts = [
+  geminiVsChatgptVsClaude,
   aiForSoftwareEngineers,
   aiAutomation,
   seoGuide,

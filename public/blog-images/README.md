@@ -31,5 +31,9 @@ Drop your blog post images here. Each blog post references specific paths.
 - `automation/ai-automation-cover.webp` - Cover / hero image for "What Is AI Automation?"
 - `automation/ai-automation-workflow.webp` - Data input, AI processing, automated execution, and feedback loop workflow
 - `automation/ai-automation-types-and-implementation.webp` - AI automation capabilities and implementation planning dashboard
+- `automation/gemini-vs-chatgpt-vs-claude.webp` - Cover / hero image for "Gemini vs ChatGPT vs Claude" (AI comparison)
+- `automation/gemini-chatgpt-claude-routing-framework.webp` - AI task routing framework (tasks, router, AI assistants, outputs)
+- `automation/gemini-chatgpt-claude-coding-automation.webp` - AI-assisted coding, automation, and web scraping workflow
+- `automation/gemini-chatgpt-claude-research-content.webp` - AI research and content workflow (live search, document synthesis, multilingual)
 
 To change image paths, edit the image fields inside each blog JSON file under `app/data/blog/`.

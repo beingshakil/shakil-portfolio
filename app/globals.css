@@ -151,6 +151,7 @@ body {
   border-radius: 0.75rem;
   display: block;
 }
+.blog-rich h3,
 .blog-rich h4 {
   font-size: 1.125rem;
   font-weight: 700;
