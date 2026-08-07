@@ -1,7 +1,6 @@
 import Experience from "../Components/Experience";
 import content from "../data/homepage.json";
-
-const siteUrl = 'https://beingshakil.xyz';
+import { siteUrl } from "../data/site";
 
 export const metadata = {
   title: 'Experience — Md Shakil Hossen | SEO & AI Automation',

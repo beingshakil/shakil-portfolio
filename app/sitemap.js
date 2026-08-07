@@ -1,6 +1,5 @@
 import { blogPosts } from './data/blog/index';
-
-const siteUrl = 'https://beingshakil.xyz';
+import { siteUrl } from './data/site';
 
 function parseDate(dateStr) {
   const d = new Date(dateStr);

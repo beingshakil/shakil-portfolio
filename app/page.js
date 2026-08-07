@@ -9,8 +9,7 @@ import CallToAction from "./Components/CallToAction";
 import content from "./data/homepage.json";
 import blogData from "./data/blog/index";
 import { featuredProjects } from "./data/work";
-
-const siteUrl = 'https://beingshakil.xyz';
+import { siteUrl } from "./data/site";
 
 export const metadata = {
   title: content.meta.title,

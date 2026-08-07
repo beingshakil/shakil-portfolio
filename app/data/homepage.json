@@ -33,8 +33,9 @@
     "title": "Who I AM",
     "subtitle": "Introduction",
     "content": [
-      "I am an experienced Data Analyst and SEO Expert with expertise in transforming complex data into actionable insights. Throughout my career, I have had the privilege of collaborating with prestigious organizations, contributing to their success and growth through data-driven strategies.",
-      "My mission is to bridge the gap between data and business strategy, helping organizations make informed decisions that drive growth and competitive advantage. With a strong foundation in both technical analysis and strategic thinking, I aim to contribute to workflow improvements while continuing to grow professionally."
+      "I am an experienced **Web Intelligence and SEO Expert** specializing in workflow automation, prompt engineering, web scraping, and the development of custom web tools. I focus on transforming complex web data and repetitive manual processes into efficient, automated workflows that save time, reduce workload, and improve productivity.",
+      "Throughout my career, I have worked on solutions that combine **web intelligence, AI-powered automation, data extraction, and SEO** to streamline business processes and turn raw information into actionable insights. My expertise includes automating repetitive tasks, building web-based tools, designing intelligent workflows, and leveraging AI and prompt engineering to improve operational efficiency.",
+      "My mission is to bridge the gap between **technology, data, and business operations** by creating practical automation solutions that eliminate unnecessary manual work and help organizations operate more efficiently. I continuously explore new technologies and AI-driven approaches to build smarter workflows, scalable web tools, and solutions that create measurable business impact."
     ],
     "storyTitle": "My Story & Mission",
     "ctaText": "Learn More",
@@ -107,7 +108,7 @@
     ]
   },
   "services": {
-    "title": "Our Services",
+    "title": "Services",
     "subtitle": "What I Offer",
     "content": "I offer a range of specialized services designed to transform your data into a competitive advantage and elevate your digital presence.",
     "cards": [

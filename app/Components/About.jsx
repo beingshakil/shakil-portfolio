@@ -46,7 +46,11 @@ const About = ({ content }) => {
                 key={index}
                 className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed text-justify"
               >
-                {paragraph}
+                {paragraph.split(/(\*\*.*?\*\*)/).map((part, i) =>
+                  part.startsWith('**') && part.endsWith('**')
+                    ? <strong key={i} className="text-gray-900 dark:text-white font-bold">{part.slice(2, -2)}</strong>
+                    : part
+                )}
               </p>
             ))}
 

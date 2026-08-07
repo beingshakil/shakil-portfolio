@@ -1,7 +1,6 @@
 import Work from "../Components/Work";
 import workData from "../data/work";
-
-const siteUrl = 'https://beingshakil.xyz';
+import { siteUrl } from "../data/site";
 
 export const metadata = {
   title: 'My Work — Portfolio & Projects | Md Shakil Hossen',

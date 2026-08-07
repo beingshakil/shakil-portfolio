@@ -1,7 +1,6 @@
 import Services from "../Components/Services";
 import content from "../data/homepage.json";
-
-const siteUrl = 'https://beingshakil.xyz';
+import { siteUrl } from "../data/site";
 
 export const metadata = {
   title: 'Services — AI Automation, SEO & Data Analysis | Md Shakil Hossen',

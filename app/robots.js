@@ -1,3 +1,5 @@
+import { siteUrl } from './data/site';
+
 export default function robots() {
   return {
     rules: [
@@ -22,7 +24,7 @@ export default function robots() {
         allow: '/',
       },
     ],
-    sitemap: 'https://beingshakil.xyz/sitemap.xml',
-    host: 'https://beingshakil.xyz',
+    sitemap: `${siteUrl}/sitemap.xml`,
+    host: siteUrl,
   };
 }

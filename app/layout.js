@@ -3,13 +3,12 @@ import "./globals.css";
 import content from './data/homepage.json';
 import { ThemeProvider } from './context/ThemeContext';
 import LayoutWrapper from './Components/LayoutWrapper';
+import { siteUrl } from './data/site';
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
 });
-
-const siteUrl = 'https://beingshakil.xyz';
 
 export const metadata = {
   title: content.meta.title,

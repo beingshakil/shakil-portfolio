@@ -1,7 +1,6 @@
 import { getPostBySlug } from '../../data/blog/index';
 import BlogPostClient from './BlogPostClient';
-
-const siteUrl = 'https://beingshakil.xyz';
+import { siteUrl } from '../../data/site';
 
 function toISODate(dateStr) {
   const d = new Date(dateStr);

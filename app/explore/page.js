@@ -1,7 +1,6 @@
 import Blog from "../Components/Blog";
 import blogData from "../data/blog/index";
-
-const siteUrl = 'https://beingshakil.xyz';
+import { siteUrl } from "../data/site";
 
 export const metadata = {
   title: 'Blog & Insights — Data, SEO & AI | Md Shakil Hossen',

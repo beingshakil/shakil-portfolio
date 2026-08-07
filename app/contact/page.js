@@ -1,7 +1,6 @@
 import Contact from "../Components/Contact";
 import content from "../data/homepage.json";
-
-const siteUrl = 'https://beingshakil.xyz';
+import { siteUrl } from "../data/site";
 
 export const metadata = {
   title: 'Contact Md Shakil Hossen — Get In Touch',

@@ -1,7 +1,10 @@
 import About from "../Components/About";
 import content from "../data/homepage.json";
+import { siteUrl } from "../data/site";
 
-const siteUrl = 'https://beingshakil.xyz';
+// The story paragraphs carry **bold** markers for on-page rendering.
+// Structured data must be plain text, so strip them here.
+const plainText = (s) => s.replace(/\*\*(.*?)\*\*/g, '$1');
 
 export const metadata = {
   title: 'About — Md Shakil Hossen | AI Automation & SEO Expert',
@@ -48,7 +51,7 @@ const aboutPageSchema = {
     url: siteUrl,
     image: `${siteUrl}/og-image.jpg`,
     jobTitle: 'AI Automation and SEO Expert',
-    description: content.about.content.join(' '),
+    description: plainText(content.about.content.join(' ')),
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Dhaka',
