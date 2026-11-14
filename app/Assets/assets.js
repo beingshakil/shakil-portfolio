@@ -1,10 +1,6 @@
 import user_image from './user-image.webp';
 import code_icon from './code-icon.svg';
-import code_icon_dark from './code-icon-dark.svg';
-import edu_icon from './edu-icon.svg';
-import edu_icon_dark from './edu-icon-dark.svg';
 import project_icon from './project-icon.svg';
-import project_icon_dark from './project-icon-dark.svg';
 import right_arrow_white from './right-arrow-white.svg';
 import mail_icon from './mail_icon.svg';
 import profile_img from './profile-img.webp';
@@ -16,11 +12,7 @@ import graphics_icon from './code-icon.svg';
 export const assets = {
     user_image,
     code_icon,
-    code_icon_dark,
-    edu_icon,
-    edu_icon_dark,
     project_icon,
-    project_icon_dark,
     right_arrow_white,
     mail_icon,
     profile_img,
