@@ -127,7 +127,7 @@ body {
   filter: brightness(0) invert(1);
 }
 
-/* Rich blog content styling (HTML rendered from JSON content blocks) */
+/* Rich blog content styling (Sanity Portable Text, see Components/PortableBody.jsx) */
 .blog-rich p {
   margin-bottom: 1rem;
   line-height: 1.75;
@@ -174,14 +174,6 @@ body {
   overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
   margin: 1.25rem 0;
-}
-/* Pre-JS fallback: constrain inline overflow-x div wrappers from JSON content */
-.blog-rich > div {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
 }
 .blog-rich table {
   border-collapse: collapse;

@@ -7,9 +7,9 @@ import Contact from "./Components/Contact";
 import Blog from "./Components/Blog";
 import CallToAction from "./Components/CallToAction";
 import content from "./data/homepage.json";
-import blogData from "./data/blog/index";
 import { featuredProjects } from "./data/work";
 import { siteUrl } from "./data/site";
+import { getBlogData } from "../sanity/lib/posts";
 
 export const metadata = {
   title: content.meta.title,
@@ -74,7 +74,9 @@ const professionalServiceSchema = {
   },
 };
 
-export default function Home() {
+export default async function Home() {
+  const blogData = await getBlogData();
+
   return (
     <>
       <script

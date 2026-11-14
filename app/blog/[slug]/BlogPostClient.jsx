@@ -1,11 +1,8 @@
 "use client"
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { blogMeta, getPostBySlug, blogPosts } from '../../data/blog/index';
-
-function toId(str) {
-  return str.toLowerCase().replace(/[^a-z0-9\s]/g, '').trim().replace(/\s+/g, '-');
-}
+import { blogMeta } from '../../data/blog/index';
+import PortableBody, { getHeadings } from '../../Components/PortableBody';
 
 const AI_TOOLS = [
   {
@@ -70,127 +67,7 @@ const AI_TOOLS = [
   },
 ];
 
-/**
- * ContentRenderer
- * Handles two JSON content-block schemas:
- *
- * SCHEMA A (old — used by professional blog posts):
- *   { type: "text"|"heading"|"image"|"images"|"keypoints", value/src/items/points/title }
- *
- * SCHEMA B (new — used by life/travel posts):
- *   { type: "text"|"image"|"keypoints", title?, content: "<html string>" }
- */
-const ContentRenderer = ({ block, index }) => {
-  if (typeof block.content === 'string') {
-    const html = { __html: block.content };
-    const id = block.title ? toId(block.title) : undefined;
-
-    switch (block.type) {
-      case 'keypoints':
-        return (
-          <div id={id} key={index} className="my-8 scroll-mt-28">
-            <div className="bg-primary/10 dark:bg-primaryDark/20 rounded-2xl p-8">
-              {block.title && (
-                <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-5">
-                  {block.title}
-                </h4>
-              )}
-              <div
-                className="blog-rich text-gray-700 dark:text-gray-300"
-                dangerouslySetInnerHTML={html}
-              />
-            </div>
-          </div>
-        );
-
-      case 'image':
-        return (
-          <div
-            key={index}
-            className="my-8 rounded-xl overflow-hidden shadow-lg blog-rich"
-            dangerouslySetInnerHTML={html}
-          />
-        );
-
-      case 'text':
-      default:
-        return (
-          <div key={index} className="mb-8">
-            {block.title && (
-              <h2 id={id} className="text-2xl font-bold text-gray-900 dark:text-white mt-10 mb-4 scroll-mt-28">
-                {block.title}
-              </h2>
-            )}
-            <div
-              className="blog-rich text-gray-700 dark:text-gray-300 leading-relaxed text-justify"
-              dangerouslySetInnerHTML={html}
-            />
-          </div>
-        );
-    }
-  }
-
-  switch (block.type) {
-    case 'keypoints':
-      return (
-        <div key={index} className="my-8">
-          <div className="bg-primary/10 dark:bg-primaryDark/20 rounded-2xl p-8">
-            {block.title && (
-              <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-5">
-                {block.title}
-              </h4>
-            )}
-            {block.points && (
-              <ul className="space-y-3">
-                {block.points.map((pt, i) => (
-                  <li key={i} className="flex items-start gap-3 text-gray-700 dark:text-gray-300">
-                    <span className="mt-1 w-2 h-2 rounded-full bg-primary shrink-0" />
-                    {pt}
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
-        </div>
-      );
-
-    case 'heading':
-      return (
-        <h2 key={index} className="text-2xl font-bold text-gray-900 dark:text-white mt-10 mb-4">
-          {block.value}
-        </h2>
-      );
-
-    case 'image':
-      return (
-        <div key={index} className="my-8 rounded-xl overflow-hidden shadow-lg">
-          <img src={block.src} alt={block.alt || ''} className="w-full h-auto object-cover" />
-        </div>
-      );
-
-    case 'images':
-      return (
-        <div key={index} className="my-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-          {(block.items || []).map((img, i) => (
-            <div key={i} className="rounded-xl overflow-hidden shadow-lg">
-              <img src={img.src} alt={img.alt || ''} className="w-full h-auto object-cover" />
-            </div>
-          ))}
-        </div>
-      );
-
-    case 'text':
-    default:
-      return (
-        <p key={index} className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6 text-justify">
-          {block.value}
-        </p>
-      );
-  }
-};
-
-function BlogSidebar({ blocks, title }) {
-  const headings = blocks.filter(b => b.title && b.title.trim() !== '');
+function BlogSidebar({ headings, title }) {
   const [hoveredAI, setHoveredAI] = useState(null);
   const [hoveredShare, setHoveredShare] = useState(null);
   const [activeId, setActiveId] = useState(null);
@@ -205,7 +82,7 @@ function BlogSidebar({ blocks, title }) {
 
   useEffect(() => {
     if (headings.length === 0) return;
-    const ids = headings.map(b => toId(b.title));
+    const ids = headings.map(h => h.id);
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
@@ -281,8 +158,8 @@ function BlogSidebar({ blocks, title }) {
             <h4 className="font-bold text-gray-900 dark:text-white text-sm">Table Of Contents</h4>
           </div>
           <nav className="px-5 py-1">
-            {headings.map((block, i) => {
-              const id = toId(block.title);
+            {headings.map((heading, i) => {
+              const id = heading.id;
               const isActive = activeId === id;
               return (
                 <div key={i}>
@@ -298,7 +175,7 @@ function BlogSidebar({ blocks, title }) {
                         : 'text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primaryDark'
                     }`}
                   >
-                    {block.title}
+                    {heading.title}
                   </a>
                   {i < headings.length - 1 && (
                     <div className="border-b border-gray-100 dark:border-gray-800" />
@@ -357,58 +234,9 @@ function BlogSidebar({ blocks, title }) {
   );
 }
 
-export default function BlogPostClient({ slug }) {
-  const post = getPostBySlug(slug);
-
-  useEffect(() => {
-    const tables = document.querySelectorAll('.blog-rich table');
-    tables.forEach(table => {
-      if (table.closest('.blog-table-scroll')) return;
-      const parent = table.parentElement;
-      // Only use the parent as the scroll wrapper if it's a plain div
-      // (not blog-rich itself or any other semantic container)
-      const parentIsWrapper =
-        parent &&
-        parent.tagName === 'DIV' &&
-        !parent.classList.contains('blog-rich') &&
-        parent.children.length === 1;
-      if (parentIsWrapper) {
-        parent.classList.add('blog-table-scroll');
-        parent.removeAttribute('style');
-      } else {
-        const wrapper = document.createElement('div');
-        wrapper.className = 'blog-table-scroll';
-        parent.insertBefore(wrapper, table);
-        wrapper.appendChild(table);
-      }
-    });
-  }, [slug]);
-
-  if (!post) {
-    return (
-      <div className="min-h-screen flex items-center justify-center pt-20">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">Blog Post Not Found</h1>
-          <Link href="/explore" className="text-primary hover:underline">
-            Back to Blog
-          </Link>
-        </div>
-      </div>
-    );
-  }
-
-  const contentBlocks = post.contents || post.content || [];
+export default function BlogPostClient({ post, relatedPosts = [] }) {
+  const headings = getHeadings(post.body);
   const postImageAlt = post.imageAlt || post.heading || post.title || '';
-
-  const relatedPosts = blogPosts
-    .filter(p => p.slug !== slug)
-    .sort((a, b) => {
-      const currentCat = post.category || post.subtitle;
-      const aMatch = (a.category || a.subtitle) === currentCat ? 1 : 0;
-      const bMatch = (b.category || b.subtitle) === currentCat ? 1 : 0;
-      return bMatch - aMatch;
-    })
-    .slice(0, 3);
 
   return (
     <div className="w-full px-4 sm:px-6 lg:px-[8%] py-16 pt-32">
@@ -428,7 +256,7 @@ export default function BlogPostClient({ slug }) {
 
         <aside className="hidden xl:block w-72 shrink-0 sticky top-28 self-start">
           <BlogSidebar
-            blocks={contentBlocks}
+            headings={headings}
             title={post.heading || post.title || ''}
           />
         </aside>
@@ -471,14 +299,12 @@ export default function BlogPostClient({ slug }) {
           </div>
 
           <article>
-            {contentBlocks.map((block, index) => (
-              <ContentRenderer key={index} block={block} index={index} />
-            ))}
+            <PortableBody value={post.body} />
           </article>
 
           <div className="xl:hidden mt-10 pt-8 border-t border-gray-200 dark:border-gray-700">
             <BlogSidebar
-              blocks={contentBlocks}
+              headings={headings}
               title={post.heading || post.title || ''}
             />
           </div>
@@ -493,10 +319,11 @@ export default function BlogPostClient({ slug }) {
                     href={`/blog/${related.slug}`}
                     className="group flex flex-col bg-white dark:bg-darkHover rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 dark:border-gray-800"
                   >
-                    {related.image && (
+                    {(related.cardImage || related.image) && (
                       <div className="h-40 overflow-hidden">
                         <img
-                          src={related.image}
+                          src={related.cardImage || related.image}
+                          loading="lazy"
                           alt={related.imageAlt || related.heading || related.title || ''}
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                         />

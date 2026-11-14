@@ -1,12 +1,14 @@
-import { blogPosts } from './data/blog/index';
 import { siteUrl } from './data/site';
+import { getAllPosts } from '../sanity/lib/posts';
 
-function parseDate(dateStr) {
-  const d = new Date(dateStr);
+function parseDate(isoDate) {
+  const d = new Date(`${isoDate}T00:00:00Z`);
   return isNaN(d.getTime()) ? new Date('2026-01-01') : d;
 }
 
-export default function sitemap() {
+export default async function sitemap() {
+  const blogPosts = await getAllPosts();
+
   const staticRoutes = [
     { url: siteUrl,                 lastModified: new Date('2026-06-12') },
     { url: `${siteUrl}/about`,      lastModified: new Date('2026-06-12') },
@@ -19,7 +21,7 @@ export default function sitemap() {
 
   const blogRoutes = blogPosts.map((post) => ({
     url: `${siteUrl}/blog/${post.slug}`,
-    lastModified: parseDate(post.date),
+    lastModified: parseDate(post.isoDate),
   }));
 
   return [...staticRoutes, ...blogRoutes];

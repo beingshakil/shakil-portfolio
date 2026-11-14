@@ -1,9 +1,9 @@
-import { blogPosts } from '../data/blog/index';
 import { absoluteUrl } from '../data/site';
+import { getAllPosts } from '../../sanity/lib/posts';
 
 // llms.txt is generated instead of shipped as a static file in /public so its
 // links are built from the single site URL: a domain change updates them with
-// no manual edit, and new blog posts appear here on their own.
+// no manual edit, and new blog posts published in Sanity appear here on their own.
 
 const MAIN_PAGES = [
   { title: 'Home', path: '', summary: 'Portfolio overview covering services, expertise, and featured work' },
@@ -58,7 +58,7 @@ function linkLine(title, url, summary) {
   return summary ? `- [${title}](${url}): ${summary}` : `- [${title}](${url})`;
 }
 
-function blogSections() {
+function blogSections(blogPosts) {
   const listed = new Set(BLOG_SECTIONS.flatMap((section) => section.categories));
   const extraCategories = Array.from(
     new Set(blogPosts.map((post) => post.category).filter((category) => !listed.has(category)))
@@ -70,7 +70,7 @@ function blogSections() {
   ];
 }
 
-function buildLlmsTxt() {
+function buildLlmsTxt(blogPosts) {
   const lines = [
     '# Md Shakil Hossen',
     '',
@@ -85,7 +85,7 @@ function buildLlmsTxt() {
     '## Blog Posts',
   ];
 
-  for (const section of blogSections()) {
+  for (const section of blogSections(blogPosts)) {
     const posts = blogPosts.filter((post) => section.categories.includes(post.category));
     if (posts.length === 0) continue;
 
@@ -100,8 +100,9 @@ function buildLlmsTxt() {
 
 export const dynamic = 'force-static';
 
-export function GET() {
-  return new Response(buildLlmsTxt(), {
+export async function GET() {
+  const blogPosts = await getAllPosts();
+  return new Response(buildLlmsTxt(blogPosts), {
     headers: { 'Content-Type': 'text/plain; charset=utf-8' },
   });
 }

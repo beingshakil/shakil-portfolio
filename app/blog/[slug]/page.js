@@ -1,29 +1,30 @@
-import { getPostBySlug } from '../../data/blog/index';
+import { notFound } from 'next/navigation';
 import BlogPostClient from './BlogPostClient';
 import { siteUrl } from '../../data/site';
+import { getAllPosts, getPostBySlug, pickRelatedPosts } from '../../../sanity/lib/posts';
 
-function toISODate(dateStr) {
-  const d = new Date(dateStr);
-  return isNaN(d.getTime()) ? dateStr : d.toISOString().split('T')[0];
+// Pre-render every published post at build time. Posts published later are
+// rendered on their first visit (dynamicParams defaults to true).
+export async function generateStaticParams() {
+  const posts = await getAllPosts();
+  return posts.map((post) => ({ slug: post.slug }));
 }
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = await getPostBySlug(slug);
 
   if (!post) {
     return {
-      title: 'Post Not Found — Md Shakil Hossen',
+      title: 'Post Not Found | Md Shakil Hossen',
       description: 'The requested blog post could not be found.',
     };
   }
 
-  const title = post.metadata?.title || post.heading || post.title;
-  const description = post.metadata?.description || '';
+  const title = post.metadata.title;
+  const description = post.metadata.description;
   const postUrl = `${siteUrl}/blog/${post.slug}`;
-  const imageUrl = post.image ? `${siteUrl}${post.image}` : `${siteUrl}/og-image.jpg`;
-  const imageAlt = post.imageAlt || post.heading || post.title || '';
-  const publishedDate = toISODate(post.date);
+  const imageUrl = post.ogImage || `${siteUrl}/og-image.jpg`;
 
   return {
     title,
@@ -37,10 +38,10 @@ export async function generateMetadata({ params }) {
       title,
       description,
       siteName: 'Md Shakil Hossen — Portfolio',
-      images: [{ url: imageUrl, width: 1200, height: 630, alt: imageAlt }],
-      publishedTime: publishedDate,
-      authors: [post.author || 'Md Shakil Hossen'],
-      section: post.category || post.subtitle,
+      images: [{ url: imageUrl, width: 1200, height: 630, alt: post.imageAlt }],
+      publishedTime: post.isoDate,
+      authors: [post.author],
+      section: post.category,
     },
     twitter: {
       card: 'summary_large_image',
@@ -54,27 +55,24 @@ export async function generateMetadata({ params }) {
 
 export default async function BlogPostPage({ params }) {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const [post, allPosts] = await Promise.all([getPostBySlug(slug), getAllPosts()]);
 
   if (!post) {
-    return <BlogPostClient slug={slug} />;
+    notFound();
   }
 
+  const relatedPosts = pickRelatedPosts(post, allPosts);
   const postUrl = `${siteUrl}/blog/${post.slug}`;
-  const imageUrl = post.image ? `${siteUrl}${post.image}` : undefined;
-  const publishedDate = toISODate(post.date);
-  const title = post.metadata?.title || post.heading || post.title;
-  const description = post.metadata?.description || '';
 
   const blogPostingSchema = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
-    headline: title,
-    description,
-    ...(imageUrl && { image: imageUrl }),
+    headline: post.metadata.title,
+    description: post.metadata.description,
+    ...(post.ogImage && { image: post.ogImage }),
     author: {
       '@type': 'Person',
-      name: post.author || 'Md Shakil Hossen',
+      name: post.author,
       url: siteUrl,
     },
     publisher: {
@@ -83,18 +81,16 @@ export default async function BlogPostPage({ params }) {
       url: siteUrl,
       image: `${siteUrl}/og-image.jpg`,
     },
-    datePublished: publishedDate,
-    dateModified: publishedDate,
+    datePublished: post.isoDate,
+    dateModified: post.isoDate,
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': postUrl,
     },
     url: postUrl,
-    articleSection: post.category || post.subtitle,
+    articleSection: post.category,
     inLanguage: 'en-US',
-    ...(post.readingTime && {
-      timeRequired: `PT${post.readingTime.replace(/[^0-9]/g, '')}M`,
-    }),
+    timeRequired: `PT${post.readingMinutes}M`,
   };
 
   const breadcrumbSchema = {
@@ -103,7 +99,7 @@ export default async function BlogPostPage({ params }) {
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
       { '@type': 'ListItem', position: 2, name: 'Blog', item: `${siteUrl}/explore` },
-      { '@type': 'ListItem', position: 3, name: post.heading || post.title, item: postUrl },
+      { '@type': 'ListItem', position: 3, name: post.heading, item: postUrl },
     ],
   };
 
@@ -117,7 +113,7 @@ export default async function BlogPostPage({ params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <BlogPostClient slug={slug} />
+      <BlogPostClient post={post} relatedPosts={relatedPosts} />
     </>
   );
 }

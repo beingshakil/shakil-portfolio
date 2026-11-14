@@ -1,6 +1,6 @@
 import Blog from "../Components/Blog";
-import blogData from "../data/blog/index";
 import { siteUrl } from "../data/site";
+import { getBlogData } from "../../sanity/lib/posts";
 
 export const metadata = {
   title: 'Blog & Insights — Data, SEO & AI | Md Shakil Hossen',
@@ -25,7 +25,7 @@ export const metadata = {
   },
 };
 
-const blogListingSchema = {
+const buildListingSchema = (blogData) => ({
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
   '@id': `${siteUrl}/explore#webpage`,
@@ -53,14 +53,16 @@ const blogListingSchema = {
     })),
   },
   inLanguage: 'en-US',
-};
+});
 
-export default function ExplorePage() {
+export default async function ExplorePage() {
+  const blogData = await getBlogData();
+
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogListingSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(buildListingSchema(blogData)) }}
       />
       <div className="pt-20">
         <Blog content={blogData} />

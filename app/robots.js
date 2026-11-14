@@ -6,22 +6,27 @@ export default function robots() {
       {
         userAgent: '*',
         allow: '/',
+        disallow: ['/studio', '/api/'],
       },
       {
         userAgent: 'GPTBot',
         allow: '/',
+        disallow: ['/studio', '/api/'],
       },
       {
         userAgent: 'ClaudeBot',
         allow: '/',
+        disallow: ['/studio', '/api/'],
       },
       {
         userAgent: 'anthropic-ai',
         allow: '/',
+        disallow: ['/studio', '/api/'],
       },
       {
         userAgent: 'PerplexityBot',
         allow: '/',
+        disallow: ['/studio', '/api/'],
       },
     ],
     sitemap: `${siteUrl}/sitemap.xml`,

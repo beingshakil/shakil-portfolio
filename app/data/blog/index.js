@@ -1,16 +1,5 @@
-// Aggregator: imports every blog post JSON and exposes a unified API.
-// To add a new post: drop a JSON file under data/blog/{category}/ and import it here.
-import seoTraffic from "./seo/best-seo-tools.json";
-import seoGuide from "./seo/what-is-seo-and-how-does-it-work.json";
-import dataPandas from "./data-analysis/automating-data-workflows-with-python-pandas.json";
-import dataPowerbi from "./data-visualization/building-interactive-dashboards-with-power-bi.json";
-import extraCurriculars from "./life/extra-curriculars.json";
-import sylhetTour from "./life/sylhet-tour.json";
-import coxsBazarTour from "./life/coxs-bazar-tour.json";
-import aiAutomation from "./automation/what-is-ai-automation.json";
-import aiForSoftwareEngineers from "./automation/ai-for-software-engineers.json";
-import geminiVsChatgptVsClaude from "./automation/gemini-vs-chatgpt-vs-claude.json";
-
+// Blog UI text. The posts themselves live in Sanity (edit them at /studio)
+// and are loaded by sanity/lib/posts.js.
 export const blogMeta = {
   title: "Blog & Insights",
   subtitle: "Explore",
@@ -20,27 +9,3 @@ export const blogMeta = {
   backText: "Back to Blog",
   allLabel: "All",
 };
-
-export const blogPosts = [
-  geminiVsChatgptVsClaude,
-  aiForSoftwareEngineers,
-  aiAutomation,
-  seoGuide,
-  seoTraffic,
-  dataPandas,
-  dataPowerbi,
-  extraCurriculars,
-  sylhetTour,
-  coxsBazarTour,
-];
-
-export const blogCategories = Array.from(
-  new Set(blogPosts.map((p) => p.category))
-);
-
-export function getPostBySlug(slug) {
-  return blogPosts.find((p) => p.slug === slug) || null;
-}
-
-const blogData = { meta: blogMeta, posts: blogPosts, categories: blogCategories };
-export default blogData;

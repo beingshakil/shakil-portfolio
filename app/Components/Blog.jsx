@@ -64,11 +64,19 @@ const Blog = ({ content }) => {
             >
               {/* Blog image */}
               <div className="h-48 overflow-hidden">
-                <img
-                  src={post.image}
-                  alt={post.imageAlt || post.heading || post.title || ''}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
+                {post.cardImage || post.image ? (
+                  <img
+                    src={post.cardImage || post.image}
+                    alt={post.imageAlt || post.heading || post.title || ''}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                ) : (
+                  // No cover image uploaded yet: show a branded placeholder.
+                  <div className="w-full h-full flex items-center justify-center bg-primary/15 text-primary font-semibold">
+                    {post.category}
+                  </div>
+                )}
               </div>
 
               {/* Blog content */}
