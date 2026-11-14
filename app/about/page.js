@@ -84,7 +84,7 @@ export default function AboutPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageSchema) }}
       />
       <div className="pt-20">
-        <About content={content.about} />
+        <About content={content.about} imagePriority />
       </div>
     </>
   );

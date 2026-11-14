@@ -4,6 +4,7 @@ import content from './data/homepage.json';
 import { ThemeProvider } from './context/ThemeContext';
 import LayoutWrapper from './Components/LayoutWrapper';
 import { siteUrl } from './data/site';
+import { fontVariables } from './fonts';
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -145,7 +146,7 @@ export default function RootLayout({ children }) {
       </head>
       <body
         suppressHydrationWarning
-        className={`${plusJakartaSans.className} antialiased leading-8
+        className={`${plusJakartaSans.className} ${fontVariables} antialiased leading-8
          dark:bg-darkTheme dark:text-white`}
       >
         <script

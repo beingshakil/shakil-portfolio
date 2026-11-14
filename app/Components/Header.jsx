@@ -36,8 +36,8 @@ const Header = ({ content }) => {
       <div className="relative z-10 w-full h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl">
           {/* Profile image */}
-          <div className="mb-8 flex justify-center">
-            <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-secondary shadow-xl">
+          <div className="mb-7 flex justify-center">
+            <div className="relative w-28 h-28 rounded-full overflow-hidden border-2 border-secondary/80 shadow-xl">
               <Image
                 src={assets.profile_img}
                 alt={content.profileAlt}
@@ -49,29 +49,28 @@ const Header = ({ content }) => {
           </div>
 
           {/* Headline with typing effect */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 min-h-[1.2em]">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-white mb-6 min-h-[1.2em]">
             {displayText}
             {!isTypingDone && <span className="typing-cursor"></span>}
           </h1>
 
           {/* Subheadline */}
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-10 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-white/75 mb-10 max-w-2xl mx-auto leading-relaxed">
             {content.subtitle}
-            <span className="block mt-2 font-medium">{content.content}</span>
           </p>
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href={content.ctaPrimary.href}
-              className="px-8 py-4 bg-light text-dark font-semibold rounded-full shadow-lg hover:bg-secondary hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-dark"
+              className="px-8 py-3.5 rounded-full bg-secondary text-dark text-sm font-semibold hover:bg-light transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-dark"
             >
               {content.ctaPrimary.text}
             </Link>
 
             <Link
               href={content.ctaSecondary.href}
-              className="px-8 py-4 border-2 border-light text-light font-semibold rounded-full hover:bg-light hover:text-dark hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-dark"
+              className="px-8 py-3.5 rounded-full border border-white/40 text-white text-sm font-semibold hover:bg-white hover:text-dark transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-dark"
             >
               {content.ctaSecondary.text}
             </Link>
@@ -82,10 +81,10 @@ const Header = ({ content }) => {
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-0 right-0 flex justify-center z-20 animate-bounce pointer-events-none">
         <a
-          href="#about"
-          aria-label="Scroll to About section"
+          href="#focus"
+          aria-label="Scroll to the next section"
           onClick={(e) => {
-            const target = document.getElementById('about');
+            const target = document.getElementById('focus');
             if (target) {
               e.preventDefault();
               target.scrollIntoView({ behavior: 'smooth', block: 'start' });

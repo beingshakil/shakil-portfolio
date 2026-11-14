@@ -2,7 +2,6 @@ import user_image from './user-image.webp';
 import code_icon from './code-icon.svg';
 import project_icon from './project-icon.svg';
 import right_arrow_white from './right-arrow-white.svg';
-import mail_icon from './mail_icon.svg';
 import profile_img from './profile-img.webp';
 import web_icon from './code-icon.svg';
 import mobile_icon from './project-icon.svg';
@@ -14,7 +13,6 @@ export const assets = {
     code_icon,
     project_icon,
     right_arrow_white,
-    mail_icon,
     profile_img,
     web_icon,
     mobile_icon,

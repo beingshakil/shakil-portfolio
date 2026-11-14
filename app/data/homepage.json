@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Md Shakil Hossen — AI Automation and SEO Expert in Bangladesh",
+    "title": "Md Shakil Hossen | AI Automation and SEO Expert in Bangladesh",
     "description": "Professional AI Automation and SEO Expert in Bangladesh. Result-driven Data Analyst specializing in AI Agents, Technical SEO, and Data Visualization."
   },
   "navbar": {
@@ -22,20 +22,32 @@
   },
   "hero": {
     "title": "Step into the World of Data",
-    "subtitle": "Striving for Excellence!!",
-    "content": "I don't just follow trends. I set insights and strategy.",
+    "subtitle": "I don't just follow trends. I turn data into insights and strategy.",
     "profileAlt": "Md Shakil Hossen",
     "ctaPrimary": { "text": "Discover My Story", "href": "/about" },
     "ctaSecondary": { "text": "Get In Touch", "href": "/contact" },
     "backgroundImage": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
   },
+  "focus": {
+    "greeting": "This is Shakil.",
+    "statement": "I specialize in web intelligence, workflow automation, and SEO/AEO, turning raw web data into decisions and getting brands found on Google and in *AI answers.*",
+    "tags": [
+      { "label": "Web Intelligence", "icon": "chart" },
+      { "label": "Workflow Automation", "icon": "sparkles" },
+      { "label": "SEO / AEO", "icon": "search" },
+      { "label": "Web Scraping", "icon": "code" },
+      { "label": "Prompt Engineering", "icon": "chat" },
+      { "label": "Custom Web Tools", "icon": "terminal" }
+    ]
+  },
   "about": {
+    "eyebrow": "About me",
+    "heading": "A problem solver *at heart*",
     "title": "Who I AM",
     "subtitle": "Introduction",
     "content": [
-      "I am an experienced **Web Intelligence and SEO Expert** specializing in workflow automation, prompt engineering, web scraping, and the development of custom web tools. I focus on transforming complex web data and repetitive manual processes into efficient, automated workflows that save time, reduce workload, and improve productivity.",
-      "Throughout my career, I have worked on solutions that combine **web intelligence, AI-powered automation, data extraction, and SEO** to streamline business processes and turn raw information into actionable insights. My expertise includes automating repetitive tasks, building web-based tools, designing intelligent workflows, and leveraging AI and prompt engineering to improve operational efficiency.",
-      "My mission is to bridge the gap between **technology, data, and business operations** by creating practical automation solutions that eliminate unnecessary manual work and help organizations operate more efficiently. I continuously explore new technologies and AI-driven approaches to build smarter workflows, scalable web tools, and solutions that create measurable business impact."
+      "I'm a **Web Intelligence and SEO Specialist** who turns complex web data and repetitive manual work into efficient, automated workflows. My work spans workflow automation, prompt engineering, web scraping, and custom web tools, all built to save time and boost productivity.",
+      "I combine **AI-powered automation, data extraction, and SEO** to streamline business processes and turn raw information into actionable insights. My goal is simple: bridge the gap between **technology, data, and business operations** with practical solutions that cut busywork and create measurable impact."
     ],
     "storyTitle": "My Story & Mission",
     "ctaText": "Learn More",
@@ -56,11 +68,13 @@
     "toolsSectionTitle": "Tools I Use"
   },
   "experience": {
+    "eyebrow": "Experience",
+    "heading": "Where I've been *building*",
     "title": "Experiences",
     "subtitle": "My Journey",
     "professional": [
       {
-        "title": "SEO & AI Automation",
+        "title": "SEO/AEO Executive & Web Intelligence",
         "duration": "May 2026 – Present",
         "company": "Musemind",
         "companyLink": "https://musemind.agency",
@@ -72,7 +86,7 @@
           "Used AI tools to build content and internal linking strategies that helped improve search rankings and topic coverage.",
           "Connected third-party APIs and AI services into existing workflows to automate repetitive tasks without breaking current processes.",
           "Turned raw data from multiple sources into clear insights that helped leadership make better decisions on content and strategy.",
-          "Applied prompt engineering techniques to improve AI outputs for SEO, content, and data tasks — saving time and reducing back-and-forth."
+          "Applied prompt engineering techniques to improve AI outputs for SEO, content, and data tasks, saving time and reducing back-and-forth."
         ],
         "side": "right"
       },
@@ -108,9 +122,11 @@
     ]
   },
   "services": {
+    "eyebrow": "Services",
+    "heading": "What I can *do for you*",
     "title": "Services",
     "subtitle": "What I Offer",
-    "content": "I offer a range of specialized services designed to transform your data into a competitive advantage and elevate your digital presence.",
+    "content": "Focused services that turn your data, workflows, and website into a real competitive advantage.",
     "cards": [
       {
         "iconKey": "ui_icon",
@@ -164,21 +180,71 @@
     "readMoreText": "Learn More",
     "viewAllText": "View All Services"
   },
-  "callToAction": {
-    "title": "Ready to Transform Your Data Into Actionable Insights?",
-    "content": "Let's collaborate to turn your data challenges into opportunities. Get in touch today to discuss how my expertise in SEO and Data Analysis can drive your business forward.",
-    "buttonText": "Get In Touch",
-    "buttonHref": "/contact"
+  "featuredWork": {
+    "eyebrow": "Featured work",
+    "heading": "Projects that show what I do *best*",
+    "actionText": "View all projects"
+  },
+  "process": {
+    "eyebrow": "Working process",
+    "heading": "Here's how I take every project from *first call to real results*",
+    "description": "Five clear steps, weekly updates, and no surprises along the way.",
+    "steps": [
+      {
+        "title": "Discovery call",
+        "icon": "phone",
+        "text": "A free 30 minute call to understand your business, your goals, and where time or traffic is being lost."
+      },
+      {
+        "title": "Audit & strategy",
+        "icon": "map",
+        "text": "I audit your site, data, or workflow, then map a clear plan with priorities, a timeline, and the metrics we will track."
+      },
+      {
+        "title": "Build & automate",
+        "icon": "code",
+        "text": "After final design approval, I handle development with clean, responsive coding, ensuring your site looks and works flawlessly everywhere."
+      },
+      {
+        "title": "Launch & measure",
+        "icon": "trend",
+        "text": "We go live, compare results against the plan, and fine-tune based on real data instead of guesses."
+      },
+      {
+        "title": "Ongoing support",
+        "icon": "chat",
+        "text": "After launch I stay on hand for fixes, improvements, and new ideas as your business grows."
+      }
+    ]
+  },
+  "blogSection": {
+    "eyebrow": "Blog",
+    "heading": "Insights from *real projects*",
+    "description": "Guides and notes on AI automation, SEO, and data, written from hands-on work.",
+    "readMoreText": "Read more",
+    "actionText": "All articles"
   },
   "contact": {
+    "eyebrow": "Contact",
+    "heading": "Let's build something that *works*",
     "title": "Connect with Me",
-    "content": "I'd Love to hear from you! If you have any question or feedback, please use the form below.",
-    "namePlaceholder": "Enter your name",
-    "emailPlaceholder": "Enter your email",
-    "messagePlaceholder": "Enter your message",
-    "submitText": "Submit now",
-    "sendingText": "Sending....",
-    "successText": "Form Submitted Successfully",
+    "content": "Have a project, a question, or just an idea? Send me a message or book a free 30 minute call.",
+    "emailLabel": "Email",
+    "email": "being.shakill@gmail.com",
+    "locationLabel": "Based in",
+    "location": "Dhaka, Bangladesh",
+    "bookCallText": "Book a free call",
+    "bookCallHref": "https://calendly.com/being-shakill/30min",
+    "formTitle": "Send a message",
+    "nameLabel": "Your name",
+    "emailFieldLabel": "Your email",
+    "messageLabel": "Your message",
+    "namePlaceholder": "Jane Doe",
+    "emailPlaceholder": "jane@company.com",
+    "messagePlaceholder": "Tell me a little about your project...",
+    "submitText": "Send message",
+    "sendingText": "Sending...",
+    "successText": "Thanks! Your message is on its way. I'll reply soon.",
     "web3formsKey": "af58504b-24af-40ac-afb8-ae46f9bc2a6f"
   },
   "footer": {
@@ -188,6 +254,23 @@
     "phone": "+880 1755780537",
     "location": "Rayerbag, Dhaka, Bangladesh",
     "contactInfoTitle": "Contact Info",
+    "quickLinksTitle": "Quick Links",
+    "quickLinks": [
+      { "label": "Home", "href": "/" },
+      { "label": "About Me", "href": "/about" },
+      { "label": "My Work", "href": "/work" },
+      { "label": "Services", "href": "/services" }
+    ],
+    "resourcesTitle": "Resources",
+    "resources": [
+      { "label": "Blog", "href": "/explore" },
+      { "label": "Experience", "href": "/experience" },
+      { "label": "Contact", "href": "/contact" }
+    ],
+    "pitch": "Need workflows that **run themselves** or pages that **rank and convert**? I combine AI automation, technical SEO, and data to help founders and teams grow without adding busywork.",
+    "ctaText": "Start a project",
+    "ctaHref": "/contact",
+    "bottomLinkText": "Start a project",
     "followMeTitle": "Follow Me",
     "socialLinks": [
       { "platform": "linkedin", "url": "https://www.linkedin.com/in/md-shakil-hossen/", "label": "LinkedIn" },

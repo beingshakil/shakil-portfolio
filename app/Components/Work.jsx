@@ -1,12 +1,12 @@
 "use client"
 import { useMemo, useState } from "react";
-import { useScrollReveal, useScrollRevealMultiple } from '../hooks/useScrollReveal';
+import { useScrollRevealMultiple } from '../hooks/useScrollReveal';
 import CategoryFilter from './CategoryFilter';
+import SectionHeading from './SectionHeading';
 
 const ITEMS_PER_PAGE = 6;
 
 const Work = ({ content }) => {
-  const headerRef = useScrollReveal();
 
   const allCards = content.cards || [];
   const categories = content.categories || Array.from(new Set(allCards.map(c => c.category || c.badge)));
@@ -30,18 +30,14 @@ const Work = ({ content }) => {
   const setCardRef = useScrollRevealMultiple(currentCards.length);
 
   return (
-    <div id="work" className="w-full px-4 sm:px-6 lg:px-[8%] py-16 scroll-mt-20 bg-light dark:bg-dark">
+    <div id="work" className="w-full px-4 sm:px-6 lg:px-[8%] py-20 md:py-28 scroll-mt-20 bg-white dark:bg-darkTheme">
       <div className="max-w-7xl mx-auto">
         {/* Section header */}
-        <div ref={headerRef} className="text-center mb-10">
-          <h4 className="text-center mb-2 text-lg font-ovo text-primary">{content.subtitle}</h4>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">{content.title}</h2>
-          <div className="w-20 h-1 bg-primary mx-auto"></div>
-
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-6">
-            {content.content}
-          </p>
-        </div>
+        <SectionHeading
+          eyebrow={content.eyebrow || content.subtitle}
+          heading={content.heading || content.title}
+          description={content.content}
+        />
 
         <CategoryFilter
           categories={categories}

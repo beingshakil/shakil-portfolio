@@ -10,10 +10,12 @@ import deepLearning from "./neural-networks/deep-learning.json";
 import dataVisualization from "./data-visualization/data-visualization.json";
 
 export const workMeta = {
+  eyebrow: "My portfolio",
+  heading: "Work I'm *proud of*",
   title: "My Latest Work",
   subtitle: "My Portfolio",
   content:
-    "Explore my recent projects showcasing expertise in web development, SEO, and data analysis. Each project reflects my commitment to quality and innovation.",
+    "Recent projects across web development, SEO, and data analysis. Filter by type to find the work closest to what you need.",
   showMoreText: "Show More Projects",
   viewProjectText: "View Project",
   allLabel: "All",

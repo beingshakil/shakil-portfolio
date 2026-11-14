@@ -11,8 +11,9 @@
   --color-light: #F0EBE3;
 }
 
-/* Custom styles */
-* {
+/* Custom styles. Set on body (not *) so elements inherit it and the
+   display font classes (.font-eyebrow, .font-display-*) reach their children. */
+body {
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
@@ -227,3 +228,51 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
+
+/* Section design system (Components/SectionHeading.jsx and friends).
+   Accent: deep blue-grey on light backgrounds, warm tan on dark ones.
+   Font variables come from app/fonts.js. */
+:root {
+  --color-accent: #4A6470;
+}
+.dark {
+  --color-accent: #C8B99A;
+}
+.font-eyebrow {
+  font-family: var(--font-eyebrow), ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+.font-display-serif {
+  font-family: var(--font-display-serif), Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+}
+@keyframes focusTagFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.focus-tag-float {
+  animation: focusTagFloat 7s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .focus-tag-float { animation: none; }
+}
+
+/* Working process phone mockup: a dot travelling down the automation pipeline */
+@keyframes processFlow {
+  0% { top: 1.25rem; opacity: 0; }
+  12% { opacity: 1; }
+  88% { opacity: 1; }
+  100% { top: calc(100% - 1.25rem); opacity: 0; }
+}
+.process-flow-dot {
+  animation: processFlow 2.6s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .process-flow-dot { animation: none; opacity: 0; }
+}
+
+/* Footer outlined name (Components/Footer.jsx) */
+.font-display-condensed {
+  font-family: var(--font-display-condensed), Impact, 'Arial Narrow', sans-serif;
+  font-weight: 400;
+}

@@ -1,11 +1,12 @@
 import Header from "./Components/Header";
+import FocusStatement from "./Components/FocusStatement";
 import About from "./Components/About";
 import Experience from "./Components/Experience";
 import Services from "./Components/Services";
-import StickyProjects from "./Components/StickyProjects";
+import FeaturedProjects from "./Components/FeaturedProjects";
 import Contact from "./Components/Contact";
-import Blog from "./Components/Blog";
-import CallToAction from "./Components/CallToAction";
+import HomeBlog from "./Components/HomeBlog";
+import WorkProcess from "./Components/WorkProcess";
 import content from "./data/homepage.json";
 import { featuredProjects } from "./data/work";
 import { siteUrl } from "./data/site";
@@ -88,12 +89,13 @@ export default async function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalServiceSchema) }}
       />
       <Header content={content.hero} />
+      <FocusStatement content={content.focus} />
       <About content={content.about} />
-      <Experience content={content.experience} hideTabs={true} />
       <Services content={content.services} />
-      <StickyProjects projects={featuredProjects} exploreHref="/work" />
-      <Blog content={blogData} />
-      <CallToAction content={content.callToAction} />
+      <FeaturedProjects projects={featuredProjects} exploreHref="/work" heading={content.featuredWork} />
+      <Experience content={content.experience} hideTabs={true} />
+      <WorkProcess content={content.process} />
+      <HomeBlog content={content.blogSection} posts={blogData.posts} />
       <Contact content={content.contact} />
     </>
   );

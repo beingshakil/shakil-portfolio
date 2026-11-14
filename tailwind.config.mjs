@@ -28,6 +28,12 @@ export default {
         lightHover: '#e6dfd5',
         darkHover: '#243d50',
         darkTheme: '#1A3040',
+        // Eyebrow labels and small accents. Value lives in globals.css
+        // (--color-accent): deep blue-grey on light, warm tan on dark.
+        accent: 'var(--color-accent)',
+        // Alternate section background (soft warm paper) and deep navy surfaces.
+        paper: '#F7F4EF',
+        deep: '#13212E',
       },
       fontFamily: {
         outfit: ["Plus Jakarta Sans", "sans-serif"],

@@ -12,7 +12,7 @@ const CategoryFilter = ({ categories, activeCategory, onChange, label = 'Filter 
   return (
     <div className="mb-12">
       {/* Mobile dropdown */}
-      <div className="md:hidden flex justify-center">
+      <div className="md:hidden flex">
         <label htmlFor="category-filter" className="sr-only">{label}</label>
         <div className="relative w-full max-w-xs">
           <select
@@ -20,7 +20,7 @@ const CategoryFilter = ({ categories, activeCategory, onChange, label = 'Filter 
             value={activeCategory}
             onChange={(e) => onChange(e.target.value)}
             aria-label={label}
-            className="w-full appearance-none px-5 py-3 pr-10 rounded-full text-sm font-semibold border border-primary/40 bg-white dark:bg-darkHover text-gray-800 dark:text-gray-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
+            className="w-full appearance-none px-5 py-3 pr-10 rounded-full text-sm font-semibold border border-gray-300 bg-white dark:bg-white/[0.04] dark:border-white/15 text-dark dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-primary"
           >
             {options.map((cat) => (
               <option key={cat} value={cat}>{cat}</option>
@@ -37,7 +37,7 @@ const CategoryFilter = ({ categories, activeCategory, onChange, label = 'Filter 
       </div>
 
       {/* Desktop pills */}
-      <div className="hidden md:flex flex-wrap items-center justify-center gap-4">
+      <div className="hidden md:flex flex-wrap items-center gap-2">
         {options.map((cat) => {
           const isActive = activeCategory === cat;
           return (
@@ -45,15 +45,15 @@ const CategoryFilter = ({ categories, activeCategory, onChange, label = 'Filter 
               key={cat}
               onClick={() => onChange(cat)}
               aria-pressed={isActive}
-              className={`flex items-center gap-2.5 px-6 py-3 rounded-full text-sm font-bold transition-all duration-300 focus:outline-none ${
+              className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold border transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
                 isActive
-                  ? 'bg-primary text-white shadow-[0_4px_14px_0_rgba(0,118,255,0.39)]'
-                  : 'bg-white dark:bg-darkHover text-gray-700 dark:text-gray-300 border border-gray-100 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-dark/60 hover:shadow-md'
+                  ? 'bg-dark border-dark text-white dark:bg-secondary dark:border-secondary dark:text-dark'
+                  : 'bg-white border-gray-200 text-gray-700 hover:border-dark hover:text-dark dark:bg-white/[0.04] dark:border-white/15 dark:text-gray-300 dark:hover:border-white dark:hover:text-white'
               }`}
             >
               {/* Category Icons */}
               {cat === 'All' ? null : (
-                <svg className={`w-4 h-4 ${isActive ? 'text-white' : 'text-primary'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className={`w-4 h-4 ${isActive ? 'text-current' : 'text-primary dark:text-secondary'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   {cat.toLowerCase().includes('web') ? (
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                   ) : cat.toLowerCase().includes('search') || cat.toLowerCase().includes('seo') ? (

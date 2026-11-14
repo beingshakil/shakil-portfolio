@@ -1,126 +1,120 @@
 "use client"
 import { useState, useEffect } from 'react';
-import { useScrollReveal, useScrollRevealMultiple } from '../hooks/useScrollReveal';
+import SectionHeading, { Section } from './SectionHeading';
 
 const INITIAL_BULLETS = 3;
 
-const Experience = ({ content, hideTabs }) => {
-  const headerRef = useScrollReveal();
-  const [activeTab, setActiveTab] = useState('professional');
-  
-  useEffect(() => {
-    // Read initial hash
-    if (typeof window !== 'undefined') {
-      const hash = window.location.hash;
-      if (hash === '#extra-curricular') setActiveTab('extraCurricular');
-      else if (hash === '#professional') setActiveTab('professional');
-    }
+const TABS = [
+  { key: 'professional', label: 'Professional' },
+  { key: 'extraCurricular', label: 'Extra Curricular' },
+];
 
-    const handleHashChange = () => {
+const Experience = ({ content, hideTabs }) => {
+  const [activeTab, setActiveTab] = useState('professional');
+  const [expandedCards, setExpandedCards] = useState({});
+
+  useEffect(() => {
+    const syncFromHash = () => {
       const hash = window.location.hash;
       if (hash === '#extra-curricular') setActiveTab('extraCurricular');
       else if (hash === '#professional') setActiveTab('professional');
     };
-    
     const handleTabChange = (e) => {
       if (e.detail) setActiveTab(e.detail);
     };
 
-    window.addEventListener('hashchange', handleHashChange);
+    syncFromHash();
+    window.addEventListener('hashchange', syncFromHash);
     window.addEventListener('setExperienceTab', handleTabChange);
     return () => {
       window.removeEventListener('setExperienceTab', handleTabChange);
-      window.removeEventListener('hashchange', handleHashChange);
+      window.removeEventListener('hashchange', syncFromHash);
     };
   }, []);
 
-  const currentCards = content[activeTab] || [];
-  const setEntryRef = useScrollRevealMultiple(currentCards.length);
-  const [expandedCards, setExpandedCards] = useState({});
+  // Collapse any expanded entries when switching tabs.
+  useEffect(() => setExpandedCards({}), [activeTab]);
 
-  const toggleCard = (index) => {
-    setExpandedCards(prev => ({ ...prev, [index]: !prev[index] }));
-  };
+  const currentCards = content[activeTab] || [];
+  const toggleCard = (index) => setExpandedCards((prev) => ({ ...prev, [index]: !prev[index] }));
 
   return (
-    <div id='experience' className='w-full px-4 sm:px-6 lg:px-[8%] py-16 scroll-mt-20 bg-light dark:bg-dark'>
-      <div className="max-w-7xl mx-auto">
-        {/* Section header */}
-        <div ref={headerRef} className="text-center mb-10">
-          <h4 className='mb-2 text-lg font-ovo text-primary'>{content.subtitle}</h4>
-          <h2 className='text-4xl md:text-5xl font-bold'>{content.title}</h2>
-          <div className="w-20 h-1 bg-primary mx-auto mt-4"></div>
+    <Section id="experience" tone="white">
+      <SectionHeading eyebrow={content.eyebrow} heading={content.heading} />
+
+      {!hideTabs && (
+        <div className="mb-10 inline-flex rounded-full border border-gray-200 bg-paper p-1 dark:border-white/10 dark:bg-white/[0.04]" role="tablist">
+          {TABS.map((tab) => (
+            <button
+              key={tab.key}
+              role="tab"
+              aria-selected={activeTab === tab.key}
+              onClick={() => setActiveTab(tab.key)}
+              className={`rounded-full px-5 py-2 text-sm font-semibold transition-colors duration-300 ${
+                activeTab === tab.key
+                  ? 'bg-dark text-white dark:bg-secondary dark:text-dark'
+                  : 'text-gray-600 hover:text-dark dark:text-gray-300 dark:hover:text-white'
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
         </div>
+      )}
 
-        {/* Tabs */}
-        {!hideTabs && (
-          <div className="flex justify-center mb-12">
-            <div className="inline-flex bg-white dark:bg-darkHover rounded-full p-1 shadow-md border border-gray-200 dark:border-gray-700">
-              <button
-                onClick={() => setActiveTab('professional')}
-                className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${activeTab === 'professional' ? 'bg-primary text-white shadow-md' : 'text-gray-600 dark:text-gray-300 hover:text-primary'}`}
-              >
-                Professional
-              </button>
-              <button
-                onClick={() => setActiveTab('extraCurricular')}
-                className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${activeTab === 'extraCurricular' ? 'bg-primary text-white shadow-md' : 'text-gray-600 dark:text-gray-300 hover:text-primary'}`}
-              >
-                Extra Curricular
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* Experience timeline */}
-        <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-0 lg:left-1/2 top-0 bottom-0 w-0.5 bg-secondary dark:bg-gray-700 transform lg:translate-x-1"></div>
-
-          {/* Experience items */}
-          <div className="space-y-12">
-            {currentCards.map((entry, index) => (
-              <div key={index} ref={setEntryRef(index)} className="relative pl-8 lg:pl-0 animate-fade-in">
-                <div className="lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2 w-6 h-6 rounded-full bg-primary border-4 border-white dark:border-dark z-10 mt-1 lg:mt-0"></div>
-                <div className={`${entry.side === 'right' ? 'lg:ml-[55%]' : 'lg:mr-[55%] lg:ml-0'} bg-white dark:bg-darkHover rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700`}>
-                  <div className="flex flex-col lg:flex-row lg:items-center justify-between mb-4">
-                    <h3 className="text-xl font-bold text-gray-800 dark:text-white">{entry.title}</h3>
-                    <span className="inline-block px-3 py-1 text-sm font-semibold bg-secondary/20 dark:bg-primaryDark/30 text-primaryDark dark:text-secondary rounded-full mt-2 lg:mt-0">
-                      {entry.duration}
-                    </span>
-                  </div>
-                  <h4 className="text-lg font-semibold text-primary mb-4">
-                    {entry.companyLink ? (
-                      <a href={entry.companyLink} target="_blank" rel="noopener noreferrer" className="hover:underline">
-                        {entry.company}
-                      </a>
-                    ) : (
-                      entry.company
-                    )}
-                  </h4>
-                  <ul className="space-y-2 text-gray-600 dark:text-gray-300">
-                    {(expandedCards[index] ? entry.content : entry.content.slice(0, INITIAL_BULLETS)).map((bullet, i) => (
-                      <li key={i} className="flex items-start">
-                        <span className="inline-block w-2 h-2 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
-                        <span className="text-justify">{bullet}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  {entry.content.length > INITIAL_BULLETS && (
-                    <button
-                      onClick={() => toggleCard(index)}
-                      className="mt-3 text-sm font-medium text-primary hover:text-primaryDark transition-colors duration-300"
-                    >
-                      {expandedCards[index] ? 'Show Less' : `Show More (${entry.content.length - INITIAL_BULLETS} more)`}
-                    </button>
-                  )}
-                </div>
+      <ol className="border-t border-gray-200 dark:border-white/10">
+        {currentCards.map((entry, index) => {
+          const expanded = expandedCards[index];
+          const bullets = expanded ? entry.content : entry.content.slice(0, INITIAL_BULLETS);
+          return (
+            <li
+              key={`${entry.title}-${entry.company}`}
+              className="grid gap-4 border-b border-gray-200 py-10 dark:border-white/10 lg:grid-cols-12 lg:gap-8"
+            >
+              <div className="lg:col-span-3">
+                <p className="font-eyebrow text-xs font-bold uppercase tracking-[0.2em] text-accent">
+                  {entry.duration}
+                </p>
               </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
+
+              <div className="lg:col-span-9">
+                <h3 className="text-xl md:text-2xl font-semibold tracking-tight text-dark dark:text-white">
+                  {entry.title}
+                </h3>
+                <p className="mt-1 font-medium text-primary dark:text-secondary">
+                  {entry.companyLink ? (
+                    <a href={entry.companyLink} target="_blank" rel="noopener noreferrer" className="hover:underline underline-offset-4">
+                      {entry.company} <span aria-hidden="true">↗</span>
+                    </a>
+                  ) : (
+                    entry.company
+                  )}
+                </p>
+
+                <ul className="mt-5 space-y-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+                  {bullets.map((bullet, i) => (
+                    <li key={i} className="flex gap-3">
+                      <span className="mt-[0.6rem] h-1.5 w-1.5 shrink-0 bg-secondary" aria-hidden="true" />
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {entry.content.length > INITIAL_BULLETS && (
+                  <button
+                    onClick={() => toggleCard(index)}
+                    className="mt-5 inline-flex items-center gap-2 border-b border-dark/20 pb-1 text-sm font-semibold text-dark transition-colors hover:border-dark dark:border-white/30 dark:text-white dark:hover:border-white"
+                    aria-expanded={!!expanded}
+                  >
+                    {expanded ? 'Show less' : `Show ${entry.content.length - INITIAL_BULLETS} more`}
+                  </button>
+                )}
+              </div>
+            </li>
+          );
+        })}
+      </ol>
+    </Section>
   );
 };
 

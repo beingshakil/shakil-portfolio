@@ -14,6 +14,8 @@ const Navbar = ({isDarkMode, setIsDarkMode, content}) => {
   const [isScroll, setIsScroll] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isExperienceOpen, setIsExperienceOpen] = useState(false);
+  // Transparent bar over the dark homepage hero: switch to light text.
+  const onHero = pathname === '/' && !isScroll;
 
   const openMenu = () => setIsMenuOpen(true);
   const closeMenu = () => setIsMenuOpen(false);
@@ -84,11 +86,11 @@ const Navbar = ({isDarkMode, setIsDarkMode, content}) => {
 
         {/* Brand Logo - Left side */}
         <Link href="/" className="flex items-center">
-          <span className="text-xl font-bold md:text-2xl bg-gradient-to-r from-primaryDark to-primary bg-clip-text text-transparent">{content.brandName}</span>
+          <span className={`whitespace-nowrap text-xl font-bold md:text-2xl transition-colors duration-300 ${onHero ? 'text-white' : 'text-dark dark:text-white'}`}>{content.brandName}</span>
         </Link>
 
         {/* Desktop Navigation Links - Center */}
-        <ul className="hidden lg:flex items-center gap-8 xl:gap-10">
+        <ul className="hidden xl:flex items-center gap-6 2xl:gap-10 whitespace-nowrap">
           {content.navLinks.map((link, index) => {
             const active = isActiveLink(pathname, link.href);
             
@@ -96,10 +98,10 @@ const Navbar = ({isDarkMode, setIsDarkMode, content}) => {
               return (
                 <li key={index} className="relative group">
                   <Link href={link.href} className={`font-medium transition-colors duration-300 relative block py-2 ${
-                    active ? 'text-primary' : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary'
+                    onHero ? (active ? 'text-white' : 'text-white/75 hover:text-white') : active ? 'text-primary' : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary'
                   }`}>
                     {link.label}
-                    <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 w-0 group-hover:w-full`}></span>
+                    <span className={`absolute -bottom-1 left-0 h-0.5 ${onHero ? 'bg-secondary' : 'bg-primary'} transition-all duration-300 w-0 group-hover:w-full`}></span>
                   </Link>
                   <div className="absolute left-0 mt-0 w-48 bg-white dark:bg-dark border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 flex flex-col z-50 overflow-hidden">
                     <Link href="/experience#professional" onClick={() => window.dispatchEvent(new CustomEvent('setExperienceTab', { detail: 'professional' }))} className="px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-darkHover text-gray-700 dark:text-gray-300 transition-colors">Professional</Link>
@@ -115,14 +117,16 @@ const Navbar = ({isDarkMode, setIsDarkMode, content}) => {
                   href={link.href}
                   aria-current={active ? 'page' : undefined}
                   className={`font-medium transition-colors duration-300 relative group ${
-                    active
-                      ? 'text-primary'
-                      : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary'
+                    onHero
+                      ? active ? 'text-white' : 'text-white/75 hover:text-white'
+                      : active
+                        ? 'text-primary'
+                        : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary'
                   }`}
                 >
                   {link.label}
                   <span
-                    className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                    className={`absolute -bottom-1 left-0 h-0.5 ${onHero ? 'bg-secondary' : 'bg-primary'} transition-all duration-300 ${
                       active ? 'w-full' : 'w-0 group-hover:w-full'
                     }`}
                   ></span>
@@ -137,7 +141,7 @@ const Navbar = ({isDarkMode, setIsDarkMode, content}) => {
           {/* Dark/Light Mode Toggle */}
           <button
             onClick={() => setIsDarkMode(prev => !prev)}
-            className="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-darkHover transition-colors duration-300"
+            className={`p-2 rounded-lg transition-colors duration-300 ${onHero ? 'hover:bg-white/10' : 'hover:bg-gray-200 dark:hover:bg-darkHover'}`}
             aria-label="Toggle dark mode"
           >
             {isDarkMode ? (
@@ -145,7 +149,7 @@ const Navbar = ({isDarkMode, setIsDarkMode, content}) => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
               </svg>
             ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-700 dark:text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" className={`h-6 w-6 ${onHero ? 'text-white' : 'text-gray-700 dark:text-gray-300'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
               </svg>
             )}
@@ -155,18 +159,18 @@ const Navbar = ({isDarkMode, setIsDarkMode, content}) => {
           <button
             type="button"
             onClick={openCalendly}
-            className="hidden lg:inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-primaryDark to-primary text-white font-medium rounded-lg hover:from-primaryDark-dark hover:to-primary-dark transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+            className={`hidden xl:inline-flex whitespace-nowrap items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold transition-colors duration-300 ${onHero ? 'bg-secondary text-dark hover:bg-light' : 'bg-dark text-white hover:bg-primaryDark dark:bg-secondary dark:text-dark dark:hover:bg-light'}`}
           >
             {content.ctaButtonText}
           </button>
 
           {/* Mobile Menu Button */}
           <button
-            className="block lg:hidden p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-darkHover transition-colors duration-300"
+            className={`block xl:hidden p-2 rounded-lg transition-colors duration-300 ${onHero ? 'hover:bg-white/10' : 'hover:bg-gray-200 dark:hover:bg-darkHover'}`}
             onClick={openMenu}
             aria-label="Open menu"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-700 dark:text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className={`h-6 w-6 ${onHero ? 'text-white' : 'text-gray-700 dark:text-gray-300'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
@@ -175,7 +179,7 @@ const Navbar = ({isDarkMode, setIsDarkMode, content}) => {
 
       {/* Mobile Menu Overlay */}
       <div
-          className={`fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+          className={`fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm transition-opacity duration-300 xl:hidden ${isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
           onClick={closeMenu}
         >
           {/* Mobile Menu Panel */}
@@ -184,7 +188,7 @@ const Navbar = ({isDarkMode, setIsDarkMode, content}) => {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex justify-between items-center mb-8">
-              <span className="text-xl font-bold bg-gradient-to-r from-primaryDark to-primary bg-clip-text text-transparent">{content.mobileMenuTitle}</span>
+              <span className="font-eyebrow text-xs font-bold uppercase tracking-[0.28em] text-accent">{content.mobileMenuTitle}</span>
               <button
                 className="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-darkHover transition-colors duration-300"
                 onClick={closeMenu}
@@ -255,7 +259,7 @@ const Navbar = ({isDarkMode, setIsDarkMode, content}) => {
                   closeMenu();
                   openCalendly();
                 }}
-                className="flex items-center justify-center gap-2 w-full mb-4 px-5 py-3 bg-gradient-to-r from-primaryDark to-primary text-white font-medium rounded-lg shadow-md transition-all duration-300"
+                className="flex items-center justify-center gap-2 w-full mb-4 px-5 py-3 rounded-full bg-dark text-white text-sm font-semibold hover:bg-primaryDark dark:bg-secondary dark:text-dark transition-colors duration-300"
               >
                 {content.ctaButtonText}
               </button>

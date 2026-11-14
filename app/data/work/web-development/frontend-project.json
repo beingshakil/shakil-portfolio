@@ -1,14 +1,14 @@
 {
   "metadata": {
-    "title": "RS Automart — Full-Stack E-Commerce Platform",
-    "description": "A full-stack automotive e-commerce platform — React frontend, backend APIs, and database layer — delivering a fast, seamless shopping experience."
+    "title": "RS Automart | Full-Stack E-Commerce Platform",
+    "description": "A full-stack automotive e-commerce platform with a React frontend, backend APIs, and database layer, delivering a fast, seamless shopping experience."
   },
   "title": "RS Automart",
   "category": "Web Development",
   "badge": "Web Development",
   "featuredLabel": "Full Stack Development",
   "features": ["Frontend Development", "Backend Development", "Database & APIs"],
-  "content": "Built RS Automart as a full-stack automotive e-commerce platform — developing the React frontend, backend APIs, and database layer end to end. Implemented product catalog management, advanced search & filtering, shopping cart, and a streamlined checkout flow, with a focus on speed, accessibility, and conversion.",
+  "content": "Built RS Automart as a full-stack automotive e-commerce platform, developing the React frontend, backend APIs, and database layer end to end. Implemented product catalog management, advanced search & filtering, shopping cart, and a streamlined checkout flow, with a focus on speed, accessibility, and conversion.",
   "bgImage": "/my-work/web-development/rs-automart.webp",
   "link": "https://rsautomart.shop/",
   "slug": "rs-automart"
