@@ -159,7 +159,7 @@ const Navbar = ({isDarkMode, setIsDarkMode, content}) => {
           <button
             type="button"
             onClick={openCalendly}
-            className={`hidden xl:inline-flex whitespace-nowrap items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold transition-colors duration-300 ${onHero ? 'bg-secondary text-dark hover:bg-light' : 'bg-dark text-white hover:bg-primaryDark dark:bg-secondary dark:text-dark dark:hover:bg-light'}`}
+            className={`hidden xl:inline-flex whitespace-nowrap items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold transition-colors duration-300 ${onHero ? 'bg-secondary text-dark hover:bg-light' : 'bg-dark text-white hover:bg-[#171719] dark:bg-secondary dark:text-dark dark:hover:bg-light'}`}
           >
             {content.ctaButtonText}
           </button>
@@ -259,7 +259,7 @@ const Navbar = ({isDarkMode, setIsDarkMode, content}) => {
                   closeMenu();
                   openCalendly();
                 }}
-                className="flex items-center justify-center gap-2 w-full mb-4 px-5 py-3 rounded-full bg-dark text-white text-sm font-semibold hover:bg-primaryDark dark:bg-secondary dark:text-dark transition-colors duration-300"
+                className="flex items-center justify-center gap-2 w-full mb-4 px-5 py-3 rounded-full bg-dark text-white text-sm font-semibold hover:bg-[#171719] dark:bg-secondary dark:text-dark transition-colors duration-300"
               >
                 {content.ctaButtonText}
               </button>

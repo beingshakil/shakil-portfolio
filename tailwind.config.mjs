@@ -9,31 +9,31 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#607D8B',
-          light: '#7d9aa8',
-          dark: '#4a6470',
+          DEFAULT: '#4B4F56',
+          light: '#686D75',
+          dark: '#32353A',
         },
         primaryDark: {
-          DEFAULT: '#2C4A5A',
-          light: '#3d6275',
-          dark: '#1e3540',
+          DEFAULT: '#25272B',
+          light: '#383B41',
+          dark: '#171719',
         },
         secondary: {
           DEFAULT: '#C8B99A',
           light: '#d9cdb5',
           dark: '#b5a485',
         },
-        dark: '#1A3040',
-        light: '#F0EBE3',
-        lightHover: '#e6dfd5',
-        darkHover: '#243d50',
-        darkTheme: '#1A3040',
+        dark: '#0B0B0C',
+        light: '#F7F4EF',
+        lightHover: '#EEEAE4',
+        darkHover: '#171719',
+        darkTheme: '#0B0B0C',
         // Eyebrow labels and small accents. Value lives in globals.css
         // (--color-accent): deep blue-grey on light, warm tan on dark.
         accent: 'var(--color-accent)',
-        // Alternate section background (soft warm paper) and deep navy surfaces.
+        // Alternate section background (soft warm paper) and deep black surfaces.
         paper: '#F7F4EF',
-        deep: '#13212E',
+        deep: '#050506',
       },
       fontFamily: {
         outfit: ["Plus Jakarta Sans", "sans-serif"],

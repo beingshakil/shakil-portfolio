@@ -5,6 +5,7 @@
 //   <SectionHeading>  eyebrow + heading (left), description + link (right)
 //   <ArrowLink>       the one text-link style used for "View all" actions
 import Link from 'next/link';
+import { useEffect, useRef, useState } from 'react';
 import RevealText from './RevealText';
 
 const SECTION_TONES = {
@@ -13,14 +14,43 @@ const SECTION_TONES = {
   navy: 'bg-dark dark:bg-deep text-white',
 };
 
-export const Section = ({ id, tone = 'white', className = '', children }) => (
-  <section
-    id={id}
-    className={`w-full px-4 sm:px-6 lg:px-[8%] py-20 md:py-28 scroll-mt-20 ${SECTION_TONES[tone] || ''} ${className}`}
-  >
-    <div className="max-w-7xl mx-auto">{children}</div>
-  </section>
-);
+export const Section = ({ id, tone = 'white', className = '', children }) => {
+  const sectionRef = useRef(null);
+  const [shouldAnimate, setShouldAnimate] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const section = sectionRef.current;
+    if (!section) return;
+
+    setShouldAnimate(true);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -5% 0px' }
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section
+      id={id}
+      ref={sectionRef}
+      className={`w-full px-4 sm:px-6 lg:px-[8%] py-20 md:py-28 scroll-mt-20 ${SECTION_TONES[tone] || ''} ${className}`}
+    >
+      <div className={`max-w-7xl mx-auto ${shouldAnimate ? `section-motion ${isVisible ? 'is-visible' : ''}` : ''}`}>
+        {children}
+      </div>
+    </section>
+  );
+};
 
 export const Eyebrow = ({ children, tone = 'light', center = false, className = '' }) => (
   <p

@@ -31,7 +31,8 @@ const Services = ({ content }) => {
         {content.cards.map((item, index) => (
           <div
             key={item.title}
-            className="group flex flex-col rounded-2xl border border-gray-200 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_20px_40px_-24px_rgba(26,48,64,0.35)] dark:border-white/10 dark:bg-white/[0.04]"
+            className="group motion-card flex flex-col rounded-2xl border border-gray-200 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_20px_40px_-24px_rgba(0,0,0,0.25)] dark:border-white/10 dark:bg-white/[0.04]"
+            style={{ '--motion-delay': `${index * 90}ms` }}
           >
             <div className="flex items-start justify-between">
               <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primaryDark transition-colors duration-300 group-hover:bg-dark group-hover:text-secondary dark:bg-white/10 dark:text-secondary">

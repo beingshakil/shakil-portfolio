@@ -269,7 +269,7 @@ export default function BlogPostClient({ post, relatedPosts = [] }) {
           )}
 
           <div className="mb-8">
-            <div className="bg-primary/10 dark:bg-primaryDark/20 rounded-2xl p-8 md:p-12 mb-8">
+            <div className="bg-primary/10 dark:bg-white/[0.06] rounded-2xl p-8 md:p-12 mb-8">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
                 {post.heading || post.title}
               </h1>

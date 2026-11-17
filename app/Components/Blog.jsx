@@ -63,7 +63,7 @@ const Blog = ({ content }) => {
                 className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold transition-all duration-300 ${
                   currentPage === page
                     ? "bg-dark text-white dark:bg-secondary dark:text-dark"
-                    : "bg-white dark:bg-darkHover text-gray-600 dark:text-gray-300 hover:bg-primary/10 dark:hover:bg-primaryDark/30"
+                    : "bg-white dark:bg-darkHover text-gray-600 dark:text-gray-300 hover:bg-primary/10 dark:hover:bg-white/[0.08]"
                 }`}
               >
                 {page}
@@ -75,7 +75,7 @@ const Blog = ({ content }) => {
               className={`px-4 h-10 rounded-full flex items-center justify-center font-semibold transition-all duration-300 ${
                 currentPage === totalPages
                   ? "bg-gray-200 dark:bg-gray-800 text-gray-400 cursor-not-allowed"
-                  : "bg-white dark:bg-darkHover text-primary hover:bg-primary/10 dark:hover:bg-primaryDark/30 shadow-sm cursor-pointer"
+                  : "bg-white dark:bg-darkHover text-primary hover:bg-primary/10 dark:hover:bg-white/[0.08] shadow-sm cursor-pointer"
               }`}
             >
               Next

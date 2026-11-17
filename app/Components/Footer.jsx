@@ -34,7 +34,7 @@ const Footer = ({ content }) => {
   const social = content.socialLinks.map((s) => ({ label: s.label, href: s.url }))
 
   return (
-    <footer className="w-full overflow-hidden border-t border-white/10 bg-deep text-white/70 px-4 sm:px-6 lg:px-[8%] pt-16 md:pt-20 dark:bg-[#0E1922]">
+    <footer className="w-full overflow-hidden border-t border-white/10 bg-deep text-white/70 px-4 sm:px-6 lg:px-[8%] pt-16 md:pt-20 dark:bg-[#050506]">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-3 lg:grid-cols-12">
           <div className="lg:col-span-2">

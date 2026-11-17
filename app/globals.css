@@ -4,11 +4,11 @@
 
 /* CSS Custom Properties */
 :root {
-  --color-primary: #607D8B;
-  --color-primary-dark: #2C4A5A;
+  --color-primary: #4B4F56;
+  --color-primary-dark: #25272B;
   --color-secondary: #C8B99A;
-  --color-dark: #1A3040;
-  --color-light: #F0EBE3;
+  --color-dark: #0B0B0C;
+  --color-light: #F7F4EF;
 }
 
 /* Custom styles. Set on body (not *) so elements inherit it and the
@@ -64,6 +64,33 @@ body {
   transform: translateY(0);
 }
 
+/* Section and card entrance motion: quiet, directional, and only played once. */
+.section-motion {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.section-motion.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-motion:not(.is-visible) .motion-card {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.section-motion.is-visible .motion-card {
+  animation: motion-card-in 0.56s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--motion-delay, 0ms);
+}
+
+@keyframes motion-card-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 /* Stagger delays for card grids */
 .stagger-1 { transition-delay: 0.1s; }
 .stagger-2 { transition-delay: 0.2s; }
@@ -87,41 +114,41 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #F0EBE3;
+  background: #F7F4EF;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #607D8B;
+  background: #4B4F56;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #4a6470;
+  background: #32353A;
 }
 
 /* Dark mode scrollbar */
 .dark ::-webkit-scrollbar-track {
-  background: #1A3040;
+  background: #0B0B0C;
 }
 
 .dark ::-webkit-scrollbar-thumb {
-  background: #2C4A5A;
+  background: #25272B;
 }
 
 .dark ::-webkit-scrollbar-thumb:hover {
-  background: #607D8B;
+  background: #4B4F56;
 }
 
 /* Monochrome icon treatment — recolors any colorful icon (PNG/SVG)
    to the site's primary brand color so the dark/light theme stays sleek.
-   The filter values produce ~ #607D8B (var(--color-primary)). */
+   The filter values keep icon surfaces neutral across both themes. */
 .icon-mono {
-  filter: brightness(0) saturate(100%) invert(48%) sepia(11%) saturate(700%) hue-rotate(165deg) brightness(92%) contrast(86%);
+  filter: brightness(0) saturate(0) opacity(0.72);
   transition: filter 0.3s ease;
 }
 .dark .icon-mono {
   /* Slightly lighter in dark mode for contrast against dark surfaces */
-  filter: brightness(0) saturate(100%) invert(82%) sepia(8%) saturate(420%) hue-rotate(165deg) brightness(95%) contrast(88%);
+  filter: brightness(0) saturate(0) invert(1) opacity(0.72);
 }
 .group:hover .icon-mono {
   /* On card hover, flip to white so the icon pops on the primary background */
@@ -145,7 +172,7 @@ body {
   margin: 0.75rem 0 1rem;
 }
 .blog-rich li { margin-bottom: 0.4rem; }
-.blog-rich a { color: #607D8B; text-decoration: none; }
+.blog-rich a { color: #4B4F56; text-decoration: none; }
 .blog-rich img {
   width: 100%;
   height: auto;
@@ -161,7 +188,7 @@ body {
   color: inherit;
 }
 .blog-rich blockquote {
-  border-left: 3px solid #607D8B;
+  border-left: 3px solid #4B4F56;
   padding: 0.5rem 1rem;
   margin: 1.25rem 0;
   font-style: italic;
@@ -202,7 +229,7 @@ body {
   word-break: break-word;
 }
 .blog-rich pre {
-  background: #1A3040;
+  background: #0B0B0C;
   color: #e5e7eb;
   padding: 1rem 1.25rem;
   border-radius: 0.75rem;
@@ -233,7 +260,7 @@ body {
    Accent: deep blue-grey on light backgrounds, warm tan on dark ones.
    Font variables come from app/fonts.js. */
 :root {
-  --color-accent: #4A6470;
+  --color-accent: #4A4A4F;
 }
 .dark {
   --color-accent: #C8B99A;
@@ -255,6 +282,14 @@ body {
 }
 @media (prefers-reduced-motion: reduce) {
   .focus-tag-float { animation: none; }
+  .section-motion,
+  .section-motion.is-visible,
+  .section-motion:not(.is-visible) .motion-card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    animation: none;
+  }
 }
 
 /* Working process phone mockup: a dot travelling down the automation pipeline */

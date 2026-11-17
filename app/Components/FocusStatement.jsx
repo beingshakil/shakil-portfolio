@@ -16,7 +16,7 @@ const TAG_LAYOUT = [
 
 const MOBILE_ROTATIONS = [-2, 2, -1, 2, -2, 1];
 
-// Brand tones cycle across the tag icons: navy, blue-grey, tan.
+// Brand tones cycle across the tag icons: black, charcoal, tan.
 const CHIP_TONES = [
   'bg-dark text-secondary',
   'bg-primary text-white',
@@ -47,7 +47,7 @@ function TagIcon({ name }) {
 
 function Tag({ label, icon, index }) {
   return (
-    <span className="inline-flex items-center gap-2.5 rounded-full bg-white dark:bg-darkHover pl-1.5 pr-4 py-1.5 text-sm font-medium text-dark dark:text-gray-100 whitespace-nowrap border border-gray-200/80 dark:border-white/10 shadow-[0_10px_30px_-14px_rgba(26,48,64,0.35)]">
+    <span className="inline-flex items-center gap-2.5 rounded-full bg-white dark:bg-darkHover pl-1.5 pr-4 py-1.5 text-sm font-medium text-dark dark:text-gray-100 whitespace-nowrap border border-gray-200/80 dark:border-white/10 shadow-[0_10px_30px_-14px_rgba(0,0,0,0.35)]">
       <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${CHIP_TONES[index % CHIP_TONES.length]}`}>
         <TagIcon name={icon} />
       </span>

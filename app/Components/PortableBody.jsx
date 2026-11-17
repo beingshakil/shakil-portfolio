@@ -91,7 +91,7 @@ const components = {
     },
     keyTakeaways: ({ value }) => (
       <div id={value.title ? toId(value.title) : undefined} className="my-8 scroll-mt-28 text-left">
-        <div className="bg-primary/10 dark:bg-primaryDark/20 rounded-2xl p-8">
+        <div className="bg-primary/10 dark:bg-white/[0.06] rounded-2xl p-8">
           {value.title && (
             <h4 className="!text-xl !mt-0 !mb-5 font-bold text-gray-900 dark:text-white">{value.title}</h4>
           )}

@@ -19,11 +19,11 @@ const Arrow = ({ dir }) => (
 
 const pad2 = (n) => String(n).padStart(2, '0');
 
-// Brand gradients rising from the bottom of each cover: blue-grey, tan, navy.
+// Neutral gradients rising from the bottom of each cover: charcoal, tan, black.
 const COVER_GRADIENTS = [
-  'from-primary via-primary/55',
+  'from-[#171719] via-[#171719]/55',
   'from-[#A8977A] via-secondary/55',
-  'from-primaryDark via-primaryDark/55',
+  'from-[#050506] via-[#050506]/55',
 ];
 
 // "https://www.example.com/path" -> "example.com"

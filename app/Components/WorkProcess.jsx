@@ -237,7 +237,7 @@ const SCREENS = [
 
 function Phone({ screen }) {
   return (
-    <div className="relative mx-auto h-[600px] w-[296px] rounded-[3rem] bg-[#0B141B] p-[10px] shadow-[0_50px_100px_-30px_rgba(0,0,0,0.65)] ring-1 ring-white/15">
+    <div className="relative mx-auto h-[600px] w-[296px] rounded-[3rem] bg-[#101011] p-[10px] shadow-[0_50px_100px_-30px_rgba(0,0,0,0.65)] ring-1 ring-white/15">
       {/* Side buttons */}
       <span className="absolute -left-[3px] top-28 h-10 w-[3px] rounded-l bg-white/20" aria-hidden="true" />
       <span className="absolute -left-[3px] top-44 h-14 w-[3px] rounded-l bg-white/20" aria-hidden="true" />
