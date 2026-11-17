@@ -3,7 +3,7 @@ import content from "../data/homepage.json";
 import { siteUrl } from "../data/site";
 
 export const metadata = {
-  title: 'Experience — Md Shakil Hossen | SEO & AI Automation',
+  title: 'Experience - Md Shakil Hossen | SEO & AI Automation',
   description: 'Professional journey of Md Shakil Hossen: SEO & AI Automation at Musemind and IRD Foundation, plus leadership at DIU Computer and Programming Club.',
   alternates: {
     canonical: `${siteUrl}/experience`,
@@ -11,14 +11,14 @@ export const metadata = {
   openGraph: {
     type: 'website',
     url: `${siteUrl}/experience`,
-    title: 'Experience — Md Shakil Hossen | SEO & AI Automation',
+    title: 'Experience - Md Shakil Hossen | SEO & AI Automation',
     description: 'Professional journey of Md Shakil Hossen: SEO & AI Automation at Musemind and IRD Foundation, plus leadership at DIU Computer and Programming Club.',
-    siteName: 'Md Shakil Hossen — Portfolio',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Md Shakil Hossen — Experience' }],
+    siteName: 'Md Shakil Hossen - Portfolio',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Md Shakil Hossen - Experience' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Experience — Md Shakil Hossen | SEO & AI Automation',
+    title: 'Experience - Md Shakil Hossen | SEO & AI Automation',
     description: 'Professional journey of Md Shakil Hossen: SEO & AI Automation at Musemind and IRD Foundation, plus leadership at DIU Computer and Programming Club.',
     creator: '@beingshakil',
     images: ['/og-image.jpg'],
@@ -30,7 +30,7 @@ const experiencePageSchema = {
   '@type': 'WebPage',
   '@id': `${siteUrl}/experience#webpage`,
   url: `${siteUrl}/experience`,
-  name: 'Experience — Md Shakil Hossen',
+  name: 'Experience - Md Shakil Hossen',
   description: 'Professional experience and career timeline of Md Shakil Hossen.',
   isPartOf: { '@type': 'WebSite', url: siteUrl },
   breadcrumb: {

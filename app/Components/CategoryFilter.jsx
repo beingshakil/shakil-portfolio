@@ -3,7 +3,7 @@
 
 /**
  * Responsive category filter.
- * - Mobile (<md): native <select> dropdown — compact and ergonomic on touch.
+ * - Mobile (<md): native <select> dropdown - compact and ergonomic on touch.
  * - Desktop (>=md): pill-button row with active state.
  */
 const CategoryFilter = ({ categories, activeCategory, onChange, label = 'Filter by category' }) => {

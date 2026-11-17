@@ -3,7 +3,7 @@ import content from "../data/homepage.json";
 import { siteUrl } from "../data/site";
 
 export const metadata = {
-  title: 'Contact Md Shakil Hossen — Get In Touch',
+  title: 'Contact Md Shakil Hossen - Get In Touch',
   description: 'Contact Md Shakil Hossen for AI Automation, SEO, and Data Analysis services. Based in Dhaka, Bangladesh. Reach out via the contact form or email.',
   alternates: {
     canonical: `${siteUrl}/contact`,
@@ -11,14 +11,14 @@ export const metadata = {
   openGraph: {
     type: 'website',
     url: `${siteUrl}/contact`,
-    title: 'Contact Md Shakil Hossen — Get In Touch',
+    title: 'Contact Md Shakil Hossen - Get In Touch',
     description: 'Contact Md Shakil Hossen for AI Automation, SEO, and Data Analysis services. Based in Dhaka, Bangladesh. Reach out via the contact form or email.',
-    siteName: 'Md Shakil Hossen — Portfolio',
+    siteName: 'Md Shakil Hossen - Portfolio',
     images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Contact Md Shakil Hossen' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contact Md Shakil Hossen — Get In Touch',
+    title: 'Contact Md Shakil Hossen - Get In Touch',
     description: 'Contact Md Shakil Hossen for AI Automation, SEO, and Data Analysis services. Based in Dhaka, Bangladesh. Reach out via the contact form or email.',
     creator: '@beingshakil',
     images: ['/og-image.jpg'],
@@ -30,7 +30,7 @@ const contactPageSchema = {
   '@type': 'ContactPage',
   '@id': `${siteUrl}/contact#webpage`,
   url: `${siteUrl}/contact`,
-  name: 'Contact — Md Shakil Hossen',
+  name: 'Contact - Md Shakil Hossen',
   description: content.contact.content,
   isPartOf: { '@type': 'WebSite', url: siteUrl },
   breadcrumb: {

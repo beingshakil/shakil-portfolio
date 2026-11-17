@@ -139,7 +139,7 @@ body {
   background: #4B4F56;
 }
 
-/* Monochrome icon treatment — recolors any colorful icon (PNG/SVG)
+/* Monochrome icon treatment - recolors any colorful icon (PNG/SVG)
    to the site's primary brand color so the dark/light theme stays sleek.
    The filter values keep icon surfaces neutral across both themes. */
 .icon-mono {

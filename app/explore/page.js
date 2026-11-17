@@ -3,7 +3,7 @@ import { siteUrl } from "../data/site";
 import { getBlogData } from "../../sanity/lib/posts";
 
 export const metadata = {
-  title: 'Blog & Insights — Data, SEO & AI | Md Shakil Hossen',
+  title: 'Blog & Insights - Data, SEO & AI | Md Shakil Hossen',
   description: 'Tutorials and insights on Data Analysis, SEO strategies, AI Automation, and Web Development by Md Shakil Hossen. Real-world guides backed by hands-on experience.',
   alternates: {
     canonical: `${siteUrl}/explore`,
@@ -11,14 +11,14 @@ export const metadata = {
   openGraph: {
     type: 'website',
     url: `${siteUrl}/explore`,
-    title: 'Blog & Insights — Data, SEO & AI | Md Shakil Hossen',
+    title: 'Blog & Insights - Data, SEO & AI | Md Shakil Hossen',
     description: 'Tutorials and insights on Data Analysis, SEO strategies, AI Automation, and Web Development by Md Shakil Hossen. Real-world guides backed by hands-on experience.',
-    siteName: 'Md Shakil Hossen — Portfolio',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Blog & Insights — Md Shakil Hossen' }],
+    siteName: 'Md Shakil Hossen - Portfolio',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Blog & Insights - Md Shakil Hossen' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Blog & Insights — Data, SEO & AI | Md Shakil Hossen',
+    title: 'Blog & Insights - Data, SEO & AI | Md Shakil Hossen',
     description: 'Tutorials and insights on Data Analysis, SEO strategies, AI Automation, and Web Development by Md Shakil Hossen. Real-world guides backed by hands-on experience.',
     creator: '@beingshakil',
     images: ['/og-image.jpg'],
@@ -30,7 +30,7 @@ const buildListingSchema = (blogData) => ({
   '@type': 'CollectionPage',
   '@id': `${siteUrl}/explore#webpage`,
   url: `${siteUrl}/explore`,
-  name: 'Blog & Insights — Md Shakil Hossen',
+  name: 'Blog & Insights - Md Shakil Hossen',
   description: blogData.meta.description,
   isPartOf: { '@type': 'WebSite', url: siteUrl },
   breadcrumb: {

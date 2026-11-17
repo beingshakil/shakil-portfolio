@@ -7,7 +7,7 @@ import { siteUrl } from "../data/site";
 const plainText = (s) => s.replace(/\*\*(.*?)\*\*/g, '$1');
 
 export const metadata = {
-  title: 'About — Md Shakil Hossen | AI Automation & SEO Expert',
+  title: 'About - Md Shakil Hossen | AI Automation & SEO Expert',
   description: 'Md Shakil Hossen is an AI Automation and SEO Expert based in Dhaka, Bangladesh. Specialized in Python automation, technical SEO, data analysis, and web development.',
   alternates: {
     canonical: `${siteUrl}/about`,
@@ -15,14 +15,14 @@ export const metadata = {
   openGraph: {
     type: 'profile',
     url: `${siteUrl}/about`,
-    title: 'About — Md Shakil Hossen | AI Automation & SEO Expert',
+    title: 'About - Md Shakil Hossen | AI Automation & SEO Expert',
     description: 'Md Shakil Hossen is an AI Automation and SEO Expert based in Dhaka, Bangladesh. Specialized in Python automation, technical SEO, data analysis, and web development.',
-    siteName: 'Md Shakil Hossen — Portfolio',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Md Shakil Hossen — AI Automation and SEO Expert' }],
+    siteName: 'Md Shakil Hossen - Portfolio',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Md Shakil Hossen - AI Automation and SEO Expert' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About — Md Shakil Hossen | AI Automation & SEO Expert',
+    title: 'About - Md Shakil Hossen | AI Automation & SEO Expert',
     description: 'Md Shakil Hossen is an AI Automation and SEO Expert based in Dhaka, Bangladesh. Specialized in Python automation, technical SEO, data analysis, and web development.',
     creator: '@beingshakil',
     images: ['/og-image.jpg'],
@@ -34,7 +34,7 @@ const aboutPageSchema = {
   '@type': 'AboutPage',
   '@id': `${siteUrl}/about#webpage`,
   url: `${siteUrl}/about`,
-  name: 'About — Md Shakil Hossen',
+  name: 'About - Md Shakil Hossen',
   description: 'Md Shakil Hossen is an AI Automation and SEO Expert based in Dhaka, Bangladesh.',
   isPartOf: { '@type': 'WebSite', url: siteUrl },
   breadcrumb: {

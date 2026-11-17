@@ -24,8 +24,8 @@ export const metadata = {
     url: siteUrl,
     title: content.meta.title,
     description: content.meta.description,
-    siteName: 'Md Shakil Hossen — Portfolio',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Md Shakil Hossen — AI Automation and SEO Expert in Bangladesh' }],
+    siteName: 'Md Shakil Hossen - Portfolio',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Md Shakil Hossen - SEO Specialist, Web Intelligence and AI Automation' }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -57,7 +57,7 @@ const homePageSchema = {
 const professionalServiceSchema = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
-  name: 'Md Shakil Hossen — AI Automation & SEO Services',
+  name: 'Md Shakil Hossen - SEO Specialist, Web Intelligence & AI Automation',
   url: siteUrl,
   description: content.meta.description,
   provider: { '@type': 'Person', name: 'Md Shakil Hossen', url: siteUrl },

@@ -37,7 +37,7 @@ export async function generateMetadata({ params }) {
       url: postUrl,
       title,
       description,
-      siteName: 'Md Shakil Hossen — Portfolio',
+      siteName: 'Md Shakil Hossen - Portfolio',
       images: [{ url: imageUrl, width: 1200, height: 630, alt: post.imageAlt }],
       publishedTime: post.isoDate,
       authors: [post.author],

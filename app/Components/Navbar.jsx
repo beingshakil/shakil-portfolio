@@ -252,7 +252,7 @@ const Navbar = ({isDarkMode, setIsDarkMode, content}) => {
             </ul>
 
             <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
-              {/* Hire Me — opens Calendly popup */}
+              {/* Hire Me - opens Calendly popup */}
               <button
                 type="button"
                 onClick={() => {

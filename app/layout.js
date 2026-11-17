@@ -15,12 +15,20 @@ export const metadata = {
   title: content.meta.title,
   description: content.meta.description,
   metadataBase: new URL(siteUrl),
+  icons: {
+    icon: '/icon.png',
+    shortcut: '/icon.png',
+    apple: '/apple-icon.png',
+  },
   alternates: {
     canonical: siteUrl,
   },
   keywords: [
-    'AI Automation Expert Bangladesh',
-    'SEO Expert Bangladesh',
+    'SEO Specialist',
+    'Web Intelligence',
+    'AI Automation',
+    'SEO Specialist Bangladesh',
+    'Web Intelligence Specialist',
     'Data Analyst Bangladesh',
     'AI Agent Developer',
     'Python Automation',
@@ -39,13 +47,13 @@ export const metadata = {
     url: siteUrl,
     title: content.meta.title,
     description: content.meta.description,
-    siteName: 'Md Shakil Hossen — Portfolio',
+    siteName: 'Md Shakil Hossen - Portfolio',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Md Shakil Hossen — AI Automation and SEO Expert in Bangladesh',
+        alt: 'Md Shakil Hossen - SEO Specialist, Web Intelligence and AI Automation',
       },
     ],
     locale: 'en_US',
@@ -87,7 +95,7 @@ const personSchema = {
     'https://www.instagram.com/feel._.shakeel',
     'https://www.researchgate.net/profile/Md-Hossen-139',
   ],
-  jobTitle: 'AI Automation and SEO Expert',
+  jobTitle: 'SEO Specialist, Web Intelligence and AI Automation',
   worksFor: {
     '@type': 'Organization',
     name: 'Freelance',

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Md Shakil Hossen | AI Automation and SEO Expert in Bangladesh",
-    "description": "Professional AI Automation and SEO Expert in Bangladesh. Result-driven Data Analyst specializing in AI Agents, Technical SEO, and Data Visualization."
+    "title": "Md Shakil Hossen | SEO Specialist, Web Intelligence & AI Automation",
+    "description": "SEO Specialist focused on Web Intelligence and AI Automation. I build practical systems that improve SEO operations, automate repetitive work, and turn website data into clear next steps."
   },
   "navbar": {
     "brandName": "Md Shakil Hossen",
@@ -24,6 +24,15 @@
     "profileAlt": "Md Shakil Hossen",
     "ctaPrimary": { "text": "Discover My Story", "href": "/about" },
     "ctaSecondary": { "text": "Get In Touch", "href": "/contact" },
+    "marqueeLabel": "Trusted by leading and growing brands",
+    "marqueeItems": [
+      { "name": "Musemind", "href": "https://musemind.agency/", "logo": "https://cdn.prod.website-files.com/6adcbfca4bed994eeae3d780/6adcbfca4bed994eeae3d7c2_logo%20black.svg", "logoClass": "invert" },
+      { "name": "Searchaly", "href": "https://searchaly.com/", "logo": "https://searchaly.com/cdn/shop/files/Untitled_design.png?v=1755877943", "logoClass": "invert", "logoSize": "large" },
+      { "name": "IRD Foundation", "href": "https://irdfoundation.com/", "logo": "https://quranmazid.com/assets/global/ird-logo-dark.png", "logoClass": "" },
+      { "name": "iHadis", "href": "https://ihadis.com/", "logo": "https://ihadis.com/assets/global/logo-lg.png", "logoClass": "invert", "showName": true },
+      { "name": "Quran Mazid", "href": "https://quranmazid.com/", "logo": "https://quranmazid.com/assets/global/favicon.svg", "logoClass": "invert", "showName": true },
+      { "name": "Masarna", "href": "https://www.meetmasarna.ae/", "logo": "https://cdn.prod.website-files.com/6a3b50f623bd5888f673c3dc/6a61b37ff0b80654705e6d51_Bilingual%20Logo%20(on%20Light%20BG)%20(4).svg", "logoClass": "invert" }
+    ],
     "backgroundImage": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
   },
   "focus": {
@@ -43,10 +52,10 @@
     "title": "Who I AM",
     "subtitle": "Introduction",
     "content": [
-      "I'm a **Web Intelligence and SEO Specialist** for teams that need a clearer view of search performance. I build systems that collect search, competitor, and website data, then turn it into a prioritized growth plan.",
+      "I help turn ideas into **scalable digital solutions**. As a dedicated **CS Engineer** with a strong foundation in **Search Engine Optimization (SEO)**, **Web Intelligence**, and **AI Automation**, I build systems that drive performance and streamline operations. I am highly motivated to drive continuous workflow improvements while expanding my expertise in cutting-edge technologies.",
       "I automate **research, reporting, QA, and data-cleaning workflows** so the next SEO, content, or technical action is clear, repeatable, and measurable."
     ],
-    "storyTitle": "Turning search signals into decisive action.",
+    "storyTitle": "Turning complex data into decisive action.",
     "ctaText": "Learn More",
     "cards": [
       {
@@ -96,33 +105,33 @@
     "subtitle": "My Journey",
     "professional": [
       {
-        "title": "SEO/AEO Executive & Web Intelligence",
+        "title": "SEO/GEO & Web Intelligence",
         "duration": "May 2026 – Present",
         "company": "Musemind",
         "companyLink": "https://musemind.agency",
         "content": [
-          "Handled end-to-end SEO strategy and automation for Musemind, a leading global UX design agency. Delivered technical SEO fixes and on-page optimization.",
-          "Created prompt templates for AI tools (LLMs) to get better, more consistent outputs across different tasks and use cases.",
+          "Conducted in-depth competitor research and SERP analysis to identify keyword gaps, backlink opportunities, and content benchmarks for data-driven SEO strategies and roadmaps.",
+          "Automated technical SEO audits and log file analysis with Python scripts and Screaming Frog to detect crawl-budget waste, 404s, redirect loops, and indexing issues, improving site health and Core Web Vitals.",
           "Pulled and analyzed data from Google Analytics and Search Console to find SEO issues and spot growth opportunities.",
-          "Set up automated SEO reports so the team could track keyword rankings, site health, and traffic without doing it manually.",
-          "Used AI tools to build content and internal linking strategies that helped improve search rankings and topic coverage.",
+          "Set up automated SEO reports so the team could track keyword rankings, site health, and traffic without manual reporting.",
+          "Built web tools, Chrome extensions, and Python scripts for data analysis to streamline tasks and improve decision-making efficiency.",
           "Connected third-party APIs and AI services into existing workflows to automate repetitive tasks without breaking current processes.",
-          "Turned raw data from multiple sources into clear insights that helped leadership make better decisions on content and strategy.",
           "Applied prompt engineering techniques to improve AI outputs for SEO, content, and data tasks, saving time and reducing back-and-forth."
         ],
         "side": "right"
       },
       {
-        "title": "SEO and AI Automation",
+        "title": "SEO & AI Automation Engineer",
         "duration": "Jan 2025 – Apr 2026",
         "company": "IRD Foundation",
         "companyLink": "https://irdfoundation.com/",
         "content": [
-          "Automated workflow processes with Python and JavaScript. Streamlined data processing and reduced manual tasks by developing custom automation scripts, improving team efficiency, and accelerating data-driven decisions.",
-          "Increased website traffic and search rankings by 5x through targeted keyword and competitor research, implementation of Technical SEO strategies, and data optimization using Ahrefs, SEMrush, and Google Search Console.",
-          "Transformed raw data into actionable insights by building automated ETL workflows with Pandas and NumPy, improving data accuracy and usability.",
-          "Collaborated with Web and Database teams to ensure data compliance and optimize website structure, enhancing SEO performance and user experience based on analytical insights.",
-          "Developed interactive Power BI and Excel dashboards to visualize key trends, improving data accessibility and decision-making speed across teams."
+          "Built web tools, Chrome extensions, and Python scripts for data analysis to streamline tasks and improve decision-making efficiency.",
+          "Automated technical SEO audits and log file analysis with Python scripts and Screaming Frog to detect crawl-budget waste, 404s, redirect loops, and indexing issues, improving site health and Core Web Vitals.",
+          "Conducted in-depth keyword research and implemented on-page and off-page SEO strategies to increase website visibility.",
+          "Collected, cleaned, and analyzed large datasets from Google Analytics and Search Console to uncover actionable trends and bridge performance gaps.",
+          "Analyzed large datasets to uncover trends and actionable insights that supported company decision-making and strategic planning.",
+          "Transformed raw data into actionable insights by building automated ETL workflows with Pandas and NumPy, improving data accuracy and usability."
         ],
         "side": "left"
       }
@@ -134,10 +143,8 @@
         "company": "Computer and Programming Club, DIU",
         "companyLink": null,
         "content": [
-          "Effective Team Building and Collaboration",
-          "Strategic Planning and Execution",
-          "Leadership Development and Mentorship",
-          "Time Management and Organization"
+          "Led and organized programming contests, including the Take-Off Contest, Algorithm Contest, and National NGPC Programming Contest, handling planning, team coordination, and contest-day tasks.",
+          "Worked directly with teachers to arrange seminars, webinars, and club tours, helping students learn outside the classroom and stay active in the club."
         ],
         "side": "right"
       }
@@ -148,7 +155,7 @@
     "heading": "Services that create *clearer next steps*",
     "title": "Services",
     "subtitle": "What I Offer",
-    "content": "Focused engagements that turn search signals, recurring work, and scattered data into useful business momentum.",
+    "content": "Focused engagements that turn website data, recurring work, and scattered information into useful business momentum.",
     "cards": [
       {
         "iconKey": "mobile_icon",
@@ -230,7 +237,7 @@
     "eyebrow": "Contact",
     "heading": "Have an SEO, automation, or data problem worth *solving?*",
     "title": "Connect with Me",
-    "content": "Tell me what is manual, unclear, or underperforming — I’ll reply within two business days.",
+    "content": "Tell me what is manual, unclear, or underperforming - I’ll reply within two business days.",
     "emailLabel": "Email",
     "email": "being.shakill@gmail.com",
     "locationLabel": "Based in",

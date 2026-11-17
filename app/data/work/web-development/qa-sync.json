@@ -1,0 +1,15 @@
+{
+  "metadata": {
+    "title": "QASync | Visual Website Feedback and QA Tool",
+    "description": "A visual QA tool for pinning feedback on live websites, inspecting specs, running SEO audits, and verifying fixes."
+  },
+  "title": "QASync",
+  "category": "Web Development",
+  "badge": "Web Intelligence & QA",
+  "featuredLabel": "Visual QA Platform",
+  "features": ["Visual Feedback", "SEO Audits", "Fix Verification"],
+  "content": "Built QASync to help teams pin visual feedback on live websites, inspect specs, run SEO audits, and verify every fix in one streamlined workflow.",
+  "bgImage": "https://qa-sync.vercel.app/opengraph-image",
+  "link": "https://qa-sync.vercel.app/",
+  "slug": "qa-sync"
+}
