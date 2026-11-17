@@ -42,6 +42,6 @@ export const toolsData = [
     { name: 'Google Search Console', src: '/tool-logos/google-search-console.svg' },
     { name: 'Ahrefs', src: '/tool-logos/ahrefs.svg' },
     { name: 'Semrush', src: '/tool-logos/semrush.svg' },
-    { name: 'Strapi', src: 'https://cdn.simpleicons.org/strapi' },
-    { name: 'Sanity', src: 'https://cdn.simpleicons.org/sanity' },
+    { name: 'Strapi', src: '/tool-logos/strapi.svg' },
+    { name: 'Sanity', src: '/tool-logos/sanity.svg' },
 ];

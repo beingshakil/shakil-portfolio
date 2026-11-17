@@ -9,7 +9,7 @@
   "featuredLabel": "Visual QA Platform",
   "features": ["Visual Feedback", "SEO Audits", "Fix Verification"],
   "content": "Built QASync to help teams pin visual feedback on live websites, inspect specs, run SEO audits, and verify every fix in one streamlined workflow.",
-  "bgImage": "https://qa-sync.vercel.app/opengraph-image",
+  "bgImage": "/my-work/web-development/qa-sync-cover.png",
   "link": "https://qa-sync.vercel.app/",
   "slug": "qa-sync"
 }

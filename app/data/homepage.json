@@ -26,12 +26,13 @@
     "ctaSecondary": { "text": "Get In Touch", "href": "/contact" },
     "marqueeLabel": "Trusted by leading and growing brands",
     "marqueeItems": [
-      { "name": "Musemind", "href": "https://musemind.agency/", "logo": "https://cdn.prod.website-files.com/6adcbfca4bed994eeae3d780/6adcbfca4bed994eeae3d7c2_logo%20black.svg", "logoClass": "invert" },
-      { "name": "Searchaly", "href": "https://searchaly.com/", "logo": "https://searchaly.com/cdn/shop/files/Untitled_design.png?v=1755877943", "logoClass": "invert", "logoSize": "large" },
+      { "name": "Musemind", "href": "https://musemind.com/", "logo": "https://cdn.prod.website-files.com/6adcbfca4bed994eeae3d780/6adcbfca4bed994eeae3d7c2_logo%20black.svg", "logoClass": "invert" },
+      { "name": "Searchaly", "href": "https://searchaly.com/", "logo": "https://searchaly.com/cdn/shop/files/Untitled_design.png?v=1755877943", "logoClass": "invert", "logoSize": "large", "logoScale": 1.4 },
       { "name": "IRD Foundation", "href": "https://irdfoundation.com/", "logo": "https://quranmazid.com/assets/global/ird-logo-dark.png", "logoClass": "" },
       { "name": "iHadis", "href": "https://ihadis.com/", "logo": "https://ihadis.com/assets/global/logo-lg.png", "logoClass": "invert", "showName": true },
       { "name": "Quran Mazid", "href": "https://quranmazid.com/", "logo": "https://quranmazid.com/assets/global/favicon.svg", "logoClass": "invert", "showName": true },
-      { "name": "Masarna", "href": "https://www.meetmasarna.ae/", "logo": "https://cdn.prod.website-files.com/6a3b50f623bd5888f673c3dc/6a61b37ff0b80654705e6d51_Bilingual%20Logo%20(on%20Light%20BG)%20(4).svg", "logoClass": "invert" }
+      { "name": "Masarna", "href": "https://www.meetmasarna.ae/", "logo": "https://cdn.prod.website-files.com/6a3b50f623bd5888f673c3dc/6a61b37ff0b80654705e6d51_Bilingual%20Logo%20(on%20Light%20BG)%20(4).svg", "logoClass": "invert" },
+      { "name": "RS Automart", "href": "https://rsautomart.shop/", "logo": "https://www.rsautomart.shop/logo-small.webp", "logoClass": "white", "logoScale": 1, "logoCrop": "wordmark", "logoOffsetY": -2 }
     ],
     "backgroundImage": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
   },
@@ -108,7 +109,7 @@
         "title": "SEO/GEO & Web Intelligence",
         "duration": "May 2026 – Present",
         "company": "Musemind",
-        "companyLink": "https://musemind.agency",
+        "companyLink": "https://musemind.com/",
         "content": [
           "Conducted in-depth competitor research and SERP analysis to identify keyword gaps, backlink opportunities, and content benchmarks for data-driven SEO strategies and roadmaps.",
           "Automated technical SEO audits and log file analysis with Python scripts and Screaming Frog to detect crawl-budget waste, 404s, redirect loops, and indexing issues, improving site health and Core Web Vitals.",

@@ -125,6 +125,7 @@ const FocusStatement = ({ content }) => {
         <div className="relative z-10 max-w-3xl xl:max-w-[620px] 2xl:max-w-[700px] text-center">
           <RevealText
             text={content.statement}
+            as="p"
             className="text-[1.85rem] leading-[1.2] sm:text-4xl md:text-[2.5rem] md:leading-[1.18] font-semibold tracking-tight"
           />
         </div>

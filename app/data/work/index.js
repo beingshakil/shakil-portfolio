@@ -1,6 +1,5 @@
 // Aggregator: imports every project JSON and exposes a unified API.
 // To add a new project: drop a JSON file under data/work/{category}/ and import it here.
-import musemind from "./web-development/musemind.json";
 import qaSync from "./web-development/qa-sync.json";
 import frontendProject from "./web-development/frontend-project.json";
 import bahariSite from "./web-development/bahari-site.json"; // moved from ecommerce → web-development
@@ -23,7 +22,6 @@ export const workMeta = {
 };
 
 export const workProjects = [
-  musemind,
   qaSync,
   frontendProject,
   bahariSite,
@@ -36,7 +34,7 @@ export const workProjects = [
 
 // Curated subset shown in the sticky-stacking "Featured Work" section, in order.
 export const featuredProjects = [
-  musemind,
+  qaSync,
   frontendProject, // RS Automart
   seoAlHadith,
   seoDuaRuqyah,

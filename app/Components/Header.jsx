@@ -7,6 +7,7 @@ import { assets } from '../Assets/assets'
 const Header = ({ content }) => {
   const [displayText, setDisplayText] = useState('');
   const [isTypingDone, setIsTypingDone] = useState(false);
+  const [failedLogos, setFailedLogos] = useState({});
   const marqueeItems = content.marqueeItems || [];
   const marqueeTrackRef = useRef(null);
   const marqueeOffsetRef = useRef(0);
@@ -15,6 +16,11 @@ const Header = ({ content }) => {
 
   useEffect(() => {
     const fullText = content.title;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setDisplayText(fullText);
+      setIsTypingDone(true);
+      return undefined;
+    }
     let i = 0;
     const timer = setInterval(() => {
       setDisplayText(fullText.slice(0, i + 1));
@@ -177,27 +183,38 @@ const Header = ({ content }) => {
                 >
                   {marqueeItems.map((item) => {
                     const name = typeof item === 'string' ? item : item.name;
-                    const href = typeof item === 'string' ? null : item.href;
                     const logo = typeof item === 'string' ? null : item.logo;
                     const logoClass = typeof item === 'string' ? '' : item.logoClass;
                     const showName = typeof item === 'string' ? true : item.showName;
                     const showMark = typeof item === 'string' ? true : item.showMark !== false;
                     const isLargeLogo = typeof item !== 'string' && item.logoSize === 'large';
+                    const logoScale = typeof item === 'string' ? 1 : item.logoScale || 1;
+                    const logoCrop = typeof item === 'string' ? '' : item.logoCrop;
+                    const logoOffsetY = typeof item === 'string' ? 0 : item.logoOffsetY || 0;
+                    const isWordmarkCrop = logoCrop === 'wordmark';
+                    const logoSize = showName ? 'h-9 w-9' : isWordmarkCrop ? 'h-6 w-40' : isLargeLogo ? 'h-10 w-40' : 'h-9 w-32';
+                    const hasFailed = Boolean(failedLogos[name]);
                     const itemContent = (
                       <>
-                        {logo ? (
-                          <img
-                            src={logo}
-                            alt={`${name} logo`}
-                            onError={(event) => {
-                              event.currentTarget.hidden = true;
-                              event.currentTarget.nextElementSibling.hidden = false;
-                            }}
-                            style={{ filter: logoClass === 'invert' ? 'grayscale(1) invert(1)' : 'grayscale(1)' }}
-                            className={`${showName ? 'h-9 w-9' : isLargeLogo ? 'h-10 w-40' : 'h-9 w-32'} shrink-0 object-contain ${isLargeLogo ? 'opacity-100' : 'opacity-75'} transition-opacity duration-300 group-hover:opacity-100`}
-                          />
+                        {logo && !hasFailed ? (
+                          <span className={`relative block shrink-0 ${logoSize} ${logoCrop ? 'overflow-hidden' : ''}`}>
+                            <Image
+                              src={logo}
+                              alt={`${name} logo`}
+                              fill
+                              sizes={isLargeLogo ? '160px' : '128px'}
+                              unoptimized={logo.endsWith('.svg')}
+                              onError={() => setFailedLogos((current) => ({ ...current, [name]: true }))}
+                              style={{
+                                filter: logoClass === 'white' ? 'brightness(0) invert(1)' : logoClass === 'invert' ? 'grayscale(1) invert(1)' : logoClass === 'none' ? 'none' : 'grayscale(1)',
+                                transform: `scale(${logoScale}) translateY(${logoOffsetY}px)`,
+                                objectPosition: isWordmarkCrop ? 'center top' : undefined,
+                              }}
+                              className={`${isWordmarkCrop ? 'object-cover' : 'object-contain'} ${isLargeLogo && !isWordmarkCrop ? 'opacity-100' : 'opacity-75'} transition-opacity duration-300 group-hover:opacity-100`}
+                            />
+                          </span>
                         ) : null}
-                        <span hidden={Boolean(logo) && !showName} className="text-base font-semibold tracking-tight text-white/75 sm:text-lg">
+                        <span hidden={Boolean(logo) && !showName && !hasFailed} className="text-base font-semibold tracking-tight text-white/75 sm:text-lg">
                           {name}
                         </span>
                         {!logo && showMark && (
@@ -213,20 +230,9 @@ const Header = ({ content }) => {
                         key={`${group}-${name}`}
                         className="group flex min-w-56 items-center justify-center border-r border-white/10"
                       >
-                        {group === 0 && href ? (
-                          <a
-                            href={href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex w-full items-center justify-center gap-2.5 px-7 py-6 transition-colors duration-300 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-secondary"
-                          >
-                            {itemContent}
-                          </a>
-                        ) : (
-                          <span className="flex w-full items-center justify-center gap-2.5 px-7 py-6">
-                            {itemContent}
-                          </span>
-                        )}
+                        <span className="flex w-full items-center justify-center gap-2.5 px-7 py-6">
+                          {itemContent}
+                        </span>
                       </li>
                     );
                   })}
@@ -238,7 +244,7 @@ const Header = ({ content }) => {
       )}
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-36 left-0 right-0 z-30 flex justify-center animate-bounce pointer-events-none sm:bottom-40">
+      <div className="absolute bottom-36 left-0 right-0 z-30 flex justify-center animate-bounce pointer-events-none motion-reduce:animate-none sm:bottom-40">
         <a
           href="#focus"
           aria-label="Scroll to the next section"

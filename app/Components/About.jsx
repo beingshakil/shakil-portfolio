@@ -179,7 +179,14 @@ const About = ({ content, action, imagePriority = false }) => {
               key={tool.name}
               className="group relative flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-md dark:border-white/10 dark:bg-darkHover"
             >
-              <Image src={tool.src} alt={tool.name} title={tool.name} className="h-8 w-8 sm:h-10 sm:w-10 object-contain" width={40} height={40} />
+              <Image
+                src={tool.src}
+                alt={tool.name}
+                title={tool.name}
+                className={`h-8 w-8 object-contain sm:h-10 sm:w-10 ${tool.name === 'Sanity' ? 'dark:invert' : ''}`}
+                width={40}
+                height={40}
+              />
               <span
                 role="tooltip"
                 className="pointer-events-none absolute -top-9 left-1/2 z-20 -translate-x-1/2 translate-y-1 whitespace-nowrap rounded-md bg-dark px-2.5 py-1 text-xs font-medium text-white opacity-0 shadow-lg transition-all duration-200 group-hover:translate-y-0 group-hover:opacity-100 dark:bg-white dark:text-dark"

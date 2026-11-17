@@ -28,6 +28,26 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'cdn.sanity.io',
       },
+      {
+        protocol: 'https',
+        hostname: 'cdn.prod.website-files.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'searchaly.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'quranmazid.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'ihadis.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.rsautomart.shop',
+      },
     ],
   },
 };
