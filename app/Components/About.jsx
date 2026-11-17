@@ -5,7 +5,7 @@ import SectionHeading, { ArrowLink, Eyebrow, Section } from "./SectionHeading";
 
 const stats = [
   { value: "3.87", label: "CGPA", suffix: "" },
-  { value: "2", label: "Years experience", suffix: "+" },
+  { value: "3", label: "Years experience", suffix: "+" },
   { value: "03", label: "Research publications", suffix: "" },
 ];
 

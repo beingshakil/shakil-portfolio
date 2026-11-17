@@ -6,12 +6,10 @@
   "navbar": {
     "brandName": "Md Shakil Hossen",
     "navLinks": [
-      { "label": "Home", "href": "/" },
-      { "label": "About", "href": "/about" },
-      { "label": "My Work", "href": "/work" },
-      { "label": "Experience", "href": "/experience" },
-      { "label": "Explore with me", "href": "/explore" },
+      { "label": "Work", "href": "/work" },
       { "label": "Services", "href": "/services" },
+      { "label": "About", "href": "/about" },
+      { "label": "Insights", "href": "/explore" },
       { "label": "Contact", "href": "/contact" }
     ],
     "ctaButtonText": "Hire Me",
@@ -29,8 +27,7 @@
     "backgroundImage": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
   },
   "focus": {
-    "greeting": "This is Shakil.",
-    "statement": "I specialize in web intelligence, workflow automation, and SEO/AEO, turning raw web data into decisions and getting brands found on Google and in *AI answers.*",
+    "statement": "I specialize in web intelligence, SEO/AEO, workflow automation and turning raw web data into decisions and getting brands found on Google and in *AI answers.*",
     "tags": [
       { "label": "Web Intelligence", "icon": "chart" },
       { "label": "Workflow Automation", "icon": "sparkles" },
@@ -42,30 +39,55 @@
   },
   "about": {
     "eyebrow": "About me",
-    "heading": "A problem solver *at heart*",
+    "heading": "Web intelligence, made *actionable*",
     "title": "Who I AM",
     "subtitle": "Introduction",
     "content": [
-      "I'm a **Web Intelligence and SEO Specialist** who turns complex web data and repetitive manual work into efficient, automated workflows. My work spans workflow automation, prompt engineering, web scraping, and custom web tools, all built to save time and boost productivity.",
-      "I combine **AI-powered automation, data extraction, and SEO** to streamline business processes and turn raw information into actionable insights. My goal is simple: bridge the gap between **technology, data, and business operations** with practical solutions that cut busywork and create measurable impact."
+      "I'm a **Web Intelligence and SEO Specialist** for teams that need a clearer view of search performance. I build systems that collect search, competitor, and website data, then turn it into a prioritized growth plan.",
+      "I automate **research, reporting, QA, and data-cleaning workflows** so the next SEO, content, or technical action is clear, repeatable, and measurable."
     ],
-    "storyTitle": "My Story & Mission",
+    "storyTitle": "Turning search signals into decisive action.",
     "ctaText": "Learn More",
     "cards": [
       {
         "iconKey": "project_icon",
         "iconDarkKey": "project_icon_dark",
         "title": "Projects",
-        "content": "Built more than 50+ projects in AI Automation, SEO, Data Analysis, and Web Development. Specializing in delivering data-driven solutions and high-performance automation tools for diverse business needs."
+        "content": "Built 50+ systems across SEO, automation, reporting, and web development - each designed to reduce manual work and surface clear priorities."
       },
       {
         "iconKey": "code_icon",
         "iconDarkKey": "code_icon_dark",
         "title": "Technical Skills",
-        "content": "**Programming & Web:** Python, SQL, React JS, JavaScript, HTML, CSS\n**SEO Tools:** SEMrush, Ahrefs, GSC, GA4, GTM\n**Data Analysis:** Power BI, Excel/Sheets\n**Advanced Analytics:** NumPy, Pandas, BeautifulSoup, Selenium"
+        "content": "**Programming & Web:** Python, SQL, React JS, JavaScript, Tailwind CSS\n**SEO Tools:** SEMrush, Ahrefs, GSC, GA4, GTM\n**Data Analysis:** Power BI, Excel/Sheets\n**Advanced Analytics:** NumPy, Pandas, BeautifulSoup, Selenium"
       }
     ],
     "toolsSectionTitle": "Tools I Use"
+  },
+  "howIWork": {
+    "eyebrow": "How I work",
+    "heading": "Turn signals into a clear plan of action.",
+    "steps": [
+      {
+        "title": "Collect",
+        "description": "Search, site, and competitor signals"
+      },
+      {
+        "title": "Clarify",
+        "description": "Structured data and useful patterns"
+      },
+      {
+        "title": "Prioritize",
+        "description": "Tasks teams can act on"
+      }
+    ],
+    "outcomeEyebrow": "Practical outcome",
+    "outcomeValue": "5x",
+    "outcomeDescription": "Growth in website traffic and rankings achieved through targeted SEO strategy and data optimization.",
+    "action": {
+      "label": "See selected work",
+      "href": "/work"
+    }
   },
   "experience": {
     "eyebrow": "Experience",
@@ -79,7 +101,7 @@
         "company": "Musemind",
         "companyLink": "https://musemind.agency",
         "content": [
-          "Built AI automation workflows using Python and Chrome extensions to cut down manual work and help teams move faster.",
+          "Handled end-to-end SEO strategy and automation for Musemind, a leading global UX design agency. Delivered technical SEO fixes and on-page optimization.",
           "Created prompt templates for AI tools (LLMs) to get better, more consistent outputs across different tasks and use cases.",
           "Pulled and analyzed data from Google Analytics and Search Console to find SEO issues and spot growth opportunities.",
           "Set up automated SEO reports so the team could track keyword rankings, site health, and traffic without doing it manually.",
@@ -123,58 +145,38 @@
   },
   "services": {
     "eyebrow": "Services",
-    "heading": "What I can *do for you*",
+    "heading": "Services that create *clearer next steps*",
     "title": "Services",
     "subtitle": "What I Offer",
-    "content": "Focused services that turn your data, workflows, and website into a real competitive advantage.",
+    "content": "Focused engagements that turn search signals, recurring work, and scattered data into useful business momentum.",
     "cards": [
       {
-        "iconKey": "ui_icon",
-        "title": "AI Automation",
-        "content": "I build AI workflows, automation scripts, and Chrome extensions that eliminate repetitive tasks and help your team operate faster.",
-        "bullets": [
-          "AI + Automation Integration",
-          "AI Agent Development",
-          "Chrome Extension Development",
-          "Python Automation Scripts",
-          "Web Scraping & Data Extraction"
-        ],
-        "link": "#"
+        "iconKey": "mobile_icon",
+        "title": "SEO Intelligence",
+        "content": "Find and prioritize the technical and content opportunities that matter.",
+        "deliverable": "Audit roadmap",
+        "link": "/contact"
       },
       {
-        "iconKey": "mobile_icon",
-        "title": "SEO",
-        "content": "I optimize your website with technical SEO, keyword research, and data-driven content strategies to rank higher and drive genuine organic traffic.",
-        "bullets": [
-          "Technical SEO",
-          "On-Page SEO",
-          "Off-Page SEO",
-          "Keyword Research",
-          "SEO Audit & Performance Tracking"
-        ],
-        "link": "#"
+        "iconKey": "ui_icon",
+        "title": "Workflow Automation",
+        "content": "Remove repetitive research, reporting, and QA work.",
+        "deliverable": "Reporting workflow",
+        "link": "/contact"
       },
       {
         "iconKey": "web_icon",
-        "title": "Data Analysis",
-        "content": "I clean, analyze, and visualize your data using Python, Power BI, and custom dashboards that turn raw numbers into actionable decisions.",
-        "bullets": [
-          "Data Cleaning & Preprocessing",
-          "Exploratory Data Analysis",
-          "Machine Learning Models",
-          "Data Visualization & Dashboard"
-        ],
-        "link": "#"
+        "title": "Decision-Ready Analytics",
+        "content": "Turn scattered data into dashboards and recommendations.",
+        "deliverable": "Decision dashboard",
+        "link": "/contact"
       },
       {
         "iconKey": "graphics_icon",
-        "title": "Web Development",
-        "content": "I build fast, SEO-optimized frontend websites that look great and perform reliably across all devices and browsers.",
-        "bullets": [
-          "Frontend Development",
-          "Website Optimization & SEO"
-        ],
-        "link": "#"
+        "title": "Technical Web Builds",
+        "content": "Build fast, search-ready tools and sites when custom implementation is needed.",
+        "deliverable": "Internal tool or site",
+        "link": "/contact"
       }
     ],
     "readMoreText": "Learn More",
@@ -182,13 +184,13 @@
   },
   "featuredWork": {
     "eyebrow": "Featured work",
-    "heading": "Projects that show what I do *best*",
+    "heading": "Selected systems that made SEO and reporting work *faster*",
     "actionText": "View all projects"
   },
   "process": {
     "eyebrow": "Working process",
-    "heading": "Here's how I take every project from *first call to real results*",
-    "description": "Five clear steps, weekly updates, and no surprises along the way.",
+    "heading": "A practical path from friction to a *working system*",
+    "description": "Clear priorities, useful deliverables, and progress you can measure.",
     "steps": [
       {
         "title": "Discovery call",
@@ -226,16 +228,16 @@
   },
   "contact": {
     "eyebrow": "Contact",
-    "heading": "Let's build something that *works*",
+    "heading": "Have an SEO, automation, or data problem worth *solving?*",
     "title": "Connect with Me",
-    "content": "Have a project, a question, or just an idea? Send me a message or book a free 30 minute call.",
+    "content": "Tell me what is manual, unclear, or underperforming — I’ll reply within two business days.",
     "emailLabel": "Email",
     "email": "being.shakill@gmail.com",
     "locationLabel": "Based in",
     "location": "Dhaka, Bangladesh",
-    "bookCallText": "Book a free call",
+    "bookCallText": "Book an intro call",
     "bookCallHref": "https://calendly.com/being-shakill/30min",
-    "formTitle": "Send a message",
+    "formTitle": "Prefer to write? Send a message",
     "nameLabel": "Your name",
     "emailFieldLabel": "Your email",
     "messageLabel": "Your message",
@@ -249,10 +251,10 @@
   },
   "footer": {
     "brandName": "Md Shakil Hossen",
-    "content": "Full suite of premium services in Data Analysis, SEO, and Web Development.",
+    "content": "Web intelligence, automation, and SEO systems that help teams make clearer decisions.",
     "email": "being.shakill@gmail.com",
     "phone": "+880 1755780537",
-    "location": "Rayerbag, Dhaka, Bangladesh",
+    "location": "Dhaka, Bangladesh",
     "contactInfoTitle": "Contact Info",
     "quickLinksTitle": "Quick Links",
     "quickLinks": [
@@ -267,10 +269,8 @@
       { "label": "Experience", "href": "/experience" },
       { "label": "Contact", "href": "/contact" }
     ],
-    "pitch": "Need workflows that **run themselves** or pages that **rank and convert**? I combine AI automation, technical SEO, and data to help founders and teams grow without adding busywork.",
     "ctaText": "Start a project",
     "ctaHref": "/contact",
-    "bottomLinkText": "Start a project",
     "followMeTitle": "Follow Me",
     "socialLinks": [
       { "platform": "linkedin", "url": "https://www.linkedin.com/in/md-shakil-hossen/", "label": "LinkedIn" },

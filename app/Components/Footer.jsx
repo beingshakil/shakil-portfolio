@@ -1,12 +1,5 @@
 import Link from 'next/link'
 
-// "**bold**" segments in the pitch render as brighter text.
-function withBold(text = '') {
-  return text.split('**').map((part, i) =>
-    i % 2 === 1 ? <strong key={i} className="font-semibold text-white">{part}</strong> : part
-  )
-}
-
 const ColumnTitle = ({ children }) => (
   <p className="mb-5 font-eyebrow text-[11px] font-bold uppercase tracking-[0.28em] text-secondary">{children}</p>
 )
@@ -55,7 +48,7 @@ const Footer = ({ content }) => {
           </div>
 
           <div className="col-span-2 sm:col-span-3 lg:col-span-5 lg:col-start-8">
-            <p className="text-lg leading-relaxed text-white/70">{withBold(content.pitch)}</p>
+            <p className="text-lg leading-relaxed text-white/70">{content.content}</p>
             <Link
               href={content.ctaHref}
               className="mt-8 inline-flex items-center gap-2 rounded-full border border-secondary/60 px-7 py-3.5 text-sm font-semibold text-secondary transition-colors duration-300 hover:bg-secondary hover:text-dark"

@@ -1,6 +1,7 @@
 import Header from "./Components/Header";
 import FocusStatement from "./Components/FocusStatement";
 import About from "./Components/About";
+import HowIWork from "./Components/HowIWork";
 import Experience from "./Components/Experience";
 import Services from "./Components/Services";
 import FeaturedProjects from "./Components/FeaturedProjects";
@@ -92,6 +93,7 @@ export default async function Home() {
       <FocusStatement content={content.focus} />
       <About content={content.about} />
       <Services content={content.services} />
+      <HowIWork content={content.howIWork} />
       <FeaturedProjects projects={featuredProjects} exploreHref="/work" heading={content.featuredWork} />
       <Experience content={content.experience} hideTabs={true} />
       <WorkProcess content={content.process} />

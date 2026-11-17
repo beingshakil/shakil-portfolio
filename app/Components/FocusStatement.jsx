@@ -1,6 +1,6 @@
 "use client"
-// Intro manifesto right after the hero: a greeting, a large focus statement
-// that lights up word by word on scroll, and floating skill tags around it.
+// Intro manifesto right after the hero: a large focus statement that lights
+// up word by word on scroll, with floating skill tags around it.
 import { useEffect, useRef, useState } from 'react';
 import RevealText from './RevealText';
 
@@ -123,9 +123,6 @@ const FocusStatement = ({ content }) => {
 
         {/* Statement */}
         <div className="relative z-10 max-w-3xl xl:max-w-[620px] 2xl:max-w-[700px] text-center">
-          <p className="font-display-serif text-3xl md:text-4xl text-primary dark:text-secondary mb-6 md:mb-8">
-            {content.greeting}
-          </p>
           <RevealText
             text={content.statement}
             className="text-[1.85rem] leading-[1.2] sm:text-4xl md:text-[2.5rem] md:leading-[1.18] font-semibold tracking-tight"

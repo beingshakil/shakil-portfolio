@@ -39,7 +39,7 @@ const Contact = ({ content }) => {
   return (
     <Section id="contact" tone="navy">
       <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
-        {/* Pitch + details */}
+        {/* Primary conversion path + direct details */}
         <div className="lg:col-span-5">
           <Eyebrow tone="dark">{content.eyebrow}</Eyebrow>
           <RevealText text={content.heading} tone="dark" className={`mt-5 ${headingClass}`} />
@@ -73,10 +73,10 @@ const Contact = ({ content }) => {
           </a>
         </div>
 
-        {/* Form */}
+        {/* Alternate contact path */}
         <form
           onSubmit={onSubmit}
-          className="lg:col-span-7 rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8 md:p-10"
+          className="lg:col-span-7 rounded-2xl border border-white/10 bg-white/[0.02] p-6 sm:p-8 md:p-10"
         >
           <h3 className="text-xl font-semibold tracking-tight text-white">{content.formTitle}</h3>
 
@@ -100,7 +100,7 @@ const Contact = ({ content }) => {
             <button
               type="submit"
               disabled={sending}
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-dark transition-colors duration-300 hover:bg-secondary disabled:opacity-60"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 px-7 py-3.5 text-sm font-semibold text-white transition-colors duration-300 hover:border-secondary hover:bg-secondary hover:text-dark disabled:opacity-60"
             >
               {content.submitText}
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="h-4 w-4" aria-hidden="true">

@@ -50,6 +50,13 @@ const Services = ({ content }) => {
             <p className="mt-3 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
               {item.content}
             </p>
+            <div className="mt-auto pt-7">
+              <p className="border-t border-gray-200 pt-4 font-eyebrow text-[10px] font-bold uppercase tracking-[0.18em] text-primary dark:border-white/10 dark:text-secondary">
+                <span className="text-gray-500 dark:text-gray-400">Deliverable</span>
+                <span className="mx-2 text-gray-300 dark:text-white/20">/</span>
+                {item.deliverable}
+              </p>
+            </div>
           </div>
         ))}
       </div>

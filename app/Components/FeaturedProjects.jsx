@@ -7,7 +7,7 @@ import SectionHeading, { ArrowLink } from './SectionHeading';
 
 const DEFAULT_HEADING = {
   eyebrow: 'Featured work',
-  heading: 'Projects that show what I do *best*',
+  heading: 'Selected systems that made SEO and reporting work *faster*',
   actionText: 'View all projects',
 };
 

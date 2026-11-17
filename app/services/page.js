@@ -3,23 +3,23 @@ import content from "../data/homepage.json";
 import { siteUrl } from "../data/site";
 
 export const metadata = {
-  title: 'Services — AI Automation, SEO & Data Analysis | Md Shakil Hossen',
-  description: 'Professional services by Md Shakil Hossen: AI Automation workflows, Technical SEO, Data Analysis & visualization, and Frontend Web Development in Bangladesh.',
+  title: 'Services — SEO Intelligence, Automation & Analytics | Md Shakil Hossen',
+  description: 'SEO intelligence, workflow automation, decision-ready analytics, and technical web builds by Md Shakil Hossen.',
   alternates: {
     canonical: `${siteUrl}/services`,
   },
   openGraph: {
     type: 'website',
     url: `${siteUrl}/services`,
-    title: 'Services — AI Automation, SEO & Data Analysis | Md Shakil Hossen',
-    description: 'Professional services by Md Shakil Hossen: AI Automation workflows, Technical SEO, Data Analysis & visualization, and Frontend Web Development in Bangladesh.',
+    title: 'Services — SEO Intelligence, Automation & Analytics | Md Shakil Hossen',
+    description: 'SEO intelligence, workflow automation, decision-ready analytics, and technical web builds by Md Shakil Hossen.',
     siteName: 'Md Shakil Hossen — Portfolio',
     images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Md Shakil Hossen — Services' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Services — AI Automation, SEO & Data Analysis | Md Shakil Hossen',
-    description: 'Professional services by Md Shakil Hossen: AI Automation workflows, Technical SEO, Data Analysis & visualization, and Frontend Web Development in Bangladesh.',
+    title: 'Services — SEO Intelligence, Automation & Analytics | Md Shakil Hossen',
+    description: 'SEO intelligence, workflow automation, decision-ready analytics, and technical web builds by Md Shakil Hossen.',
     creator: '@beingshakil',
     images: ['/og-image.jpg'],
   },
@@ -58,10 +58,10 @@ const serviceItemSchemas = content.services.cards.map(card => ({
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: `${card.title} Offerings`,
-    itemListElement: card.bullets.map((bullet, i) => ({
+    itemListElement: [card.deliverable].map((deliverable, i) => ({
       '@type': 'Offer',
       position: i + 1,
-      itemOffered: { '@type': 'Service', name: bullet },
+      itemOffered: { '@type': 'Service', name: deliverable },
     })),
   },
 }));
